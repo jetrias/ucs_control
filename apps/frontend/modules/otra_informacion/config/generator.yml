@@ -1,0 +1,47 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           otraInformacion
+    theme:                 jroller
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          otra_informacion
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  
+          base_mision: {help: Indica si pertenece a alguna base de misión}
+          det_base_mision: {label: Detalle base misión}
+          org_dep: {label: Organización deportiva}
+          det_org_deportiva: {label: Detalle organización deportiva}
+          org_cultural: {label: Organización cultural}
+          det_org_cultural: {label: Detalle organización cultural}
+          org_ecologista: {label: Organización ecologista}
+          det_org_ecologista: {label: Detalle organización ecologista}
+          org_productiva: {label: Organización productiva}
+          det_org_productiva: {label: Detalle organización productiva}
+          mil_bolivariana: {label: Milicia_bolivariana}
+          det_mil_bolivariana: {label: Detalle milicia bolivariana}
+          org_politica_estudiantil: {label: Organización política estudiantil}
+          det_org_politica_estudiantil: {label: Detalle organización política estudiantil}
+                
+                
+      list:    ~
+      filter:  ~
+      form:    ~
+      edit:    
+          display:
+              ORGANIZACIONES EN LAS QUE PARTICIPA: [base_mision,det_base_mision,org_dep, det_org_deportiva,org_cultural,det_org_cultural,org_ecologista,det_org_ecologista,org_productiva,det_org_productiva,mil_bolivariana,det_mil_bolivariana,org_politica_estudiantil,det_org_politica_estudiantil,iniciativa_productiva]
+              REDES SOCIALES: [facebook,twitter,instagram]
+          actions:
+               _save:
+      new:     
+          display:
+              ORGANIZACIONES EN LAS QUE PARTICIPA: [base_mision,det_base_mision,org_dep, det_org_deportiva,org_cultural,det_org_cultural,org_ecologista,det_org_ecologista,org_productiva,det_org_productiva,mil_bolivariana,det_mil_bolivariana,org_politica_estudiantil,det_org_politica_estudiantil,iniciativa_productiva]
+              REDES SOCIALES: [facebook,twitter,instagram]
+          actions:
+               _save:    

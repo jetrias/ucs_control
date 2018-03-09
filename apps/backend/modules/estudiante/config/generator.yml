@@ -1,0 +1,31 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           estudiante
+    theme:                 jroller
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          estudiante
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: [_notas,_activo,_licencia,_baja,_usuario]
+      fields:  ~
+      list:    
+          object_actions: 
+            _delete:
+            _edit:
+            _notas:
+            _activo:
+            _licencia:
+            _baja:
+            _usuario:   
+          display: [tipo_identificacion,identificacion,primer_nombre,primer_apellido,estatus,verificado]
+      filter:  
+          display: [tipo_identificacion,identificacion,primer_nombre,primer_apellido,estado_id,municipio_id,pais_origen_id]
+      form:    ~
+      edit:    ~
+      new:     ~

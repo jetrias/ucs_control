@@ -1,0 +1,35 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           estudiante
+    theme:                 jroller
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          estudiante
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:    
+          table_method: obtenerEstudiante
+          display: [tipo_identificacion,identificacion,primer_nombre,segundo_nombre]
+      filter:  
+          class: false
+          
+      form:    ~
+      edit:      
+          title: ESTUDIANTE
+          display:
+              DATOS PERSONALES: [tipo_identificacion, identificacion, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido,sexo_id,fecha_nacimiento,pais_origen_id,foto]
+              UBICACIÓN: [estado_id, municipio_id, parroquia_id,centro_poblado_id,direccion,punto_referencia]
+              CONTACTO: [telefono, telefono_casa, correo_electronico,persona_contacto]
+              DE INTERES: [estado_civil_id, n_hijos,ano_curso, etnia_indigena_id,elam]
+              INFORMACIÓN LABORAL: [trabaja,horario,lugar,ingresos,telefono_trabajo,tipo_empresa]
+              INFORMACIÓN BANCARIA: [no_cta,cta_social,cta_personal,banco, tipo_cuenta,cuenta]
+          actions:
+               _save:
+      new:     ~

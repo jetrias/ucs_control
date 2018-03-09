@@ -1,0 +1,20 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    title:         Sistema Integral de Gestión Estudiantil
+    #description:  symfony project
+    #keywords:     symfony, project
+    #language:     en
+    #robots:       index, follow
+
+  stylesheets:    [main.css]
+
+  javascripts:    [/control/sfAdminThemejRollerPlugin/js/jquery.min.js,/control/sfAdminThemejRollerPlugin/js/jquery-ui.custom.min.js,control.js,date_es.js,pdfobject.min.js]
+
+  has_layout:     true
+  layout:         layout

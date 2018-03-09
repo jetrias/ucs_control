@@ -1,0 +1,1658 @@
+Asic:
+  connection: doctrine
+  tableName: asic
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: asic_id
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    municipio_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    estado_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    parroquia_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    Estudiante:
+      local: id
+      foreign: asic_id
+      type: many
+CentroPoblado:
+  connection: doctrine
+  tableName: centro_poblado
+  columns:
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    estado_codigo:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    municipio_codigo:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    parroquia_codigo:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    parroquia_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    id:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: true
+    centro_codigo:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    Estudiante:
+      local: id
+      foreign: centro_poblado_id
+      type: many
+CondicionVivienda:
+  connection: doctrine
+  tableName: condicion_vivienda
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: condicion_vivienda_id
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    EstudioSocioeconomico:
+      local: id
+      foreign: condicion_vivienda_id
+      type: many
+Estado:
+  connection: doctrine
+  tableName: estado
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: estado_id
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    Estudiante:
+      local: id
+      foreign: asic_estado_id
+      type: many
+    Estudiante_5:
+      class: Estudiante
+      local: id
+      foreign: estado_id
+      type: many
+EstadoCivil:
+  connection: doctrine
+  tableName: estado_civil
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: estado_civil_id
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    Estudiante:
+      local: id
+      foreign: estado_civil_id
+      type: many
+Estudiante:
+  connection: doctrine
+  tableName: estudiante
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: estudiante_id
+    tipo_identificacion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    identificacion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    primer_nombre:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    segundo_nombre:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    primer_apellido:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    segundo_apellido:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    sexo_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    fecha_nacimiento:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    pais_origen_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    estado_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    municipio_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    parroquia_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    direccion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    punto_referencia:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    asic_estado_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    asic_municipio_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    asic_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    telefono:
+      type: decimal(18)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    telefono_casa:
+      type: decimal(18)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    correo_electronico:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    persona_contacto:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    estado_civil_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    n_hijos:
+      type: decimal(18)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    ano_curso:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    cohorte:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    etnia_indigena_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    elam:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    idmatricula:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    trabaja:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    lugar:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    horario:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    ingresos:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    telefono_trabajo:
+      type: decimal(18)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    centro_poblado_id:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    foto:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    tipo_empresa:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    estatus:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    banco:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    tipo_cuenta:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    cuenta:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    cta_social:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    cta_personal:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    no_cta:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    n_ingreso:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    opsu:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    postulado:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    registro:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    verificado:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    fecha_verificacion:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    notas:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    pnf:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    Estado:
+      local: asic_estado_id
+      foreign: id
+      type: one
+    Asic:
+      local: asic_id
+      foreign: id
+      type: one
+    Municipio:
+      local: asic_municipio_id
+      foreign: id
+      type: one
+    EstadoCivil:
+      local: estado_civil_id
+      foreign: id
+      type: one
+    Estado_5:
+      class: Estado
+      local: estado_id
+      foreign: id
+      type: one
+    EtniaIndigena:
+      local: etnia_indigena_id
+      foreign: id
+      type: one
+    Municipio_7:
+      class: Municipio
+      local: municipio_id
+      foreign: id
+      type: one
+    PaisOrigen:
+      local: pais_origen_id
+      foreign: id
+      type: one
+    Parroquia:
+      local: parroquia_id
+      foreign: id
+      type: one
+    Sexo:
+      local: sexo_id
+      foreign: id
+      type: one
+    CentroPoblado:
+      local: centro_poblado_id
+      foreign: id
+      type: one
+    EstudioSocioeconomico:
+      local: id
+      foreign: estudiante_id
+      type: many
+    Notas:
+      local: id
+      foreign: estudiante_id
+      type: many
+    OtraInformacion:
+      local: id
+      foreign: estudiante_id
+      type: many
+    Reclamo:
+      local: id
+      foreign: estudiante_id
+      type: many
+EstudioSocioeconomico:
+  connection: doctrine
+  tableName: estudio_socioeconomico
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: estudio_socioeconomico_id
+    estudiante_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    grupo_familiar_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    profesion_jefe_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    instruccion_madre_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    ingreso_familiar_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    condicion_vivienda_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    tenencia_vivienda_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    material_paredes_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    material_techo_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    material_piso_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    numero_ambientes_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    electricidad:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    agua:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    red_de_cloacas:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    telefono_fijo_linea:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    telefono_fijo_enchufe:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    gas_directo:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    gas_bombona:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    aseo_urbano:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    internet:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    tv:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    mental_intelectual:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    mental_psicosocial:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    visual:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    auditiva:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    voz_y_habla:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    cardiovascular:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    respiratoria:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    metabolica:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    neurologica:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    musculo_esqueletico:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    sensitiva:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    genitourinaria:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    otra_discapacidad:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+  relations:
+    CondicionVivienda:
+      local: condicion_vivienda_id
+      foreign: id
+      type: one
+    Estudiante:
+      local: estudiante_id
+      foreign: id
+      type: one
+    GrupoFamiliar:
+      local: grupo_familiar_id
+      foreign: id
+      type: one
+    IngresoFamiliar:
+      local: ingreso_familiar_id
+      foreign: id
+      type: one
+    InstruccionMadre:
+      local: instruccion_madre_id
+      foreign: id
+      type: one
+    MaterialParedes:
+      local: material_paredes_id
+      foreign: id
+      type: one
+    MaterialPiso:
+      local: material_piso_id
+      foreign: id
+      type: one
+    MaterialTecho:
+      local: material_techo_id
+      foreign: id
+      type: one
+    NumeroAmbientes:
+      local: numero_ambientes_id
+      foreign: id
+      type: one
+    ProfesionJefe:
+      local: profesion_jefe_id
+      foreign: id
+      type: one
+    TenenciaVivienda:
+      local: tenencia_vivienda_id
+      foreign: id
+      type: one
+EtniaIndigena:
+  connection: doctrine
+  tableName: etnia_indigena
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: etnia_indigena_id
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    Estudiante:
+      local: id
+      foreign: etnia_indigena_id
+      type: many
+GrupoFamiliar:
+  connection: doctrine
+  tableName: grupo_familiar
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: grupo_familiar_id
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    EstudioSocioeconomico:
+      local: id
+      foreign: grupo_familiar_id
+      type: many
+IngresoFamiliar:
+  connection: doctrine
+  tableName: ingreso_familiar
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: ingreso_familiar_id
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    EstudioSocioeconomico:
+      local: id
+      foreign: ingreso_familiar_id
+      type: many
+InstruccionMadre:
+  connection: doctrine
+  tableName: instruccion_madre
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: instruccion_madre_id
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    EstudioSocioeconomico:
+      local: id
+      foreign: instruccion_madre_id
+      type: many
+MaterialParedes:
+  connection: doctrine
+  tableName: material_paredes
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: material_paredes_id
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    EstudioSocioeconomico:
+      local: id
+      foreign: material_paredes_id
+      type: many
+MaterialPiso:
+  connection: doctrine
+  tableName: material_piso
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: material_piso_id
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    EstudioSocioeconomico:
+      local: id
+      foreign: material_piso_id
+      type: many
+MaterialTecho:
+  connection: doctrine
+  tableName: material_techo
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: material_techo_id
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    EstudioSocioeconomico:
+      local: id
+      foreign: material_techo_id
+      type: many
+Municipio:
+  connection: doctrine
+  tableName: municipio
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: municipio_id
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    estado_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    municipio_codigo:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    Estudiante:
+      local: id
+      foreign: asic_municipio_id
+      type: many
+    Estudiante_7:
+      class: Estudiante
+      local: id
+      foreign: municipio_id
+      type: many
+Notas:
+  connection: doctrine
+  tableName: notas
+  columns:
+    periodo:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    pasaporte:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    codigo_carrera:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    unidad_curricular:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    seccion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    nota:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    cedula:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    pnf_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    estudiante_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    codigo2:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    unidad_curricular_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: notas3_id
+  relations:
+    UnidadCurricular:
+      local: unidad_curricular_id
+      foreign: id
+      type: one
+    Pnf:
+      local: pnf_id
+      foreign: id
+      type: one
+    Estudiante:
+      local: estudiante_id
+      foreign: id
+      type: one
+NumeroAmbientes:
+  connection: doctrine
+  tableName: numero_ambientes
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: numero_ambientes_id
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    EstudioSocioeconomico:
+      local: id
+      foreign: numero_ambientes_id
+      type: many
+OtraInformacion:
+  connection: doctrine
+  tableName: otra_informacion
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: otra_informacion_id
+    estudiante_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    base_mision:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    det_base_mision:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    org_dep:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    det_org_deportiva:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    org_cultural:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    det_org_cultural:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    org_ecologista:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    det_org_ecologista:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    org_productiva:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    det_org_productiva:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    mil_bolivariana:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    det_mil_bolivariana:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    iniciativa_productiva:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    facebook:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    twitter:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    instagram:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    org_politica_estudiantil:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    det_org_politica_estudiantil:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    Estudiante:
+      local: estudiante_id
+      foreign: id
+      type: one
+PaisOrigen:
+  connection: doctrine
+  tableName: pais_origen
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: pais_origen_id
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    iso:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    Estudiante:
+      local: id
+      foreign: pais_origen_id
+      type: many
+Parroquia:
+  connection: doctrine
+  tableName: parroquia
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: parroquia_id
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    municipio_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    estado_codigo:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    municipio_codigo:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    parroquia_codigo:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    Estudiante:
+      local: id
+      foreign: parroquia_id
+      type: many
+Pnf:
+  connection: doctrine
+  tableName: pnf
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: pnf_id
+    codigo:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    Notas:
+      local: id
+      foreign: pnf_id
+      type: many
+    UnidadCurricular:
+      local: id
+      foreign: pnf_id
+      type: many
+ProfesionJefe:
+  connection: doctrine
+  tableName: profesion_jefe
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: profesion_jefe_id
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    EstudioSocioeconomico:
+      local: id
+      foreign: profesion_jefe_id
+      type: many
+Reclamo:
+  connection: doctrine
+  tableName: reclamo
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: reclamo_id
+    tipo_reclamo_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    estatus:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    estudiante_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    Estudiante:
+      local: estudiante_id
+      foreign: id
+      type: one
+    TipoReclamo:
+      local: tipo_reclamo_id
+      foreign: id
+      type: one
+Sexo:
+  connection: doctrine
+  tableName: sexo
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: sexo_id
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    Estudiante:
+      local: id
+      foreign: sexo_id
+      type: many
+TenenciaVivienda:
+  connection: doctrine
+  tableName: tenencia_vivienda
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: tenencia_vivienda_id
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    EstudioSocioeconomico:
+      local: id
+      foreign: tenencia_vivienda_id
+      type: many
+TipoReclamo:
+  connection: doctrine
+  tableName: tipo_reclamo
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: tipo_reclamo_id
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    Reclamo:
+      local: id
+      foreign: tipo_reclamo_id
+      type: many
+UnidadCurricular:
+  connection: doctrine
+  tableName: unidad_curricular
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: unidad_curricular_id
+    mmc_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    pnf_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    cod_unerg:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    ano_acad:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    cod_sec_nac:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    cod_ubv:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    asig_ig:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    periodo_old:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    periodo_sec:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    periodo_un:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    prelacion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    periodo_id:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    trayecto_id:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    Pnf:
+      local: pnf_id
+      foreign: id
+      type: one
+    Notas:
+      local: id
+      foreign: unidad_curricular_id
+      type: many
+Usuario:
+  connection: doctrine
+  tableName: usuario
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: usuario_id
+    persona_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    usuario_nom:
+      type: string(9)
+      fixed: true
+      unsigned: false
+      notnull: false
+      primary: false
+    usuario_cla:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    usutip_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    usuper_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    usuario_pr1:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    usuario_re1:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    usuario_pr2:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    usuario_re2:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    usuario_fre:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    usuario_fbl:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    usuario_fde:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    usuario_obs:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    ususes_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    usuest_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    usurdi_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false

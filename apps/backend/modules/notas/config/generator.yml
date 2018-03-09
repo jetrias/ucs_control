@@ -1,0 +1,27 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           notas
+    theme:                 jroller
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          notas
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:    
+          table_method: obtenerNotasEst
+          display: [periodo,unidad_curricular,seccion,pnf,nota]
+          max_per_page: 60
+      filter:  
+          class: false
+      form:    ~
+      edit:    
+          display: [periodo,unidad_curricular_id,seccion,pnf_id,nota]
+      new:     
+          display: [periodo,unidad_curricular_id,seccion,pnf_id,nota]

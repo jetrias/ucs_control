@@ -1,0 +1,24 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           usuario
+    theme:                 jroller
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          usuario
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      
+      actions: ~
+      fields:         
+      list:    
+          table_method: obtenerUsuario
+          display: [usuario_nom,usuario_pr1,usuario_re1,usuario_pr2,usuario_re2]
+      filter:  ~
+      form:    ~
+      edit:    
+      new:     ~

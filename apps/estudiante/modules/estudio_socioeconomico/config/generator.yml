@@ -1,0 +1,50 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           estudioSocioeconomico
+    theme:                 jroller
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          estudio_socioeconomico
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields: 
+          grupo_familiar_id: {label: Grupo familiar}
+          profesion_jefe_id: {label: Profesión jefe}
+          instruccion_madre_id: {label: Instrucción madre}
+          condicion_vivienda_id: {label: Condición vivienda}
+          numero_ambientes_id: {label: Número ambientes}
+          telefono_fijo_linea: {label: Teléfono fijo línea}
+          telefono_fijo_enchufe: {label: Teléfono fijo enchufe}
+          metabolica: {label: Metabólica}
+          neurologica: {label: Neurológica}
+          musculo_esqueletico: {label: Músculo esquelético}
+      list:    ~
+      filter:  
+#        class: false
+      form:    ~
+      edit:    
+          title: CARACTERIZACIÓN DEL ESTUDIANTE
+          display:
+              INFORMACIÓN FAMILIAR : [profesion_jefe_id, condicion_vivienda_id, instruccion_madre_id, ingreso_familiar_id, grupo_familiar_id]
+              DATOS DE VIVIENDA: [tenencia_vivienda_id, material_paredes_id, material_techo_id, material_piso_id, numero_ambientes_id]
+              DATOS DE SERVICIOS: [electricidad, agua, red_de_cloacas, telefono_fijo_linea, telefono_fijo_enchufe, gas_bombona, gas_directo, aseo_urbano, tv, internet]
+              DATOS DE ALGUNA DISCAPACIDAD: [mental_intelectual, mental_psicosocial, visual, auditiva, voz_y_habla, cardiovascular, respiratoria, metabolica, neurologica, musculo_esqueletico, sensitiva, genitourinaria, otra_discapacidad]
+          actions:
+              _save:
+
+      new:     
+          title: CARACTERIZACIÓN DEL ESTUDIANTE
+          display:
+              INFORMACIÓN FAMILIAR : [profesion_jefe_id, condicion_vivienda_id, instruccion_madre_id, ingreso_familiar_id, grupo_familiar_id]
+              DATOS DE VIVIENDA: [tenencia_vivienda_id, material_paredes_id, material_techo_id, material_piso_id, numero_ambientes_id]
+              DATOS DE SERVICIOS: [electricidad, agua, red_de_cloacas, telefono_fijo_linea, telefono_fijo_enchufe, gas_bombona, gas_directo, aseo_urbano, tv, internet]
+              DATOS DE ALGUNA DISCAPACIDAD: [mental_intelectual, mental_psicosocial, visual, auditiva, voz_y_habla, cardiovascular, respiratoria, metabolica, neurologica, musculo_esqueletico, sensitiva, genitourinaria, otra_discapacidad]
+          actions:
+              _save:
+                          

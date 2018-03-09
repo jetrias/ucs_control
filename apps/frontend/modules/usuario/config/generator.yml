@@ -1,0 +1,37 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           usuario
+    theme:                 jroller
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          usuario
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+          nombre: {label: 1er Nombre}
+          apellido: {label: 1er Apellido}
+          cedula_identidad: {label: Cedula de Identidad}
+          correo_electronico: {label: Correo Electronico}
+          correo_electronico2: {label: Repita Correo Electronico, help: Repita en estes campo su Correo Electronico.}
+          usuario_nom: {label: Nombre de Usuario}
+          usutip_nom: {label: Tipo de Usuario}
+          usuario_pr1: {label: 1ª Pregunta de Seguridad, help: Pregunta 1 para recupera Contraseña y/o Usuario}
+          usuario_re1: {label: Respuesta de la 1ª Pregunta}
+          usuario_pr2: {label: 2ª Pregunta de Seguridad, help: Pregunta 2 para recupera Contraseña y/o Usuario}
+          usuario_re2: {label: Respuesta de la 2ª Pregunta}
+          usuario_cla: {label: Clave, help: Debe al menos constar de 1 letra. 1 número y 1 de estos ¡@$%&? caracteres especiles.}
+          usuario_cl2: {label: Repita Clave, help: Repita en estes campo su Clave.}
+      list:    ~
+      filter:  
+          class: false
+      form:    ~
+      edit:    ~
+      new:     
+          actions:
+              _save:

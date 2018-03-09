@@ -1,0 +1,41 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+estudiante:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    title:        Universidad de las Ciencias de la Salud
+    #description:  symfony project
+    #keywords:     symfony, project
+    #language:     en
+    #robots:       index, follow
+
+  stylesheets:    [main.css,/control/bootstrap/bootstrap/css/bootstrap.min.css,/control/bootstrap/metisMenu/metisMenu.min.css,/control/bootstrap/dist/css/sb-admin-2.css,/control/bootstrap/font-awesome/css/font-awesome.min.css]
+
+  javascripts:    [/control/bootstrap/jquery/jquery.min.js,/control/bootstrap/bootstrap/js/bootstrap.min.js,/control/bootstrap/metisMenu/metisMenu.min.js,/control/bootstrap/dist/js/sb-admin-2.js,/control/sfAdminThemejRollerPlugin/js/jquery-ui.custom.min.js,control.js,date_es.js]
+
+  has_layout:     true
+  layout:         layout
+  
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    title:        Universidad de las Ciencias de la Salud
+    #description:  symfony project
+    #keywords:     symfony, project
+    #language:     en
+    #robots:       index, follow
+
+  stylesheets:    [main.css,/control/bootstrap/bootstrap/css/bootstrap.min.css,/control/bootstrap/metisMenu/metisMenu.min.css,/control/bootstrap/dist/css/sb-admin-2.css,/control/bootstrap/font-awesome/css/font-awesome.min.css]
+
+  javascripts:    [/control/bootstrap/jquery/jquery.min.js,/control/bootstrap/bootstrap/js/bootstrap.min.js,/control/bootstrap/metisMenu/metisMenu.min.js,/control/bootstrap/dist/js/sb-admin-2.js]
+
+  has_layout:     true
+  layout:         layout
+  
+  
+  
+  

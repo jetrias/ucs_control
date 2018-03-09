@@ -1,0 +1,63 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           estudiante
+    theme:                 jroller
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          estudiante
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields: 
+          tipo_identificacion: {label: Tipo identificación}
+          identificacion: {label: Identificación}
+          direccion: {label: Dirección}
+          telefono: {label: Teléfono}
+          telefono_casa: {label: Teléfono casa}
+          correo_electronico: {label: Correo electrónico}
+          etnia_indigena: {label: Etnia indígena}
+          telefono_trabajo: {label: Teléfono trabajo}
+          n_hijos: {label: Número de hijos}
+          elam: {help: Si eres estudiante del programa elam marca esta casilla}
+          fecha_nacimiento: {label: Fecha de Nacimiento}
+          pais_origen_id: {label: País de Origen}
+          persona_contacto: {help: Indica el nombre de algún familiar}
+          punto_referencia: {label: Punto de referencia, help: Coloca punto conocido de la comunidad}
+          asic_estado_id: {help: Selecciona el estado del asic en el que estudias}
+          asic_municipio_id: {help: Selecciona el municipio del asic en el que estudias}
+          telefono_casa: {help: Coloca el número de tlf de tu casa de origen ej. +53XXX-XXXXXXX}
+          cta_social: {label: Cuenta Social, help: NOTA: A partir del mes de junio los estudiantes que cobran su beca por cta social deberan contar con una cuenta personal desde ahora se les exhorta a gestionar la misma}
+          cta_personal: {label: Cuenta Personal}
+          no_cta: {label: No Poseo Cuenta}
+          cuenta: {help: Coloca los 20 dígitos de la cuenta bancaria. La cuenta a colocar debe pertenecerte}
+          
+      list:    ~
+      filter:  ~
+      form:    ~
+      edit:    
+          title: ESTUDIANTE
+          display:
+              DATOS PERSONALES: [tipo_identificacion, identificacion, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido,sexo_id,fecha_nacimiento,pais_origen_id,foto]
+              UBICACIÓN: [estado_id, municipio_id, parroquia_id,centro_poblado_id,direccion,punto_referencia]
+              INFORMACIÓN DE CONTACTO: [telefono, telefono_casa, correo_electronico,persona_contacto]
+              INFORMACIÓN DE INTERES: [estado_civil_id, n_hijos,ano_curso, etnia_indigena_id,elam]
+              INFORMACIÓN LABORAL: [trabaja,horario,lugar,ingresos,telefono_trabajo,tipo_empresa]
+              INFORMACIÓN BANCARIA: [no_cta,cta_social,cta_personal,banco, tipo_cuenta,cuenta]
+          actions:
+               _save:
+      new:     
+          title: ESTUDIANTE
+          display:
+              DATOS PERSONALES: [tipo_identificacion, identificacion, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido,sexo_id,fecha_nacimiento,pais_origen_id,foto]
+              UBICACIÓN: [estado_id, municipio_id, parroquia_id,centro_poblado_id,direccion,punto_referencia]
+              INFORMACIÓN DE CONTACTO: [telefono, telefono_casa, correo_electronico,persona_contacto]
+              INFORMACIÓN DE INTERES: [estado_civil_id, n_hijos,año_curso,etnia_indigena_id,elam]
+              INFORMACIÓN LABORAL: [trabaja,horario,lugar,ingresos,telefono_trabajo,tipo_empresa]
+              INFORMACIÓN BANCARIA: [no_cta,cta_social,cta_personal,banco, tipo_cuenta,cuenta]
+          actions:
+               _save:

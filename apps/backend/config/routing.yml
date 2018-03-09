@@ -1,0 +1,115 @@
+notas:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                notas
+    module:               notas
+    prefix_path:          /notas
+    column:               id
+    with_wildcard_routes: true
+
+pnf:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                pnf
+    module:               pnf
+    prefix_path:          /pnf
+    column:               id
+    with_wildcard_routes: true
+
+unidad_curricular:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                unidadCurricular
+    module:               unidad_curricular
+    prefix_path:          /unidad_curricular
+    column:               id
+    with_wildcard_routes: true
+
+nota:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                nota
+    module:               nota
+    prefix_path:          /nota
+    column:               id
+    with_wildcard_routes: true
+
+estudiante:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                estudiante
+    module:               estudiante
+    prefix_path:          /estudiante
+    column:               id
+    with_wildcard_routes: true
+
+usuario:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                usuario
+    module:               usuario
+    prefix_path:          /usuario
+    column:               id
+    with_wildcard_routes: true
+
+tenencia_vivienda:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                tenenciaVivienda
+    module:               tenencia_vivienda
+    prefix_path:          /tenencia_vivienda
+    column:               id
+    with_wildcard_routes: true
+
+condicion_vivienda:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                condicionVivienda
+    module:               condicion_vivienda
+    prefix_path:          /condicion_vivienda
+    column:               id
+    with_wildcard_routes: true
+
+ingreso_familiar:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ingresoFamiliar
+    module:               ingreso_familiar
+    prefix_path:          /ingreso_familiar
+    column:               id
+    with_wildcard_routes: true
+
+instruccion_madre:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                instruccionMadre
+    module:               instruccion_madre
+    prefix_path:          /instruccion_madre
+    column:               id
+    with_wildcard_routes: true
+
+profesion_jefe:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                profesionJefe
+    module:               profesion_jefe
+    prefix_path:          /profesion_jefe
+    column:               id
+    with_wildcard_routes: true
+
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules
+homepage:
+  url:   /
+  param: { module: default, action: index }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*
