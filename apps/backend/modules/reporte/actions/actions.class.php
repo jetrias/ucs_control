@@ -76,7 +76,7 @@ class reporteActions extends sfActions
         foreach ($notas as $data):
             $nro++;
             $html2.='<tr><td align="center">' . $nro . '</td>
-            <td align="center">' . $data['unidad_curricular'] . '</td>
+            <td align="center">' . $data['cod_ubv'] . '</td>
             <td align="center">' . $data['descripcion'] . '</td>
             <td align="center">' . $data['periodo'] . '</td>
             <td align="center">' . $data['nota'] . '</td>
