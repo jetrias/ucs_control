@@ -19,7 +19,7 @@
                         if($sf_user->getAttribute('notas')=='SI-ELAM'){
                              $notas='/control/estudiante.php/reporte/mostrarNotas';
                         }
-                        if($sf_user->getAttribute('notas')=='SI'){
+                        if($sf_user->getAttribute('notas')=='SI-7'){
                              $notas='/control/estudiante.php/reporte/mostrarNotas2';
                         }
                         ?>
@@ -45,7 +45,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#vercarne">
+                        <a href="/control/estudiante.php/reporte/carnet" target="_blank"  download="carnet.png">
                             <div class="panel-footer">
                                 <span class="pull-left">Ver Detalle</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

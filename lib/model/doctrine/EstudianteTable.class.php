@@ -16,6 +16,11 @@ class EstudianteTable extends Doctrine_Table {
         return Doctrine_Core::getTable('Estudiante');
     }
 /*------------------------- FUNCION FORM = BUSCARUSUARIO  -------------------------*/
+    /**
+     * @param $personati string variable contentiva del tipo de identificacion
+     * @param $persona_id string variable contentiva del numero de identificacion
+     * 
+     * **/
     public static function buscaPersona($personati, $persona_ide) {
         $sql = "SELECT *
                 FROM estudiante
@@ -92,5 +97,9 @@ class EstudianteTable extends Doctrine_Table {
         $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
         return $q;
     }
-
+        public static function obtener_estudiante_estado($id) {
+        $sql = "select * from estudiante where estado_id=$id and";
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
+        return $q;
+    }
 }

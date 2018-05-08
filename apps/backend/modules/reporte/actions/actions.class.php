@@ -19,4 +19,15 @@ class reporteActions extends sfActions
   {
     $this->forward('default', 'module');
   }
+  public function executeReporteEstado(sfWebRequest $request){
+      //select estados
+      $this->estado=  EstadoTable::getEstado();
+      //<option value="audi" selected>Audi</option>
+      
+  }
+  public function executeMostrarReporteEstado(sfWebRequest $request){
+      $this->estado = $this->getRequestParameter('estado');
+      echo $this->estado;
+      exit();
+  }
 }

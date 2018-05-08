@@ -4108,3 +4108,138 @@ Nov 29 22:56:03 symfony [info] {sfWebDebugLogger} Partial "estudiante/_form_foot
 Nov 29 22:56:03 symfony [info] {sfWebDebugLogger} Partial "estudiante/_themeswitcher" 0.23 ms (1)
 Nov 29 22:56:03 symfony [info] {sfWebResponse} Send content (559851 o)
 Nov 29 22:56:03 symfony [info] {myUser} Remove old flash messages ("notice")
+Mar 09 13:39:31 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /reporte/carnet with parameters array (  'module' => 'reporte',  'action' => 'carnet',)
+Mar 09 13:39:31 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 09 13:39:31 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Mar 09 13:39:31 symfony [info] {sfBasicSecurityFilter} Action "reporte/carnet" requires authentication, forwarding to "default/login"
+Mar 09 13:39:31 symfony [err] {sfConfigurationException} The module "default" is not enabled.
+Mar 09 13:39:31 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Mar 09 13:39:31 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php:409))
+Mar 09 13:39:31 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 09 13:39:31 symfony [info] {sfWebDebugLogger} Configuration 2705.98 ms (8)
+Mar 09 13:39:31 symfony [info] {sfWebDebugLogger} Factories 456.39 ms (1)
+Mar 09 14:08:22 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /reporte/carnet with parameters array (  'module' => 'reporte',  'action' => 'carnet',)
+Mar 09 14:08:22 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 09 14:08:22 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Mar 09 14:08:22 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 09 14:08:22 symfony [info] {reporteActions} Call "reporteActions->executeCarnet()"
+Mar 09 14:08:22 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Mar 09 14:08:22 symfony [info] {Doctrine_Connection_Pgsql} query : select a.*,b.descripcion as pais,c.descripcion as sexo,d.descripcion as estado_asic,
+            e.descripcion as municipio_asic,f.descripcion as estado,g.descripcion as municipio,
+            h.descripcion as parroquia
+                from estudiante a 
+                left join pais_origen b on a.pais_origen_id=b.id 
+                left join sexo c on a.sexo_id=c.id
+                left join estado d on a.asic_estado_id=d.id
+                left join municipio e on a.asic_municipio_id=e.id
+                left join estado f on a.estado_id=f.id
+                left join municipio g on a.municipio_id=g.id
+                left join parroquia h on a.parroquia_id=h.id
+                where a.id=34386 - ()
+Mar 09 14:08:22 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\ucs_control\apps\estudiante\modules\reporte\actions\actions.class.php on line 897 (imagettftext(): Invalid font filename)
+Mar 09 14:08:22 symfony [notice] {sfWebDebugLogger}  Notice at C:\wamp\www\ucs_control\apps\estudiante\modules\reporte\actions\actions.class.php on line 932 (Undefined variable: bold)
+Mar 09 14:08:22 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\ucs_control\apps\estudiante\modules\reporte\actions\actions.class.php on line 932 (imagettftext(): Could not find/open font)
+Mar 09 14:08:35 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /reporte/carnet with parameters array (  'module' => 'reporte',  'action' => 'carnet',)
+Mar 09 14:08:35 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 09 14:08:35 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Mar 09 14:08:35 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 09 14:08:35 symfony [info] {reporteActions} Call "reporteActions->executeCarnet()"
+Mar 09 14:08:35 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Mar 09 14:08:35 symfony [info] {Doctrine_Connection_Pgsql} query : select a.*,b.descripcion as pais,c.descripcion as sexo,d.descripcion as estado_asic,
+            e.descripcion as municipio_asic,f.descripcion as estado,g.descripcion as municipio,
+            h.descripcion as parroquia
+                from estudiante a 
+                left join pais_origen b on a.pais_origen_id=b.id 
+                left join sexo c on a.sexo_id=c.id
+                left join estado d on a.asic_estado_id=d.id
+                left join municipio e on a.asic_municipio_id=e.id
+                left join estado f on a.estado_id=f.id
+                left join municipio g on a.municipio_id=g.id
+                left join parroquia h on a.parroquia_id=h.id
+                where a.id=34386 - ()
+Mar 09 14:08:35 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\ucs_control\apps\estudiante\modules\reporte\actions\actions.class.php on line 897 (imagettftext(): Invalid font filename)
+Mar 09 14:08:35 symfony [notice] {sfWebDebugLogger}  Notice at C:\wamp\www\ucs_control\apps\estudiante\modules\reporte\actions\actions.class.php on line 932 (Undefined variable: bold)
+Mar 09 14:08:35 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\ucs_control\apps\estudiante\modules\reporte\actions\actions.class.php on line 932 (imagettftext(): Could not find/open font)
+Mar 09 14:10:10 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /reporte/carnet with parameters array (  'module' => 'reporte',  'action' => 'carnet',)
+Mar 09 14:10:10 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 09 14:10:10 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Mar 09 14:10:10 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 09 14:10:10 symfony [info] {reporteActions} Call "reporteActions->executeCarnet()"
+Mar 09 14:10:10 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Mar 09 14:10:10 symfony [info] {Doctrine_Connection_Pgsql} query : select a.*,b.descripcion as pais,c.descripcion as sexo,d.descripcion as estado_asic,
+            e.descripcion as municipio_asic,f.descripcion as estado,g.descripcion as municipio,
+            h.descripcion as parroquia
+                from estudiante a 
+                left join pais_origen b on a.pais_origen_id=b.id 
+                left join sexo c on a.sexo_id=c.id
+                left join estado d on a.asic_estado_id=d.id
+                left join municipio e on a.asic_municipio_id=e.id
+                left join estado f on a.estado_id=f.id
+                left join municipio g on a.municipio_id=g.id
+                left join parroquia h on a.parroquia_id=h.id
+                where a.id=34386 - ()
+Mar 09 14:10:10 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\ucs_control\apps\estudiante\modules\reporte\actions\actions.class.php on line 897 (imagettftext(): Invalid font filename)
+Mar 09 14:10:11 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\ucs_control\apps\estudiante\modules\reporte\actions\actions.class.php on line 932 (imagettftext(): Invalid font filename)
+Mar 09 14:11:39 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /reporte/carnet with parameters array (  'module' => 'reporte',  'action' => 'carnet',)
+Mar 09 14:11:39 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 09 14:11:39 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Mar 09 14:11:39 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 09 14:11:39 symfony [info] {reporteActions} Call "reporteActions->executeCarnet()"
+Mar 09 14:11:39 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Mar 09 14:11:39 symfony [info] {Doctrine_Connection_Pgsql} query : select a.*,b.descripcion as pais,c.descripcion as sexo,d.descripcion as estado_asic,
+            e.descripcion as municipio_asic,f.descripcion as estado,g.descripcion as municipio,
+            h.descripcion as parroquia
+                from estudiante a 
+                left join pais_origen b on a.pais_origen_id=b.id 
+                left join sexo c on a.sexo_id=c.id
+                left join estado d on a.asic_estado_id=d.id
+                left join municipio e on a.asic_municipio_id=e.id
+                left join estado f on a.estado_id=f.id
+                left join municipio g on a.municipio_id=g.id
+                left join parroquia h on a.parroquia_id=h.id
+                where a.id=34386 - ()
+Mar 09 14:11:39 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\ucs_control\apps\estudiante\modules\reporte\actions\actions.class.php on line 896 (imagettftext(): Invalid font filename)
+Mar 09 14:11:39 symfony [notice] {sfWebDebugLogger}  Notice at C:\wamp\www\ucs_control\apps\estudiante\modules\reporte\actions\actions.class.php on line 897 (Undefined variable: persona)
+Mar 09 14:11:39 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\ucs_control\apps\estudiante\modules\reporte\actions\actions.class.php on line 897 (imagettftext(): Invalid font filename)
+Mar 09 14:11:39 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\ucs_control\apps\estudiante\modules\reporte\actions\actions.class.php on line 931 (imagettftext(): Invalid font filename)
+Mar 09 14:11:50 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /reporte/carnet with parameters array (  'module' => 'reporte',  'action' => 'carnet',)
+Mar 09 14:11:50 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 09 14:11:50 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Mar 09 14:11:50 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 09 14:11:50 symfony [info] {reporteActions} Call "reporteActions->executeCarnet()"
+Mar 09 14:11:50 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Mar 09 14:11:50 symfony [info] {Doctrine_Connection_Pgsql} query : select a.*,b.descripcion as pais,c.descripcion as sexo,d.descripcion as estado_asic,
+            e.descripcion as municipio_asic,f.descripcion as estado,g.descripcion as municipio,
+            h.descripcion as parroquia
+                from estudiante a 
+                left join pais_origen b on a.pais_origen_id=b.id 
+                left join sexo c on a.sexo_id=c.id
+                left join estado d on a.asic_estado_id=d.id
+                left join municipio e on a.asic_municipio_id=e.id
+                left join estado f on a.estado_id=f.id
+                left join municipio g on a.municipio_id=g.id
+                left join parroquia h on a.parroquia_id=h.id
+                where a.id=34386 - ()
+Mar 09 14:11:50 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\ucs_control\apps\estudiante\modules\reporte\actions\actions.class.php on line 896 (imagettftext(): Invalid font filename)
+Mar 09 14:11:50 symfony [notice] {sfWebDebugLogger}  Notice at C:\wamp\www\ucs_control\apps\estudiante\modules\reporte\actions\actions.class.php on line 897 (Undefined variable: persona)
+Mar 09 14:11:50 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\ucs_control\apps\estudiante\modules\reporte\actions\actions.class.php on line 897 (imagettftext(): Invalid font filename)
+Mar 09 14:11:50 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\ucs_control\apps\estudiante\modules\reporte\actions\actions.class.php on line 931 (imagettftext(): Invalid font filename)
+Mar 09 14:12:51 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /reporte/carnet with parameters array (  'module' => 'reporte',  'action' => 'carnet',)
+Mar 09 14:12:51 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 09 14:12:51 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Mar 09 14:12:51 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 09 14:12:51 symfony [info] {reporteActions} Call "reporteActions->executeCarnet()"
+Mar 09 14:12:52 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Mar 09 14:12:52 symfony [info] {Doctrine_Connection_Pgsql} query : select a.*,b.descripcion as pais,c.descripcion as sexo,d.descripcion as estado_asic,
+            e.descripcion as municipio_asic,f.descripcion as estado,g.descripcion as municipio,
+            h.descripcion as parroquia
+                from estudiante a 
+                left join pais_origen b on a.pais_origen_id=b.id 
+                left join sexo c on a.sexo_id=c.id
+                left join estado d on a.asic_estado_id=d.id
+                left join municipio e on a.asic_municipio_id=e.id
+                left join estado f on a.estado_id=f.id
+                left join municipio g on a.municipio_id=g.id
+                left join parroquia h on a.parroquia_id=h.id
+                where a.id=34386 - ()
+Mar 09 14:12:52 symfony [notice] {sfWebDebugLogger}  Notice at C:\wamp\www\ucs_control\apps\estudiante\modules\reporte\actions\actions.class.php on line 897 (Undefined variable: persona)

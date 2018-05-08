@@ -8,127 +8,123 @@
  * @author     Your name here
  * @version    SVN: $Id: actions.class.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
  */
-class reporteActions extends sfActions
-{
- /**
-  * Executes index action
-  *
-  * @param sfRequest $request A request object
-  */
-  public function executeIndex(sfWebRequest $request)
-  {
-    $this->forward('default', 'module');
-  }
-  public function executeConstancia()
-  {
-    $this->estudiante = $this->getUser()->getAttribute('estudiante_id');
+class reporteActions extends sfActions {
+
+    /**
+     * Executes index action
+     *
+     * @param sfRequest $request A request object
+     */
+    public function executeIndex(sfWebRequest $request) {
+        $this->forward('default', 'module');
+    }
+
+    public function executeConstancia() {
+        $this->estudiante = $this->getUser()->getAttribute('estudiante_id');
 //    $this->estudiante=250;
-    $data=  EstudianteTable::buscarEstudiante($this->estudiante);
-    $edad=$this->edad($data[0]['fecha_nacimiento']);
-    $fecha2=date("d-m-Y",strtotime($data[0]['fecha_nacimiento']));
-      $encript= new crypt();
-      $encriptado=$encript->encriptar($data[0]['id'].'-'.$data[0]['tipo_identificacion'].'-'.$data[0]['identificacion']);
-    if($data[0]['foto']==''){
-        $foto='persona.jpg';
-    }else{
-        $foto=$data[0]['foto'];
-    }
-    if($data[0]['tipo_identificacion']=='V'){
-        $tipo_identificacion='CÉDULA';
-    }
-    if($data[0]['tipo_identificacion']=='P'){
-        $tipo_identificacion='PASAPORTE';
-    }
-    $config = sfTCPDFPluginConfigHandler::loadConfig();
-    $pdf = new sfTCPDF();
-    $pdf->SetCreator(PDF_CREATOR);
-    $pdf->SetAuthor('SIGE');
-    $pdf->SetTitle('Constancia de Estudios');
-    $pdf->SetSubject('SIGE - Constancia de Estudios');
-    $pdf->SetKeywords('SIGE, PDF, Constancia de Estudios');
-    $pdf->setPrintHeader(false);
-    $pdf->setPrintFooter(false);
-    $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-    $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
-    $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-    $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
-    $pdf->setFontSubsetting(true);
-    $pdf->SetFont('dejavusans', '', 14, '', true);
-    // Add a page
-    // This method has several options, check the source code documentation for more information.
+        $data = EstudianteTable::buscarEstudiante($this->estudiante);
+        $edad = $this->edad($data[0]['fecha_nacimiento']);
+        $fecha2 = date("d-m-Y", strtotime($data[0]['fecha_nacimiento']));
+        $encript = new crypt();
+        $encriptado = $encript->encriptar($data[0]['id'] . '-' . $data[0]['tipo_identificacion'] . '-' . $data[0]['identificacion']);
+        if ($data[0]['foto'] == '') {
+            $foto = 'persona.jpg';
+        } else {
+            $foto = $data[0]['foto'];
+        }
+        if ($data[0]['tipo_identificacion'] == 'V') {
+            $tipo_identificacion = 'CÉDULA';
+        }
+        if ($data[0]['tipo_identificacion'] == 'P') {
+            $tipo_identificacion = 'PASAPORTE';
+        }
+        $config = sfTCPDFPluginConfigHandler::loadConfig();
+        $pdf = new sfTCPDF();
+        $pdf->SetCreator(PDF_CREATOR);
+        $pdf->SetAuthor('SIGE');
+        $pdf->SetTitle('Constancia de Estudios');
+        $pdf->SetSubject('SIGE - Constancia de Estudios');
+        $pdf->SetKeywords('SIGE, PDF, Constancia de Estudios');
+        $pdf->setPrintHeader(false);
+        $pdf->setPrintFooter(false);
+        $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+        $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+        $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+        $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
+        $pdf->setFontSubsetting(true);
+        $pdf->SetFont('dejavusans', '', 14, '', true);
+        // Add a page
+        // This method has several options, check the source code documentation for more information.
 // set style for barcode
-$style = array(
-	'border' => 2,
-	'vpadding' => 'auto',
-	'hpadding' => 'auto',
-	'fgcolor' => array(0,0,0),
-	'bgcolor' => false, //array(255,255,255)
-	'module_width' => 1, // width of a single module in points
-	'module_height' => 1 // height of a single module in points
-);
-$dia=date('d');
-$mes=date('m');
-$year=date('Y');
-$vence='04-04-2017';
-switch($mes){
-	case 1:
-		$mes_letras='enero';
-		break;
-	case 2:
-		$mes_letras='febrero';
-		break;
-	case 3:
-		$mes_letras='marzo';
-		break;
+        $style = array(
+            'border' => 2,
+            'vpadding' => 'auto',
+            'hpadding' => 'auto',
+            'fgcolor' => array(0, 0, 0),
+            'bgcolor' => false, //array(255,255,255)
+            'module_width' => 1, // width of a single module in points
+            'module_height' => 1 // height of a single module in points
+        );
+        $dia = date('d');
+        $mes = date('m');
+        $year = date('Y');
+        $vence = '04-04-2017';
+        switch ($mes) {
+            case 1:
+                $mes_letras = 'enero';
+                break;
+            case 2:
+                $mes_letras = 'febrero';
+                break;
+            case 3:
+                $mes_letras = 'marzo';
+                break;
 
-	case 4:
-		$mes_letras='abril';
-		break;
+            case 4:
+                $mes_letras = 'abril';
+                break;
 
-	case 5:
-		$mes_letras='mayo';
-		break;
+            case 5:
+                $mes_letras = 'mayo';
+                break;
 
-	case 6:
-		$mes_letras='junio';
-		break;
+            case 6:
+                $mes_letras = 'junio';
+                break;
 
-	case 7:
+            case 7:
 
-		$mes_letras='julio';
-		break;
-	case 8:
-		$mes_letras='agosto';
-		break;
+                $mes_letras = 'julio';
+                break;
+            case 8:
+                $mes_letras = 'agosto';
+                break;
 
-	case 9:
-		$mes_letras='septiembre';
-		break;
+            case 9:
+                $mes_letras = 'septiembre';
+                break;
 
-	case 10:
-		$mes_letras='octubre';
-		break;
-
-
-	case 11:
-		$mes_letras='noviembre';
-		break;
-
-	case 12:
-		$mes_letras='diciembre';
-		break;
+            case 10:
+                $mes_letras = 'octubre';
+                break;
 
 
+            case 11:
+                $mes_letras = 'noviembre';
+                break;
 
-	}
-$params2=$pdf->serializeTCPDFtagParameters(array($encriptado, 'QRCODE,L','', '', 20, 20, array('position'=>'C', 'border'=>false, 'padding'=>4, 'fgcolor'=>array(0,0,0), 'bgcolor'=>array(255,255,255), 'text'=>true, 'font'=>'helvetica', 'fontsize'=>8, 'stretchtext'=>4), 'N'));
-$params = $pdf->serializeTCPDFtagParameters(array($encriptado, 'C128', '', '', 80, 20, 0.4, array('position'=>'C', 'border'=>false, 'padding'=>4, 'fgcolor'=>array(0,0,0), 'bgcolor'=>array(255,255,255), 'text'=>true, 'font'=>'helvetica', 'fontsize'=>8, 'stretchtext'=>4), 'N'));
-$code= '<tcpdf method="write1DBarcode" params="'.$params.'" />';
-$code2= '<tcpdf method="write2DBarcode" params="'.$params2.'" />';
+            case 12:
+                $mes_letras = 'diciembre';
+                break;
+        }
+        $params2 = $pdf->serializeTCPDFtagParameters(array($encriptado, 'QRCODE,L', '', '', 20, 20, array('position' => 'C', 'border' => false, 'padding' => 4, 'fgcolor' => array(0, 0, 0), 'bgcolor' => array(255, 255, 255), 'text' => true, 'font' => 'helvetica', 'fontsize' => 8, 'stretchtext' => 4), 'N'));
+        $params = $pdf->serializeTCPDFtagParameters(array($encriptado, 'C128', '', '', 80, 20, 0.4, array('position' => 'C', 'border' => false, 'padding' => 4, 'fgcolor' => array(0, 0, 0), 'bgcolor' => array(255, 255, 255), 'text' => true, 'font' => 'helvetica', 'fontsize' => 8, 'stretchtext' => 4), 'N'));
+        $code = '<tcpdf method="write1DBarcode" params="' . $params . '" />';
+        $code2 = '<tcpdf method="write2DBarcode" params="' . $params2 . '" />';
 
-    // ---------------------------------------------------------
-    $pdf->AddPage();
-    $html = '<div style="text-align:center"><img src="images/logo_ucs.jpg" width="300" /></div>
+        // ---------------------------------------------------------
+        $pdf->AddPage();
+        $html = '<div style="text-align:center"><img src="images/logo_ucs.jpg" width="300" /></div>
              <div style="text-align:center">REPÚBLICA  BOLIVARIANA  DE VENEZUELA <br>
 UNIVERSIDAD DE LAS CIENCIAS DE LA SALUD “HUGO CHÁVEZ FRÍAS”<br>
 SECRETARIA GENERAL <br>
@@ -139,15 +135,15 @@ DIRECCIÓN GENERAL DE ADMISIÓN, CONTROL DE ESTUDIOS Y REGISTROS ACADEMICOS<br>
 </div>
         <span style="text-align:justify;">
             Quien suscribe <b>Ana Y. Montenegro N.</b>, Secretaria General de la Universidad de las Ciencias de la Salud “Hugo Chávez Frías”, 
-            por medio de la presente hace constar que el(la) ciudadano(a) '.$data[0]['primer_nombre'].' '.$data[0]['segundo_nombre'].' 
-            '.$data[0]['primer_apellido'].' '.$data[0]['segundo_apellido'].', de Nacionalidad __________________ titular del Documento de 
-                Identidad CI/PP N° '.$data[0]['identificacion'].', es estudiante activo (a)  del Programa Nacional de Formación en 
+            por medio de la presente hace constar que el(la) ciudadano(a) ' . $data[0]['primer_nombre'] . ' ' . $data[0]['segundo_nombre'] . ' 
+            ' . $data[0]['primer_apellido'] . ' ' . $data[0]['segundo_apellido'] . ', de Nacionalidad __________________ titular del Documento de 
+                Identidad CI/PP N° ' . $data[0]['identificacion'] . ', es estudiante activo (a)  del Programa Nacional de Formación en 
                 Medicina Integral Comunitaria (PNFMIC). Actualmente, cursa el Período Académico 2017-I, comprendido entre el 09-01-2017 
                 al 31-06-2017, en el siguiente horario: lunes a sábado de 8:00 a.m. a 12:00 a.m., y de 1:00 p.m., a 5:00 p.m., en el Área 
-                de Salud Integral Comunitaria__________________, ubicada en la Parroquia '.$data[0]['parroquia'].', Municipio '.$data[0]['municipio'].' 
-                    del  Estado '.$data[0]['estado'].'.  <br>
+                de Salud Integral Comunitaria__________________, ubicada en la Parroquia ' . $data[0]['parroquia'] . ', Municipio ' . $data[0]['municipio'] . ' 
+                    del  Estado ' . $data[0]['estado'] . '.  <br>
 
-Constancia que se emite  a los '.$dia.' días del mes de '.$mes.' de '.$year.'.
+Constancia que se emite  a los ' . $dia . ' días del mes de ' . $mes . ' de ' . $year . '.
 <br><br>
 </span>
 <div style="text-align:center">Atentamente,<br><br><br>
@@ -164,116 +160,119 @@ Secretario (a) Docente del Programa Nacional de formación<br> en Medicina Integ
 </div>
 <table><tr><td width="90%">
 <p>Nota: Esta constancia de no contar con la firma y sello de la Direción de Control de Estudios del estado pierde su validez</p></td>
-<td width="10%">'.$code2.'</td></tr></table>
+<td width="10%">' . $code2 . '</td></tr></table>
 <div style="text-align:center"><img src="images/footer.jpg" height="100" width="1000"/></div>
 ';
-    $pdf->SetFont('dejavusans', '', 11, '', true);
-$pdf->writeHTML($html, true, 0, true, true);
-    $pdf->Output('matricula.pdf', 'I');
-    throw new sfStopException();
-  }
-  public function edad($fecha){
-    $fecha = str_replace("/","-",$fecha);
-    $fecha = date('Y/m/d',strtotime($fecha));
-    $hoy = date('Y/m/d');
-    $edad = $hoy - $fecha;
-    return $edad;
+        $pdf->SetFont('dejavusans', '', 11, '', true);
+        $pdf->writeHTML($html, true, 0, true, true);
+        $pdf->Output('matricula.pdf', 'I');
+        throw new sfStopException();
     }
+
+    public function edad($fecha) {
+        $fecha = str_replace("/", "-", $fecha);
+        $fecha = date('Y/m/d', strtotime($fecha));
+        $hoy = date('Y/m/d');
+        $edad = $hoy - $fecha;
+        return $edad;
+    }
+
     public function executeVerConstancia() {
         
     }
-    public function executeConsEst(){
-    $this->estudiante = $this->getUser()->getAttribute('estudiante_id');
-    $data=  EstudianteTable::buscarEstudiante($this->estudiante);
-    $edad=$this->edad($data[0]['fecha_nacimiento']);
-    $fecha2=date("d-m-Y",strtotime($data[0]['fecha_nacimiento']));
-      $encript= new crypt();
-      $encriptado=$encript->encriptar($data[0]['id'].'-'.$data[0]['tipo_identificacion'].'-'.$data[0]['identificacion']);
-    if($data[0]['foto']==''){
-        $foto='persona.jpg';
-    }else{
-        $foto=$data[0]['foto'];
-    }
-    if($data[0]['tipo_identificacion']=='V'){
-        $tipo_identificacion='CÉDULA';
-    }
-    if($data[0]['tipo_identificacion']=='P'){
-        $tipo_identificacion='PASAPORTE';
-    }
-    $config = sfTCPDFPluginConfigHandler::loadConfig();
-    $pdf = new sfTCPDF();
-    $pdf->SetCreator(PDF_CREATOR);
-    $pdf->SetAuthor('SIGE');
-    $pdf->SetTitle('Constancia de Estudios');
-    $pdf->SetSubject('SIGE - Matrícula Premédico');
-    $pdf->SetKeywords('SIGE, PDF, Matrícula, Premédico, Planilla,Inscripción');
-    $pdf->setPrintHeader(false);
-    $pdf->setPrintFooter(false);
-    $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-    $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP-10, PDF_MARGIN_RIGHT);
-    $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-    $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
-    $pdf->setFontSubsetting(true);
-    $pdf->SetFont('dejavusans', '', 14, '', true);
-    $pdf->AddPage();
-$style = array(
-	'border' => 2,
-	'vpadding' => 'auto',
-	'hpadding' => 'auto',
-	'fgcolor' => array(0,0,0),
-	'bgcolor' => false, //array(255,255,255)
-	'module_width' => 1, // width of a single module in points
-	'module_height' => 1 // height of a single module in points
-);
-$dia=date('d');
-$mes=date('m');
-$year=date('Y');
-$vence='04-04-2017';
-switch ($mes){
-	case 1:
-		$mes_letras='enero';
-	break;
-	case 2:
-		$mes_letras='febrero';
-	break;
-	case 3:
-		$mes_letras='marzo';
-	break;
-	case 4:
-		$mes_letras='abril';
-	break;
-	case 5:
-		$mes_letras='mayo';
-	break;
-	case 6:
-		$mes_letras='junio';
-	break;
-	case 7:
-		$mes_letras='julio';
-	break;
-	case 8:
-		$mes_letras='agosto';
-	break;
-	case 9:
-		$mes_letras='septiembre';
-	break;
-	case 10:
-		$mes_letras='octubre';
-	break;
-	case 11:
-		$mes_letras='noviembre';
-	break;
-	case 12:
-		$mes_letras='diciembre';
-	break;
-}
+
+    public function executeConsEst() {
+        $this->estudiante = $this->getUser()->getAttribute('estudiante_id');
+        $data = EstudianteTable::buscarEstudiante($this->estudiante);
+        $edad = $this->edad($data[0]['fecha_nacimiento']);
+        $fecha2 = date("d-m-Y", strtotime($data[0]['fecha_nacimiento']));
+        $encript = new crypt();
+        $encriptado = $encript->encriptar($data[0]['id'] . '-' . $data[0]['tipo_identificacion'] . '-' . $data[0]['identificacion']);
+        if ($data[0]['foto'] == '') {
+            $foto = 'persona.jpg';
+        } else {
+            $foto = $data[0]['foto'];
+        }
+        if ($data[0]['tipo_identificacion'] == 'V') {
+            $tipo_identificacion = 'CÉDULA';
+        }
+        if ($data[0]['tipo_identificacion'] == 'P') {
+            $tipo_identificacion = 'PASAPORTE';
+        }
+        $config = sfTCPDFPluginConfigHandler::loadConfig();
+        $pdf = new sfTCPDF();
+        $pdf->SetCreator(PDF_CREATOR);
+        $pdf->SetAuthor('SIGE');
+        $pdf->SetTitle('Constancia de Estudios');
+        $pdf->SetSubject('SIGE - Matrícula Premédico');
+        $pdf->SetKeywords('SIGE, PDF, Matrícula, Premédico, Planilla,Inscripción');
+        $pdf->setPrintHeader(false);
+        $pdf->setPrintFooter(false);
+        $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+        $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP - 10, PDF_MARGIN_RIGHT);
+        $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+        $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
+        $pdf->setFontSubsetting(true);
+        $pdf->SetFont('dejavusans', '', 14, '', true);
+        $pdf->AddPage();
+        $style = array(
+            'border' => 2,
+            'vpadding' => 'auto',
+            'hpadding' => 'auto',
+            'fgcolor' => array(0, 0, 0),
+            'bgcolor' => false, //array(255,255,255)
+            'module_width' => 1, // width of a single module in points
+            'module_height' => 1 // height of a single module in points
+        );
+        $dia = date('d');
+        $mes = date('m');
+        $year = date('Y');
+        $vence = '04-04-2017';
+        switch ($mes) {
+            case 1:
+                $mes_letras = 'enero';
+                break;
+            case 2:
+                $mes_letras = 'febrero';
+                break;
+            case 3:
+                $mes_letras = 'marzo';
+                break;
+            case 4:
+                $mes_letras = 'abril';
+                break;
+            case 5:
+                $mes_letras = 'mayo';
+                break;
+            case 6:
+                $mes_letras = 'junio';
+                break;
+            case 7:
+                $mes_letras = 'julio';
+                break;
+            case 8:
+                $mes_letras = 'agosto';
+                break;
+            case 9:
+                $mes_letras = 'septiembre';
+                break;
+            case 10:
+                $mes_letras = 'octubre';
+                break;
+            case 11:
+                $mes_letras = 'noviembre';
+                break;
+            case 12:
+                $mes_letras = 'diciembre';
+                break;
+        }
 //$params = $pdf->serializeTCPDFtagParameters(array($encriptado,'EAN13', '', '', '', 18, 0.4, array('position'=>'C', 'border'=>false, 'padding'=>4, 'fgcolor'=>array(0,0,0), 'bgcolor'=>array(255,255,255), 'text'=>true, 'font'=>'helvetica', 'fontsize'=>8, 'stretchtext'=>4), 'N'));
 //$pdf->write2DBarcode('www.tcpdf.org', 'QRCODE,L', 20, 30, 50, 50, $style, 'N');
-$params2=$pdf->serializeTCPDFtagParameters(array($encriptado, 'QRCODE,L','', '', 20, 20, array('position'=>'C', 'border'=>false, 'padding'=>4, 'fgcolor'=>array(0,0,0), 'bgcolor'=>array(255,255,255), 'text'=>true, 'font'=>'helvetica', 'fontsize'=>8, 'stretchtext'=>4), 'N'));
-$params = $pdf->serializeTCPDFtagParameters(array($encriptado, 'C128', '', '', 80, 20, 0.4, array('position'=>'C', 'border'=>false, 'padding'=>4, 'fgcolor'=>array(0,0,0), 'bgcolor'=>array(255,255,255), 'text'=>true, 'font'=>'helvetica', 'fontsize'=>8, 'stretchtext'=>4), 'N'));
-$code= '<tcpdf method="write1DBarcode" params="'.$params.'" />';
-$code2= '<tcpdf method="write2DBarcode" params="'.$params2.'" />';
-    $html = '<div style="text-align:center"><img src="images/logo_ucs.jpg" width="300" /><br></div>
+        $params2 = $pdf->serializeTCPDFtagParameters(array($encriptado, 'QRCODE,L', '', '', 20, 20, array('position' => 'C', 'border' => false, 'padding' => 4, 'fgcolor' => array(0, 0, 0), 'bgcolor' => array(255, 255, 255), 'text' => true, 'font' => 'helvetica', 'fontsize' => 8, 'stretchtext' => 4), 'N'));
+        $params = $pdf->serializeTCPDFtagParameters(array($encriptado, 'C128', '', '', 80, 20, 0.4, array('position' => 'C', 'border' => false, 'padding' => 4, 'fgcolor' => array(0, 0, 0), 'bgcolor' => array(255, 255, 255), 'text' => true, 'font' => 'helvetica', 'fontsize' => 8, 'stretchtext' => 4), 'N'));
+        $code = '<tcpdf method="write1DBarcode" params="' . $params . '" />';
+        $code2 = '<tcpdf method="write2DBarcode" params="' . $params2 . '" />';
+        $html = '<div style="text-align:center"><img src="images/logo_ucs.jpg" width="300" /><br></div>
              <div style="text-align:center">REPÚBLICA  BOLIVARIANA  DE VENEZUELA <br>
 UNIVERSIDAD DE LAS CIENCIAS DE LA SALUD “HUGO CHÁVEZ FRÍAS”<br>
 SECRETARIA GENERAL <br>
@@ -285,13 +284,13 @@ DIRECCIÓN GENERAL DE ADMISIÓN, CONTROL DE ESTUDIOS Y REGISTROS ACADEMICOS<br>
 </div>
         <span style="text-align:justify;">
             Quien suscribe <b>Ana Y. Montenegro N.</b>, Secretaria General de la Universidad de las Ciencias de la Salud “Hugo Chávez Frías”, 
-            por medio de la presente hace constar que el(la) ciudadano(a) <b> '.$data[0]['primer_nombre'].' '.$data[0]['segundo_nombre'].' 
-            '.$data[0]['primer_apellido'].' '.$data[0]['segundo_apellido'].'</b>, titular del Documento de 
-                Identidad CI/PP N°<b>'.$data[0]['identificacion'].'</b>, es estudiante activo (a)  del Programa Nacional de Formación en 
+            por medio de la presente hace constar que el(la) ciudadano(a) <b> ' . $data[0]['primer_nombre'] . ' ' . $data[0]['segundo_nombre'] . ' 
+            ' . $data[0]['primer_apellido'] . ' ' . $data[0]['segundo_apellido'] . '</b>, titular del Documento de 
+                Identidad CI/PP N°<b>' . $data[0]['identificacion'] . '</b>, es estudiante activo (a)  del Programa Nacional de Formación en 
                 Medicina Integral Comunitaria (PNFMIC). Actualmente, cursa el Período Académico 2018-I, comprendido entre el 08-01-2018
                 al 30-03-2018, en el siguiente horario: lunes a sábado de 8:00 a.m. a 12:00 a.m., y de 1:00 p.m., a 5:00 p.m.,  en la Parroquia 
-                '.$data[0]['parroquia'].', del Municipio '.$data[0]['municipio'].' del  Estado '.strtoupper($data[0]['estado']).'. 
-            Constancia que se emite  a los '.$dia.' días del mes de '.$mes_letras.' de '.$year.'.
+                ' . $data[0]['parroquia'] . ', del Municipio ' . $data[0]['municipio'] . ' del  Estado ' . strtoupper($data[0]['estado']) . '. 
+            Constancia que se emite  a los ' . $dia . ' días del mes de ' . $mes_letras . ' de ' . $year . '.
 <br>
 </span>
 <div style="text-align:center">Atentamente,<br>
@@ -308,108 +307,107 @@ Secretario (a) Docente del Programa Nacional de formación<br> en Medicina Integ
 </div>
 <table><tr><td width="90%">
 <p>Nota: Esta constancia de no contar con la firma y sello de la Direción de Control de Estudios del estado pierde su validez</p></td>
-<td width="10%">'.$code2.'</td></tr></table>
+<td width="10%">' . $code2 . '</td></tr></table>
 <div style="text-align:center"><img src="images/footer.jpg" height="100" width="1000"/></div>
 ';
-    $pdf->SetFont('dejavusans', '', 11, '', true);
-$pdf->writeHTML($html, true, 0, true, true);
-    $pdf->Output('matricula.pdf', 'I');
-    throw new sfStopException();
-    
+        $pdf->SetFont('dejavusans', '', 11, '', true);
+        $pdf->writeHTML($html, true, 0, true, true);
+        $pdf->Output('matricula.pdf', 'I');
+        throw new sfStopException();
     }
-    public function executeMostrarNotas(sfWebRequest $request)
-    {
-    $this->estudiante = $this->getUser()->getAttribute('estudiante_id');
-    $data=  EstudianteTable::buscarEstudiante($this->estudiante);
-    $edad=$this->edad($data[0]['fecha_nacimiento']);
-    $fecha2=date("d-m-Y",strtotime($data[0]['fecha_nacimiento']));
-      $encript= new crypt();
-      $encriptado=$encript->encriptar($data[0]['id'].'-'.$data[0]['tipo_identificacion'].'-'.$data[0]['identificacion']);
-    if($data[0]['foto']==''){
-        $foto='persona.jpg';
-    }else{
-        $foto=$data[0]['foto'];
-    }
-    if($data[0]['tipo_identificacion']=='V'){
-        $tipo_identificacion='CÉDULA';
-    }
-    if($data[0]['tipo_identificacion']=='P'){
-        $tipo_identificacion='PASAPORTE';
-    }
-    $config = sfTCPDFPluginConfigHandler::loadConfig();
-    $pdf = new sfTCPDF();
-    $pdf->SetCreator(PDF_CREATOR);
-    $pdf->SetAuthor('SIGE');
-    $pdf->SetTitle('Documento de Verificación');
-    $pdf->SetSubject('SIGE - Verificación');
-    $pdf->SetKeywords('SIGE, PDF, verificación');
-    $pdf->setPrintHeader(false);
-    $pdf->setPrintFooter(false);
-    $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-    $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP -20, PDF_MARGIN_RIGHT);
-    $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM -20);
-    $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
-    $pdf->setFontSubsetting(true);
-    $pdf->SetFont('dejavusans', '', 8, '', true);
-    $pdf->AddPage();
-$style = array(
-	'border' => 2,
-	'vpadding' => 'auto',
-	'hpadding' => 'auto',
-	'fgcolor' => array(0,0,0),
-	'bgcolor' => false, //array(255,255,255)
-	'module_width' => 1, // width of a single module in points
-	'module_height' => 1 // height of a single module in points
-);
-$dia=date('d');
-$mes=date('m');
-$year=date('Y');
-$vence='04-04-2017';
-switch($mes){
-    case 1:
-        $mes_letras='enero';
-        break;
-    case 2:
-        $mes_letras='febrero';
-        break;
-    case 3:
-        $mes_letras='marzo';
-        break;
-    case 4:
-        $mes_letras='abril';
-        break;
-    case 5:
-        $mes_letras='mayo';
-        break;
-    case 6:
-        $mes_letras='junio';
-        break;
-    case 7:
-        $mes_letras='julio';
-        break;
-    case 8:
-        $mes_letras='agosto';
-        break;
-    case 9:
-        $mes_letras='septiembre';
-        break;
-    case 10:
-        $mes_letras='octubre';
-        break;
-    case 11:
-        $mes_letras='noviembre';
-        break;
-    case 12:
-        $mes_letras='diciembre';
-        break;
-}
+
+    public function executeMostrarNotas(sfWebRequest $request) {
+        $this->estudiante = $this->getUser()->getAttribute('estudiante_id');
+        $data = EstudianteTable::buscarEstudiante($this->estudiante);
+        $edad = $this->edad($data[0]['fecha_nacimiento']);
+        $fecha2 = date("d-m-Y", strtotime($data[0]['fecha_nacimiento']));
+        $encript = new crypt();
+        $encriptado = $encript->encriptar($data[0]['id'] . '-' . $data[0]['tipo_identificacion'] . '-' . $data[0]['identificacion']);
+        if ($data[0]['foto'] == '') {
+            $foto = 'persona.jpg';
+        } else {
+            $foto = $data[0]['foto'];
+        }
+        if ($data[0]['tipo_identificacion'] == 'V') {
+            $tipo_identificacion = 'CÉDULA';
+        }
+        if ($data[0]['tipo_identificacion'] == 'P') {
+            $tipo_identificacion = 'PASAPORTE';
+        }
+        $config = sfTCPDFPluginConfigHandler::loadConfig();
+        $pdf = new sfTCPDF();
+        $pdf->SetCreator(PDF_CREATOR);
+        $pdf->SetAuthor('SIGE');
+        $pdf->SetTitle('Documento de Verificación');
+        $pdf->SetSubject('SIGE - Verificación');
+        $pdf->SetKeywords('SIGE, PDF, verificación');
+        $pdf->setPrintHeader(false);
+        $pdf->setPrintFooter(false);
+        $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+        $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP - 20, PDF_MARGIN_RIGHT);
+        $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM - 20);
+        $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
+        $pdf->setFontSubsetting(true);
+        $pdf->SetFont('dejavusans', '', 8, '', true);
+        $pdf->AddPage();
+        $style = array(
+            'border' => 2,
+            'vpadding' => 'auto',
+            'hpadding' => 'auto',
+            'fgcolor' => array(0, 0, 0),
+            'bgcolor' => false, //array(255,255,255)
+            'module_width' => 1, // width of a single module in points
+            'module_height' => 1 // height of a single module in points
+        );
+        $dia = date('d');
+        $mes = date('m');
+        $year = date('Y');
+        $vence = '04-04-2017';
+        switch ($mes) {
+            case 1:
+                $mes_letras = 'enero';
+                break;
+            case 2:
+                $mes_letras = 'febrero';
+                break;
+            case 3:
+                $mes_letras = 'marzo';
+                break;
+            case 4:
+                $mes_letras = 'abril';
+                break;
+            case 5:
+                $mes_letras = 'mayo';
+                break;
+            case 6:
+                $mes_letras = 'junio';
+                break;
+            case 7:
+                $mes_letras = 'julio';
+                break;
+            case 8:
+                $mes_letras = 'agosto';
+                break;
+            case 9:
+                $mes_letras = 'septiembre';
+                break;
+            case 10:
+                $mes_letras = 'octubre';
+                break;
+            case 11:
+                $mes_letras = 'noviembre';
+                break;
+            case 12:
+                $mes_letras = 'diciembre';
+                break;
+        }
 //$params = $pdf->serializeTCPDFtagParameters(array($encriptado,'EAN13', '', '', '', 18, 0.4, array('position'=>'C', 'border'=>false, 'padding'=>4, 'fgcolor'=>array(0,0,0), 'bgcolor'=>array(255,255,255), 'text'=>true, 'font'=>'helvetica', 'fontsize'=>8, 'stretchtext'=>4), 'N'));
 //$pdf->write2DBarcode('www.tcpdf.org', 'QRCODE,L', 20, 30, 50, 50, $style, 'N');
-$params2=$pdf->serializeTCPDFtagParameters(array($encriptado, 'QRCODE,L','', '', 20, 20, array('position'=>'C', 'border'=>false, 'padding'=>4, 'fgcolor'=>array(0,0,0), 'bgcolor'=>array(255,255,255), 'text'=>true, 'font'=>'helvetica', 'fontsize'=>8, 'stretchtext'=>4), 'N'));
-$params = $pdf->serializeTCPDFtagParameters(array($encriptado, 'C128', '', '', 80, 20, 0.4, array('position'=>'C', 'border'=>false, 'padding'=>4, 'fgcolor'=>array(0,0,0), 'bgcolor'=>array(255,255,255), 'text'=>true, 'font'=>'helvetica', 'fontsize'=>8, 'stretchtext'=>4), 'N'));
-$code= '<tcpdf method="write1DBarcode" params="'.$params.'" />';
-$code2= '<tcpdf method="write2DBarcode" params="'.$params2.'" />';
-    $html = '<table>
+        $params2 = $pdf->serializeTCPDFtagParameters(array($encriptado, 'QRCODE,L', '', '', 20, 20, array('position' => 'C', 'border' => false, 'padding' => 4, 'fgcolor' => array(0, 0, 0), 'bgcolor' => array(255, 255, 255), 'text' => true, 'font' => 'helvetica', 'fontsize' => 8, 'stretchtext' => 4), 'N'));
+        $params = $pdf->serializeTCPDFtagParameters(array($encriptado, 'C128', '', '', 80, 20, 0.4, array('position' => 'C', 'border' => false, 'padding' => 4, 'fgcolor' => array(0, 0, 0), 'bgcolor' => array(255, 255, 255), 'text' => true, 'font' => 'helvetica', 'fontsize' => 8, 'stretchtext' => 4), 'N'));
+        $code = '<tcpdf method="write1DBarcode" params="' . $params . '" />';
+        $code2 = '<tcpdf method="write2DBarcode" params="' . $params2 . '" />';
+        $html = '<table>
             <tr><td align="left"><img src="images/logo_ucs.jpg" width="300" /></td><td align="right" ><font size="8">República Bolivariana de Venezuela<br> 
             Universidad de las Ciencias de la Salud <br><b>"HUGO CHÁVEZ FRÍAS"</b><br> SECRETARÍA GENERAL <br> CONTROL DE ESTUDIOS</font></td></tr>
             <tr><td colspan="2" align="center"><b>ACTA DE VERIFICACIÓN ACADÉMICA <br><br>V COHORTE PNFMIC - ESTUDIANTES INTERNACIONALES</b></td></tr>
@@ -420,7 +418,7 @@ Doc. Identidad N°_______________, conjuntamente con el (la) Prof.______________
 Identidad N°______________, constituidos como Comité de Verificación Académica de la V Cohorte de estudiantes
 internacionales del PNFMIC, y ______________________________ Doc. Identidad N°____________, en calidad de Testigo
 Estudiantil, con la finalidad de realizar una revisión exhaustiva a las Actas de Notas de cada una de las unidades curriculares
-cursadas por: '.$data[0]['primer_nombre'].' '.$data[0]['segundo_nombre'].' '.$data[0]['primer_apellido'].' '.$data[0]['segundo_apellido'].', Doc. Identidad N°'.$data[0]['tipo_identificacion'].'-'.$data[0]['identificacion'].', aspirante al título de Médico (a) Integral Comunitario (a),
+cursadas por: ' . $data[0]['primer_nombre'] . ' ' . $data[0]['segundo_nombre'] . ' ' . $data[0]['primer_apellido'] . ' ' . $data[0]['segundo_apellido'] . ', Doc. Identidad N°' . $data[0]['tipo_identificacion'] . '-' . $data[0]['identificacion'] . ', aspirante al título de Médico (a) Integral Comunitario (a),
 CERTIFICAMOS: que las calificaciones obtenidas por este (a) último (a), se encuentran verificadas y marcadas como
 correctas, en el Anexo 2-B que precede al presente documento. Específicamente, en la columna identificada como: SI SE
 CORRESPONDE CON LA NOTA PLASMADA EN EL ACTA DE EXAMEN DE LA UNIDAD CURRICULAR, y también, en la columna
@@ -433,17 +431,17 @@ estaba indicada en el acta de examen.</p></td></tr>
 <tr><td colspan="2" align="center"><br><br><br><b>SELLO<br>DIRECCIÓN DE CONTROL DE ESTUDIOS</b></td></tr>
 <tr><td align="right" colspan="2"><br><br><br><b>Formato 02-A</b></td></tr>
             </table>';
-    $pdf->SetFont('dejavusans', '', 9, '', true);
-    $pdf->writeHTML($html, true, 0, true, true);
-    $pdf->SetMargins(PDF_MARGIN_LEFT-10, PDF_MARGIN_TOP -20, PDF_MARGIN_RIGHT-10);
-    $pdf->AddPage();
-    
-    $html2='<br><br><font size="8"><table>
+        $pdf->SetFont('dejavusans', '', 9, '', true);
+        $pdf->writeHTML($html, true, 0, true, true);
+        $pdf->SetMargins(PDF_MARGIN_LEFT - 10, PDF_MARGIN_TOP - 20, PDF_MARGIN_RIGHT - 10);
+        $pdf->AddPage();
+
+        $html2 = '<br><br><font size="8"><table>
             <tr><td align="left"><img src="images/logo_ucs.jpg" width="300" /></td><td align="right" ><font size="8">República Bolivariana de Venezuela<br> 
             Universidad de las Ciencias de la Salud <br><b>"HUGO CHÁVEZ FRÍAS"</b><br> SECRETARÍA GENERAL <br> CONTROL DE ESTUDIOS</font></td></tr>
             <tr><td colspan="2" align="center"><b>DOCUMENTO DE VERIFICACIÓN ACADÉMICA </b></td></tr>
-            <tr><td colspan="2"><p style="text-align: justify"><br>Hoy____ de _________________________ de 20_____, el (la) estudiante: '.$data[0]['primer_nombre'].' '.$data[0]['segundo_nombre'].' '.$data[0]['primer_apellido'].' '.$data[0]['segundo_apellido'].', PORTADOR (A) DEL 
-            DOCUMENTO DE IDENTIDAD Nº '.$data[0]['tipo_identificacion'].'-'.$data[0]['identificacion'].', hace entrega del  Documento de Verificación Académica ante la Secretaria Docente,  para que el Comité de Verificación Académica de la V Cohorte de estudiantes internacionales, procedan a la revisión de las notas obtenidas en cada una de las unidades curriculares que contempla el Plan de Estudios del PNFMIC. </p></td></tr>
+            <tr><td colspan="2"><p style="text-align: justify"><br>Hoy____ de _________________________ de 20_____, el (la) estudiante: ' . $data[0]['primer_nombre'] . ' ' . $data[0]['segundo_nombre'] . ' ' . $data[0]['primer_apellido'] . ' ' . $data[0]['segundo_apellido'] . ', PORTADOR (A) DEL 
+            DOCUMENTO DE IDENTIDAD Nº ' . $data[0]['tipo_identificacion'] . '-' . $data[0]['identificacion'] . ', hace entrega del  Documento de Verificación Académica ante la Secretaria Docente,  para que el Comité de Verificación Académica de la V Cohorte de estudiantes internacionales, procedan a la revisión de las notas obtenidas en cada una de las unidades curriculares que contempla el Plan de Estudios del PNFMIC. </p></td></tr>
             </table></font><br>
             <font size="8">
             <table border="1">
@@ -451,22 +449,22 @@ estaba indicada en el acta de examen.</p></td></tr>
            Calificación Definitiva según el Acta de Examen </td></tr>
             <tr><td align="center">SI</td>
             <td align="center">NO</td></tr>';
-     $this->identificacion=$this->getUser()->getAttribute('identificacion');
-     $notas= NotasTable::getNotasGrado($this->identificacion);
-     foreach($notas as $data):
-            $html2.='<tr><td align="center">'.$data['identificador'].'</td><td align="center">'.$data['unidad_curricular'].'</td><td align="center">'.$data['descripcion'].'</td><td align="center">'.$data['periodo'].'</td><td align="center">'.$data['nota'].'</td>
+        $this->identificacion = $this->getUser()->getAttribute('identificacion');
+        $notas = NotasTable::getNotasGrado($this->identificacion);
+        foreach ($notas as $data):
+            $html2.='<tr><td align="center">' . $data['identificador'] . '</td><td align="center">' . $data['unidad_curricular'] . '</td><td align="center">' . $data['descripcion'] . '</td><td align="center">' . $data['periodo'] . '</td><td align="center">' . $data['nota'] . '</td>
              <td></td><td></td><td></td></tr>';
         endforeach;
-$html2.='</table><table>
+        $html2.='</table><table>
     <tr><td align="center"><br><br><br>_______________________<br>Coordinador CABES-PNFMIC<br>Firma y Nro. Doc. Identidad </td><td align="center"><br><br><br>______________________________<br>Prof. (Equipo Promotor de la UCS)<br>Firma y  Nro. Doc. Identidad</td>
 <td align="center"><br><br><br>______________________________<br>Secretario (a) Docente PNFMIC<br>Firma y Nro. Doc. Identidad</td><td align="center"><br><br><br>______________________________<br>Testigo Estudiantil<br>Firma y Nro. Doc. Identidad</td></tr>
 <tr><td colspan="4" align="center"><br><br><br><b>SELLO<br>DIRECCIÓN DE CONTROL DE ESTUDIOS</b></td></tr>
 <tr><td align="right" colspan="4"><b>Formato 02-B</b></td></tr>
             </table>
         </font>';
-    $pdf->writeHTML($html2, true, 0, true, true);
-    $pdf->AddPage();
-    $html3='<br><br><font size="8"><table>
+        $pdf->writeHTML($html2, true, 0, true, true);
+        $pdf->AddPage();
+        $html3 = '<br><br><font size="8"><table>
             <tr><td align="left"><img src="images/logo_ucs.jpg" width="300" /></td><td align="right" ><font size="8">República Bolivariana de Venezuela<br> 
             Universidad de las Ciencias de la Salud <br><b>"HUGO CHÁVEZ FRÍAS"</b><br> SECRETARÍA GENERAL <br> CONTROL DE ESTUDIOS</font></td></tr>
             
@@ -490,10 +488,10 @@ $html2.='</table><table>
 <br>
 <br>
 NOTA: deben ser impresos dos (02) ejemplares de cada formato.</p></td></tr></table>';
-    $pdf->writeHTML($html3, true, 0, true, true);
-    $pdf->Output('notas.pdf', 'I');
-    throw new sfStopException();
-    
+        $pdf->writeHTML($html3, true, 0, true, true);
+        $pdf->Output('notas.pdf', 'I');
+        throw new sfStopException();
+
 //         $this->identificacion=$this->getUser()->getAttribute('identificacion');
 //         $notas= NotasTable::getNotasGrado($this->identificacion);
 //         
@@ -505,62 +503,62 @@ NOTA: deben ser impresos dos (02) ejemplares de cada formato.</p></td></tr></tab
 //         echo '</pre>';
 //         exit();
     }
- public function executeMatricula()
-  {
-    $this->estudiante = $this->getUser()->getAttribute('estudiante_id');
+
+    public function executeMatricula() {
+        $this->estudiante = $this->getUser()->getAttribute('estudiante_id');
 //    $this->estudiante=250;
-    $data=  EstudianteTable::buscarEstudiante($this->estudiante);
-    $edad=$this->edad($data[0]['fecha_nacimiento']);
-    $fecha2=date("d-m-Y",strtotime($data[0]['fecha_nacimiento']));
-      $encript= new crypt();
-      $encriptado=$encript->encriptar($data[0]['id'].'-'.$data[0]['tipo_identificacion'].'-'.$data[0]['identificacion']);
-    if($data[0]['foto']==''){
-        $foto='s_persona.jpg';
-    }else{
-        $foto='s_'.$data[0]['foto'];
-    }
+        $data = EstudianteTable::buscarEstudiante($this->estudiante);
+        $edad = $this->edad($data[0]['fecha_nacimiento']);
+        $fecha2 = date("d-m-Y", strtotime($data[0]['fecha_nacimiento']));
+        $encript = new crypt();
+        $encriptado = $encript->encriptar($data[0]['id'] . '-' . $data[0]['tipo_identificacion'] . '-' . $data[0]['identificacion']);
+        if ($data[0]['foto'] == '') {
+            $foto = 's_persona.jpg';
+        } else {
+            $foto = 's_' . $data[0]['foto'];
+        }
 //$foto='s_5f4082e7abcae8aa5032e90449a4e5a3d65ff487.jpg';
-    if($data[0]['tipo_identificacion']=='V'){
-        $tipo_identificacion='CÉDULA';
-    }
-    if($data[0]['tipo_identificacion']=='P'){
-        $tipo_identificacion='PASAPORTE';
-    }
-    $config = sfTCPDFPluginConfigHandler::loadConfig();
-    $pdf = new sfTCPDF();
-    $pdf->SetCreator(PDF_CREATOR);
-    $pdf->SetAuthor('SIGE');
-    $pdf->SetTitle('Matrícula');
-    $pdf->SetSubject('SIGE - Matrícula');
-    $pdf->SetKeywords('SIGE, PDF, Matrícula');
-    $pdf->setPrintHeader(false);
-    $pdf->setPrintFooter(false);
-    $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-    $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
-    $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-    $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
-    $pdf->setFontSubsetting(true);
-    $pdf->SetFont('dejavusans', '', 14, '', true);
-    // Add a page
-    // This method has several options, check the source code documentation for more information.
+        if ($data[0]['tipo_identificacion'] == 'V') {
+            $tipo_identificacion = 'CÉDULA';
+        }
+        if ($data[0]['tipo_identificacion'] == 'P') {
+            $tipo_identificacion = 'PASAPORTE';
+        }
+        $config = sfTCPDFPluginConfigHandler::loadConfig();
+        $pdf = new sfTCPDF();
+        $pdf->SetCreator(PDF_CREATOR);
+        $pdf->SetAuthor('SIGE');
+        $pdf->SetTitle('Matrícula');
+        $pdf->SetSubject('SIGE - Matrícula');
+        $pdf->SetKeywords('SIGE, PDF, Matrícula');
+        $pdf->setPrintHeader(false);
+        $pdf->setPrintFooter(false);
+        $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+        $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+        $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+        $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
+        $pdf->setFontSubsetting(true);
+        $pdf->SetFont('dejavusans', '', 14, '', true);
+        // Add a page
+        // This method has several options, check the source code documentation for more information.
 // set style for barcode
-$style = array(
-	'border' => 2,
-	'vpadding' => 'auto',
-	'hpadding' => 'auto',
-	'fgcolor' => array(0,0,0),
-	'bgcolor' => false, //array(255,255,255)
-	'module_width' => 1, // width of a single module in points
-	'module_height' => 1 // height of a single module in points
-);
-$dia=date('d');
-$mes=date('m');
-$year=date('Y');
+        $style = array(
+            'border' => 2,
+            'vpadding' => 'auto',
+            'hpadding' => 'auto',
+            'fgcolor' => array(0, 0, 0),
+            'bgcolor' => false, //array(255,255,255)
+            'module_width' => 1, // width of a single module in points
+            'module_height' => 1 // height of a single module in points
+        );
+        $dia = date('d');
+        $mes = date('m');
+        $year = date('Y');
 
 
-    // ---------------------------------------------------------
-    $pdf->AddPage();
-    $html = '
+        // ---------------------------------------------------------
+        $pdf->AddPage();
+        $html = '
 <style>
     .clase {
         font-family: verdana;
@@ -572,14 +570,14 @@ $year=date('Y');
     <tr><td colspan="6" width="80%" align="center">REPÚBLICA BOLIVARIANA DE VENEZUELA<br> 
             UNIVERSIDAD DE LAS CIENCIAS DE LA SALUD "HUGO CHÁVEZ FRÍAS"<br>
             <b>PLANILLA DE MATRÍCULA AÑO ACADÉMICO 2018</b>
-        </td><td width="20%"><img src="uploads/fotos/original/'.$foto.'" height="340" width="280" alt="foto"/></td></tr>
+        </td><td width="20%"><img src="uploads/fotos/original/' . $foto . '" height="340" width="280" alt="foto"/></td></tr>
     <tr><td colspan="7" align="center"><b>DATOS PERSONALES</b></td></tr>
-    <tr><td>PRIMER APELLIDO:<br>'.$data[0]['primer_apellido'].'</td><td>SEGUNDO APELLIDO:<br>'.$data[0]['segundo_apellido'].'</td><td>NOMBRES:<br>'.$data[0]['primer_nombre'].' '.$data[0]['segundo_nombre'].'</td><td>GÉNERO:</td>
-        <td>EDAD:<br>'.$edad.'</td><td>FECHA DE NACIMIENTO:<br>'.$fecha2.'</td><td>ESTADO CIVIL:</td></tr>
-    <tr><td colspan="2">NACIONALIDAD: '.$data[0]['tipo_identificacion'].'</td><td colspan="2">N. DE CÉDULA:'.$data[0]['identificacion'].'</td><td colspan="3">PAÍS DE ORIGEN:</td></tr>
-    <tr><td colspan="7">DIRECCIÓN: '.$data[0]['direccion'].'</td></tr>
-    <tr><td colspan="2">ESTADO: '.$data[0]['estado'].'</td><td colspan="2">MUNICIPIO: '.$data[0]['municipio'].'</td><td colspan="3">PARROQUIA: '.$data[0]['parroquia'].'</td></tr>
-    <tr><td colspan="2">TELÉFONO:'.$data[0]['telefono'].'</td><td colspan="3">CORREO:'.$data[0]['correo_electronico'].'</td><td colspan="2">TWITTER:</td></tr>
+    <tr><td>PRIMER APELLIDO:<br>' . $data[0]['primer_apellido'] . '</td><td>SEGUNDO APELLIDO:<br>' . $data[0]['segundo_apellido'] . '</td><td>NOMBRES:<br>' . $data[0]['primer_nombre'] . ' ' . $data[0]['segundo_nombre'] . '</td><td>GÉNERO:</td>
+        <td>EDAD:<br>' . $edad . '</td><td>FECHA DE NACIMIENTO:<br>' . $fecha2 . '</td><td>ESTADO CIVIL:</td></tr>
+    <tr><td colspan="2">NACIONALIDAD: ' . $data[0]['tipo_identificacion'] . '</td><td colspan="2">N. DE CÉDULA:' . $data[0]['identificacion'] . '</td><td colspan="3">PAÍS DE ORIGEN:</td></tr>
+    <tr><td colspan="7">DIRECCIÓN: ' . $data[0]['direccion'] . '</td></tr>
+    <tr><td colspan="2">ESTADO: ' . $data[0]['estado'] . '</td><td colspan="2">MUNICIPIO: ' . $data[0]['municipio'] . '</td><td colspan="3">PARROQUIA: ' . $data[0]['parroquia'] . '</td></tr>
+    <tr><td colspan="2">TELÉFONO:' . $data[0]['telefono'] . '</td><td colspan="3">CORREO:' . $data[0]['correo_electronico'] . '</td><td colspan="2">TWITTER:</td></tr>
     <tr><td colspan="7" align="center"><b>UBICACIÓN DOCENTE</b></td></tr>
     <tr><td colspan="2">ESTADO:</td><td colspan="3">MUNICIPIO:</td><td colspan="2">ASIC:</td></tr>
     <tr><td colspan="2">PARROQUIA:</td><td colspan="3">NÚCLEO DOCENTE:</td><td colspan="2">PNF:</td></tr>
@@ -598,10 +596,10 @@ $year=date('Y');
         <td width="30%" align="center"><br><br><br>_________________________________<br> Estudiante</td></tr>
     <tr><td colspan="3"><br><br>NOTA: EL ESTUDIANTE DEBE IMPRIMIR DOS (02) EJEMPLARES DE ESTA PLANILLA. UNA DEBE SER ENTREGADA A LA SECRETARIA DOCENTE PARA SER ARCHIVADA EN SU EXPEDIENTE Y LA OTRA LA GUARDARÁ COMO CONSTANCIA DE LA FORMALIZACION DE LA MATRICULA.</td></tr>
 </table>';
-	$pdf->writeHTML($html, true, 0, true, true);
-	if($data[0]['n_ingreso']==true){
-$pdf->AddPage();
-	$html2='<style>
+        $pdf->writeHTML($html, true, 0, true, true);
+        if ($data[0]['n_ingreso'] == true) {
+            $pdf->AddPage();
+            $html2 = '<style>
     .clase {
         font-family: verdana;
         font-size: 8;
@@ -611,8 +609,8 @@ $pdf->AddPage();
     <tr><td><img src="images/cintillo.jpg"/></td></tr>
     <tr><td align="center"><br><br><br><b>CONSTANCIA DE APROBACIÓN</b></td></tr>
     <tr><td align="center"><br><br><b>I CURSO INTRODUCTORIO A LAS CIENCIAS DE LA SALUD 2017</b></td></tr>
-    <tr><td><br><br><p style="text-align: justify">Por medio de la presente, se hace constar que el(la) ciudadano(a):'.$data[0]['primer_nombre'].' '.$data[0]['segundo_nombre'].' 
-            '.$data[0]['primer_apellido'].' '.$data[0]['segundo_apellido'].',  titular de la Cédula de Identidad N° '.$data[0]['identificacion'].' ,  
+    <tr><td><br><br><p style="text-align: justify">Por medio de la presente, se hace constar que el(la) ciudadano(a):' . $data[0]['primer_nombre'] . ' ' . $data[0]['segundo_nombre'] . ' 
+            ' . $data[0]['primer_apellido'] . ' ' . $data[0]['segundo_apellido'] . ',  titular de la Cédula de Identidad N° ' . $data[0]['identificacion'] . ' ,  
     cursó y aprobó el I Curso  Introductorio a las Ciencias de la Salud 2017, en el estado: 
     _________________,municipio:_______________________, ASIC:_____________________, obteniendo 
     las siguientes calificaciones:</p> <br><br>
@@ -671,106 +669,106 @@ $pdf->AddPage();
                     </td></tr>
             </table></td></tr>
 </table>';
-	$pdf->writeHTML($html2, true, 0, true, true);
-	}
-    $pdf->SetFont('dejavusans', '', 11, '', true);
+            $pdf->writeHTML($html2, true, 0, true, true);
+        }
+        $pdf->SetFont('dejavusans', '', 11, '', true);
 
-    $pdf->Output('matricula.pdf', 'I');
-    throw new sfStopException();
-  }
-  public function executeMostrarNotas2(sfWebRequest $request)
-    {
-    $this->estudiante = $this->getUser()->getAttribute('estudiante_id');
-    $data=  EstudianteTable::buscarEstudiante($this->estudiante);
-    $edad=$this->edad($data[0]['fecha_nacimiento']);
-    $fecha2=date("d-m-Y",strtotime($data[0]['fecha_nacimiento']));
-      $encript= new crypt();
-      $encriptado=$encript->encriptar($data[0]['id'].'-'.$data[0]['tipo_identificacion'].'-'.$data[0]['identificacion']);
-    if($data[0]['foto']==''){
-        $foto='persona.jpg';
-    }else{
-        $foto=$data[0]['foto'];
+        $pdf->Output('matricula.pdf', 'I');
+        throw new sfStopException();
     }
-    if($data[0]['tipo_identificacion']=='V'){
-        $tipo_identificacion='CÉDULA';
-    }
-    if($data[0]['tipo_identificacion']=='P'){
-        $tipo_identificacion='PASAPORTE';
-    }
-    $config = sfTCPDFPluginConfigHandler::loadConfig();
-    $pdf = new sfTCPDF();
-    $pdf->SetCreator(PDF_CREATOR);
-    $pdf->SetAuthor('SIGE');
-    $pdf->SetTitle('Documento de Verificación');
-    $pdf->SetSubject('SIGE - Verificación');
-    $pdf->SetKeywords('SIGE, PDF, verificación');
-    $pdf->setPrintHeader(false);
-    $pdf->setPrintFooter(false);
-    $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-    $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP -20, PDF_MARGIN_RIGHT);
-    $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM -20);
-    $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
-    $pdf->setFontSubsetting(true);
-    $pdf->SetFont('dejavusans', '', 8, '', true);
-    $pdf->AddPage();
-$style = array(
-	'border' => 2,
-	'vpadding' => 'auto',
-	'hpadding' => 'auto',
-	'fgcolor' => array(0,0,0),
-	'bgcolor' => false, //array(255,255,255)
-	'module_width' => 1, // width of a single module in points
-	'module_height' => 1 // height of a single module in points
-);
-$dia=date('d');
-$mes=date('m');
-$year=date('Y');
-$vence='04-04-2017';
-switch($mes){
-    case 1:
-        $mes_letras='enero';
-        break;
-    case 2:
-        $mes_letras='febrero';
-        break;
-    case 3:
-        $mes_letras='marzo';
-        break;
-    case 4:
-        $mes_letras='abril';
-        break;
-    case 5:
-        $mes_letras='mayo';
-        break;
-    case 6:
-        $mes_letras='junio';
-        break;
-    case 7:
-        $mes_letras='julio';
-        break;
-    case 8:
-        $mes_letras='agosto';
-        break;
-    case 9:
-        $mes_letras='septiembre';
-        break;
-    case 10:
-        $mes_letras='octubre';
-        break;
-    case 11:
-        $mes_letras='noviembre';
-        break;
-    case 12:
-        $mes_letras='diciembre';
-        break;
-}
+
+    public function executeMostrarNotas2(sfWebRequest $request) {
+        $this->estudiante = $this->getUser()->getAttribute('estudiante_id');
+        $data = EstudianteTable::buscarEstudiante($this->estudiante);
+        $edad = $this->edad($data[0]['fecha_nacimiento']);
+        $fecha2 = date("d-m-Y", strtotime($data[0]['fecha_nacimiento']));
+        $encript = new crypt();
+        $encriptado = $encript->encriptar($data[0]['id'] . '-' . $data[0]['tipo_identificacion'] . '-' . $data[0]['identificacion']);
+        if ($data[0]['foto'] == '') {
+            $foto = 'persona.jpg';
+        } else {
+            $foto = $data[0]['foto'];
+        }
+        if ($data[0]['tipo_identificacion'] == 'V') {
+            $tipo_identificacion = 'CÉDULA';
+        }
+        if ($data[0]['tipo_identificacion'] == 'P') {
+            $tipo_identificacion = 'PASAPORTE';
+        }
+        $config = sfTCPDFPluginConfigHandler::loadConfig();
+        $pdf = new sfTCPDF();
+        $pdf->SetCreator(PDF_CREATOR);
+        $pdf->SetAuthor('SIGE');
+        $pdf->SetTitle('Documento de Verificación');
+        $pdf->SetSubject('SIGE - Verificación');
+        $pdf->SetKeywords('SIGE, PDF, verificación');
+        $pdf->setPrintHeader(false);
+        $pdf->setPrintFooter(false);
+        $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+        $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP - 20, PDF_MARGIN_RIGHT);
+        $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM - 20);
+        $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
+        $pdf->setFontSubsetting(true);
+        $pdf->SetFont('dejavusans', '', 8, '', true);
+        $pdf->AddPage();
+        $style = array(
+            'border' => 2,
+            'vpadding' => 'auto',
+            'hpadding' => 'auto',
+            'fgcolor' => array(0, 0, 0),
+            'bgcolor' => false, //array(255,255,255)
+            'module_width' => 1, // width of a single module in points
+            'module_height' => 1 // height of a single module in points
+        );
+        $dia = date('d');
+        $mes = date('m');
+        $year = date('Y');
+        $vence = '04-04-2017';
+        switch ($mes) {
+            case 1:
+                $mes_letras = 'enero';
+                break;
+            case 2:
+                $mes_letras = 'febrero';
+                break;
+            case 3:
+                $mes_letras = 'marzo';
+                break;
+            case 4:
+                $mes_letras = 'abril';
+                break;
+            case 5:
+                $mes_letras = 'mayo';
+                break;
+            case 6:
+                $mes_letras = 'junio';
+                break;
+            case 7:
+                $mes_letras = 'julio';
+                break;
+            case 8:
+                $mes_letras = 'agosto';
+                break;
+            case 9:
+                $mes_letras = 'septiembre';
+                break;
+            case 10:
+                $mes_letras = 'octubre';
+                break;
+            case 11:
+                $mes_letras = 'noviembre';
+                break;
+            case 12:
+                $mes_letras = 'diciembre';
+                break;
+        }
 //$params = $pdf->serializeTCPDFtagParameters(array($encriptado,'EAN13', '', '', '', 18, 0.4, array('position'=>'C', 'border'=>false, 'padding'=>4, 'fgcolor'=>array(0,0,0), 'bgcolor'=>array(255,255,255), 'text'=>true, 'font'=>'helvetica', 'fontsize'=>8, 'stretchtext'=>4), 'N'));
 //$pdf->write2DBarcode('www.tcpdf.org', 'QRCODE,L', 20, 30, 50, 50, $style, 'N');
-$params2=$pdf->serializeTCPDFtagParameters(array($encriptado, 'QRCODE,L','', '', 20, 20, array('position'=>'C', 'border'=>false, 'padding'=>4, 'fgcolor'=>array(0,0,0), 'bgcolor'=>array(255,255,255), 'text'=>true, 'font'=>'helvetica', 'fontsize'=>8, 'stretchtext'=>4), 'N'));
-$params = $pdf->serializeTCPDFtagParameters(array($encriptado, 'C128', '', '', 80, 20, 0.4, array('position'=>'C', 'border'=>false, 'padding'=>4, 'fgcolor'=>array(0,0,0), 'bgcolor'=>array(255,255,255), 'text'=>true, 'font'=>'helvetica', 'fontsize'=>8, 'stretchtext'=>4), 'N'));
-$code= '<tcpdf method="write1DBarcode" params="'.$params.'" />';
-$code2= '<tcpdf method="write2DBarcode" params="'.$params2.'" />';
-    $html = '<table>
+        $params2 = $pdf->serializeTCPDFtagParameters(array($encriptado, 'QRCODE,L', '', '', 20, 20, array('position' => 'C', 'border' => false, 'padding' => 4, 'fgcolor' => array(0, 0, 0), 'bgcolor' => array(255, 255, 255), 'text' => true, 'font' => 'helvetica', 'fontsize' => 8, 'stretchtext' => 4), 'N'));
+        $params = $pdf->serializeTCPDFtagParameters(array($encriptado, 'C128', '', '', 80, 20, 0.4, array('position' => 'C', 'border' => false, 'padding' => 4, 'fgcolor' => array(0, 0, 0), 'bgcolor' => array(255, 255, 255), 'text' => true, 'font' => 'helvetica', 'fontsize' => 8, 'stretchtext' => 4), 'N'));
+        $code = '<tcpdf method="write1DBarcode" params="' . $params . '" />';
+        $code2 = '<tcpdf method="write2DBarcode" params="' . $params2 . '" />';
+        $html = '<table>
             <tr><td align="left"><img src="images/logo_ucs.jpg" width="300" /></td><td align="right" ><font size="8">República Bolivariana de Venezuela<br> 
             Universidad de las Ciencias de la Salud <br><b>"HUGO CHÁVEZ FRÍAS"</b><br> SECRETARÍA GENERAL <br> CONTROL DE ESTUDIOS</font></td></tr>
             <tr><td colspan="2" align="center"><b>ACTA DE VERIFICACIÓN ACADÉMICA <br><br>VII COHORTE PNFMIC</b></td></tr>
@@ -781,8 +779,8 @@ $code2= '<tcpdf method="write2DBarcode" params="'.$params2.'" />';
              N°______________, respectivamente, designados como Comité de Verificación Académica de la VII Cohorte del  PNFMIC, y 
              ______________________________ Doc. Identidad N°____________, en calidad de Testigo Estudiantil, con la finalidad de 
              realizar una revisión exhaustiva a las Actas de Exámenes de cada una de las unidades curriculares cursadas  por: 
-             '.$data[0]['primer_nombre'].' '.$data[0]['segundo_nombre'].' '.$data[0]['primer_apellido'].' '.$data[0]['segundo_apellido'].', 
-             Doc. Identidad N°'.$data[0]['tipo_identificacion'].'-'.$data[0]['identificacion'].', 
+             ' . $data[0]['primer_nombre'] . ' ' . $data[0]['segundo_nombre'] . ' ' . $data[0]['primer_apellido'] . ' ' . $data[0]['segundo_apellido'] . ', 
+             Doc. Identidad N°' . $data[0]['tipo_identificacion'] . '-' . $data[0]['identificacion'] . ', 
              aspirante al título de Médico (a) Integral Comunitario (a),
 CERTIFICAMOS: que las calificaciones obtenidas por este (a) último (a), se encuentran verificadas y marcadas como
 correctas, en el Anexo 2-B que precede al presente documento. Específicamente, en la columna identificada como: SI SE
@@ -795,17 +793,17 @@ de Verificación procedió a plasmar la nota que efectivamente estaba indicada e
 <tr><td align="center"><br><br><br><br>______________________________<br>Testigo Estudiantil</td><td align="center"><br><br><br><b>SELLO<br>DIRECCIÓN DE CONTROL DE ESTUDIOS</b></td></tr>
 <tr><td align="right" colspan="2"><br><br><br><b>Formato 02-A</b></td></tr>
             </table>';
-    $pdf->SetFont('dejavusans', '', 9, '', true);
-    $pdf->writeHTML($html, true, 0, true, true);
-    $pdf->SetMargins(PDF_MARGIN_LEFT-10, PDF_MARGIN_TOP -20, PDF_MARGIN_RIGHT-10);
-    $pdf->AddPage();
-    
-    $html2='<br><br><font size="8"><table>
+        $pdf->SetFont('dejavusans', '', 9, '', true);
+        $pdf->writeHTML($html, true, 0, true, true);
+        $pdf->SetMargins(PDF_MARGIN_LEFT - 10, PDF_MARGIN_TOP - 20, PDF_MARGIN_RIGHT - 10);
+        $pdf->AddPage();
+
+        $html2 = '<br><br><font size="8"><table>
             <tr><td align="left"><img src="images/logo_ucs.jpg" width="300" /></td><td align="right" ><font size="8">República Bolivariana de Venezuela<br> 
             Universidad de las Ciencias de la Salud <br><b>"HUGO CHÁVEZ FRÍAS"</b><br> SECRETARÍA GENERAL <br> CONTROL DE ESTUDIOS</font></td></tr>
             <tr><td colspan="2" align="center"><b>DOCUMENTO DE VERIFICACIÓN ACADÉMICA </b></td></tr>
-            <tr><td colspan="2"><p style="text-align: justify"><br>Hoy____ de _________________________ de 20_____, el (la) estudiante: '.$data[0]['primer_nombre'].' '.$data[0]['segundo_nombre'].' '.$data[0]['primer_apellido'].' '.$data[0]['segundo_apellido'].', PORTADOR (A) DEL 
-            DOCUMENTO DE IDENTIDAD Nº '.$data[0]['tipo_identificacion'].'-'.$data[0]['identificacion'].', hace entrega del  Documento de Verificación Académica ante la Secretaria Docente,  para que el Comité de Verificación Académica de la VII Cohorte, procedan a la revisión de las notas obtenidas en cada una de las unidades curriculares que contempla el Plan de Estudios del PNFMIC. </p></td></tr>
+            <tr><td colspan="2"><p style="text-align: justify"><br>Hoy____ de _________________________ de 20_____, el (la) estudiante: ' . $data[0]['primer_nombre'] . ' ' . $data[0]['segundo_nombre'] . ' ' . $data[0]['primer_apellido'] . ' ' . $data[0]['segundo_apellido'] . ', PORTADOR (A) DEL 
+            DOCUMENTO DE IDENTIDAD Nº ' . $data[0]['tipo_identificacion'] . '-' . $data[0]['identificacion'] . ', hace entrega del  Documento de Verificación Académica ante la Secretaria Docente,  para que el Comité de Verificación Académica de la VII Cohorte, procedan a la revisión de las notas obtenidas en cada una de las unidades curriculares que contempla el Plan de Estudios del PNFMIC. </p></td></tr>
             </table></font><br>
             <font size="8">
             <table border="1">
@@ -813,20 +811,20 @@ de Verificación procedió a plasmar la nota que efectivamente estaba indicada e
            Calificación Definitiva según el Acta de Examen </td></tr>
             <tr><td align="center">SI</td>
             <td align="center">NO</td></tr>';
-     $this->identificacion=$this->getUser()->getAttribute('identificacion');
-      $this->id=$this->getUser()->getAttribute('estudiante_id');
-     $notas= NotasTable::getNotasGrado2($this->id);
-     $nro=0;
-     foreach($notas as $data):
-     $nro++;
-            $html2.='<tr><td align="center">'.$nro.'</td>
-            <td align="center">'.$data['unidad_curricular'].'</td>
-            <td align="center">'.$data['descripcion'].'</td>
-            <td align="center">'.$data['periodo'].'</td>
-            <td align="center">'.$data['nota'].'</td>
+        $this->identificacion = $this->getUser()->getAttribute('identificacion');
+        $this->id = $this->getUser()->getAttribute('estudiante_id');
+        $notas = NotasTable::getNotasGrado2($this->id);
+        $nro = 0;
+        foreach ($notas as $data):
+            $nro++;
+            $html2.='<tr><td align="center">' . $nro . '</td>
+            <td align="center">' . $data['unidad_curricular'] . '</td>
+            <td align="center">' . $data['descripcion'] . '</td>
+            <td align="center">' . $data['periodo'] . '</td>
+            <td align="center">' . $data['nota'] . '</td>
              <td></td><td></td><td></td></tr>';
         endforeach;
-$html2.='</table><table>
+        $html2.='</table><table>
     <tr>
     <td align="center"><br><br><br>_______________________<br>Sec. Doc. MMC<br>Firma y Nro. Doc. Identidad </td>
     <td align="center"><br><br><br>_______________________<br>Director de Secretaría UCS<br>Firma y  Nro. Doc. Identidad</td>
@@ -837,9 +835,9 @@ $html2.='</table><table>
     <td align="center"><br><br><b>SELLO<br>DIRECCIÓN DE CONTROL DE ESTUDIOS</b></td><td align="right" ><b>Formato 02-B</b></td></tr>
             </table>
         </font>';
-    $pdf->writeHTML($html2, true, 0, true, true);
-    $pdf->AddPage();
-    $html3='<br><br><font size="8"><table>
+        $pdf->writeHTML($html2, true, 0, true, true);
+        $pdf->AddPage();
+        $html3 = '<br><br><font size="8"><table>
             <tr><td align="left"><img src="images/logo_ucs.jpg" width="300" /></td><td align="right" ><font size="8">República Bolivariana de Venezuela<br> 
             Universidad de las Ciencias de la Salud <br><b>"HUGO CHÁVEZ FRÍAS"</b><br> SECRETARÍA GENERAL <br> CONTROL DE ESTUDIOS</font></td></tr>
             
@@ -860,8 +858,61 @@ casos en que la nota reflejada en el acta de examen no se corresponda con la not
 <br>
 <br>
 NOTA: deben ser impresos dos (02) ejemplares de cada formato.</p></td></tr></table>';
-    $pdf->writeHTML($html3, true, 0, true, true);
-    $pdf->Output('notas.pdf', 'I');
-    throw new sfStopException();
+        $pdf->writeHTML($html3, true, 0, true, true);
+        $pdf->Output('notas.pdf', 'I');
+        throw new sfStopException();
     }
+
+    public function executeCarnet(sfWebRequest $request) {
+        $this->estudiante = $this->getUser()->getAttribute('estudiante_id');
+        $this->data = EstudianteTable::buscarEstudiante($this->estudiante);
+        header('Content-Type: image/png');
+        header("Cache-Control: no-cache, must-revalidate");
+        $cedula = $this->data[0]['identificacion'];
+        $server='http://localhost/';
+        $pathImg =$server.'control/images/';
+        $width = 1338;
+        $height = 408;
+        $base = imagecreatetruecolor($width, $height);
+        $black = ImageColorAllocate($base, 0, 0, 0);
+        $white = ImageColorAllocate($base, 255, 255, 255);
+        imagefill($base, 0, 0, $white);
+        $fondo = imagecreatefrompng($pathImg.'base_carnet.png');
+        imagecopyresampled($base, $fondo, 0, 0, 0, 0, $width, $height, imagesx($fondo), imagesy($fondo));
+        $normal = dirname(__FILE__).'/../util/arial.ttf';
+        $bold = dirname(__FILE__).'/../util/arialbd.ttf';
+        $largo_pro=  strlen($this->data[0]['pnf']);
+        $x = ($width/4)-($largo_pro*5.5);
+        $y=($height/4)+($height/4.5);
+        imagettftext($base, 14, 0, $x, $y-60, $black, $bold, $this->data[0]['pnf']);
+//nombre y apellido
+        $x_str_nombre = 455;
+        $y_str_nombre = 180;
+        $interLine = 22;
+        $largo_nombre=  strlen($this->data[0]['primer_nombre'])*14;
+        $largo_apellido=  strlen($this->data[0]['primer_apellido'])*14;
+        imagettftext($base, 14, 0, $x_str_nombre-$largo_nombre, $y_str_nombre, $black, $normal, $this->data[0]['primer_nombre']);
+        imagettftext($base, 14, 0, $x_str_nombre-$largo_apellido, $y_str_nombre + $interLine, $black, $normal, $this->data[0]['primer_apellido']);
+//cedula
+        $y_str_cedula = 224;
+        $largo_identificacion=  strlen($this->data[0]['tipo_identificacion'] . '-' . $this->data[0]['identificacion'])*12;
+        imagettftext($base, 14, 0, $x_str_nombre-$largo_identificacion, $y_str_cedula, $black, $normal, $this->data[0]['tipo_identificacion'] . '-' . $this->data[0]['identificacion']);
+//estado
+        $y_str_cedula = 246;
+        $largo_estado=  strlen($this->data[0]['estado'])*14;
+        imagettftext($base, 14, 0, $x_str_nombre-$largo_estado, $y_str_cedula, $black, $normal, $this->data[0]['estado']);
+////foto
+        $foto_path=$server.'control/uploads/fotos/original/';
+        $image_foto = imagecreatefromjpeg($foto_path.'s_4556471e33e53c90326d9dac1edc712cd8c1fdf2.jpg');
+        $x_foto = 465;
+        $y_foto = 165;
+        imagecopyresampled($base, $image_foto, $x_foto, $y_foto, 0, 0, 159, 172, imagesx($image_foto), imagesy($image_foto));
+//fecha vencimiento
+        $x_vence = 490;
+        $y_vence = 385;
+        imagettftext($base, 10, 0, $x_vence, $y_vence, $black, $bold, 'Vence: 31-12-'. ((date('Y'))));
+        imagepng($base);
+        throw new sfStopException();
+    }
+
 }

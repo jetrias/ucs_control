@@ -7696,3 +7696,222 @@ Mar 03 18:32:38 symfony [info] {sfWebDebugLogger} Partial "notas/_form_actions" 
 Mar 03 18:32:38 symfony [info] {sfWebDebugLogger} Partial "notas/_form_fieldset" 270.03 ms (1)
 Mar 03 18:32:38 symfony [info] {sfWebDebugLogger} Partial "notas/_form_field" 4.25 ms (1)
 Mar 03 18:32:38 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.46 ms (1)
+Mar 15 15:06:37 symfony [info] {sfPatternRouting} Match route "notas" (/notas.:sf_format) for /notas with parameters array (  'module' => 'notas',  'action' => 'index',  'sf_format' => 'html',)
+Mar 15 15:06:40 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 15 15:06:40 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Mar 15 15:06:40 symfony [info] {sfBasicSecurityFilter} Action "notas/index" requires authentication, forwarding to "default/login"
+Mar 15 15:06:40 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 15 15:06:40 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Mar 15 15:06:40 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 15 15:06:40 symfony [info] {defaultActions} Call "defaultActions->executeLogin()"
+May 07 15:24:19 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /reporte/reporteEstado with parameters array (  'module' => 'reporte',  'action' => 'reporteEstado',)
+May 07 15:24:19 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+May 07 15:24:19 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+May 07 15:24:19 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+May 07 15:24:19 symfony [info] {reporteActions} Call "reporteActions->executeReporteEstado()"
+May 07 15:24:19 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+May 07 15:24:19 symfony [info] {Doctrine_Connection_Pgsql} query : SELECT *
+                FROM estado - ()
+May 07 15:24:19 symfony [err] {sfWebDebugLogger}  Error at C:\wamp\www\ucs_control\apps\backend\modules\reporte\actions\actions.class.php on line 26 (Object of class reporteActions could not be converted to string)
+May 07 15:24:47 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /reporte/reporteEstado with parameters array (  'module' => 'reporte',  'action' => 'reporteEstado',)
+May 07 15:24:47 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+May 07 15:24:47 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+May 07 15:24:47 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+May 07 15:24:47 symfony [info] {reporteActions} Call "reporteActions->executeReporteEstado()"
+May 07 15:24:47 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+May 07 15:24:47 symfony [info] {Doctrine_Connection_Pgsql} query : SELECT *
+                FROM estado - ()
+May 07 15:24:47 symfony [info] {sfPHPView} Render "C:\wamp\www\ucs_control\apps\backend\modules/reporte/templates/reporteEstadoSuccess.php"
+May 07 15:24:47 symfony [info] {sfPHPView} Decorate content with "C:\wamp\www\ucs_control\apps\backend\templates/layout.php"
+May 07 15:24:47 symfony [info] {sfPHPView} Render "C:\wamp\www\ucs_control\apps\backend\templates/layout.php"
+May 07 15:24:47 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php on line 336 (Cannot modify header information - headers already sent by (output started at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php:409))
+May 07 15:24:47 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+May 07 15:24:47 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php:409))
+May 07 15:24:47 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+May 07 15:24:47 symfony [info] {sfWebDebugLogger} Configuration 43.24 ms (10)
+May 07 15:24:47 symfony [info] {sfWebDebugLogger} Factories 88.80 ms (1)
+May 07 15:24:47 symfony [info] {sfWebDebugLogger} Action "reporte/reporteEstado" 57.00 ms (1)
+May 07 15:24:47 symfony [info] {sfWebDebugLogger} Database (Doctrine) 1.84 ms (2)
+May 07 15:24:47 symfony [info] {sfWebDebugLogger} View "Success" for "reporte/reporteEstado" 203.61 ms (1)
+May 07 15:24:47 symfony [info] {sfWebResponse} Send content (40380 o)
+May 07 15:24:48 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /reporte/reporteEstado with parameters array (  'module' => 'reporte',  'action' => 'reporteEstado',)
+May 07 15:24:48 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+May 07 15:24:48 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+May 07 15:24:48 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+May 07 15:24:48 symfony [info] {reporteActions} Call "reporteActions->executeReporteEstado()"
+May 07 15:24:48 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+May 07 15:24:48 symfony [info] {Doctrine_Connection_Pgsql} query : SELECT *
+                FROM estado - ()
+May 07 15:24:48 symfony [info] {sfPHPView} Render "C:\wamp\www\ucs_control\apps\backend\modules/reporte/templates/reporteEstadoSuccess.php"
+May 07 15:24:48 symfony [info] {sfPHPView} Decorate content with "C:\wamp\www\ucs_control\apps\backend\templates/layout.php"
+May 07 15:24:48 symfony [info] {sfPHPView} Render "C:\wamp\www\ucs_control\apps\backend\templates/layout.php"
+May 07 15:24:48 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php on line 336 (Cannot modify header information - headers already sent by (output started at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php:409))
+May 07 15:24:48 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+May 07 15:24:48 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php:409))
+May 07 15:24:48 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+May 07 15:24:48 symfony [info] {sfWebDebugLogger} Configuration 35.82 ms (9)
+May 07 15:24:48 symfony [info] {sfWebDebugLogger} Factories 97.50 ms (1)
+May 07 15:24:48 symfony [info] {sfWebDebugLogger} Action "reporte/reporteEstado" 60.43 ms (1)
+May 07 15:24:48 symfony [info] {sfWebDebugLogger} Database (Doctrine) 2.60 ms (2)
+May 07 15:24:48 symfony [info] {sfWebDebugLogger} View "Success" for "reporte/reporteEstado" 113.76 ms (1)
+May 07 15:24:48 symfony [info] {sfWebResponse} Send content (40347 o)
+May 07 15:25:55 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /reporte/reporteEstado with parameters array (  'module' => 'reporte',  'action' => 'reporteEstado',)
+May 07 15:25:55 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+May 07 15:25:55 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+May 07 15:25:55 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+May 07 15:25:55 symfony [info] {reporteActions} Call "reporteActions->executeReporteEstado()"
+May 07 15:25:55 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+May 07 15:25:55 symfony [info] {Doctrine_Connection_Pgsql} query : SELECT *
+                FROM estado - ()
+May 07 15:25:56 symfony [info] {sfPHPView} Render "C:\wamp\www\ucs_control\apps\backend\modules/reporte/templates/reporteEstadoSuccess.php"
+May 07 15:25:56 symfony [info] {sfPHPView} Decorate content with "C:\wamp\www\ucs_control\apps\backend\templates/layout.php"
+May 07 15:25:56 symfony [info] {sfPHPView} Render "C:\wamp\www\ucs_control\apps\backend\templates/layout.php"
+May 07 15:25:56 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php on line 336 (Cannot modify header information - headers already sent by (output started at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php:409))
+May 07 15:25:56 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+May 07 15:25:56 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php:409))
+May 07 15:25:56 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+May 07 15:25:56 symfony [info] {sfWebDebugLogger} Configuration 34.93 ms (9)
+May 07 15:25:56 symfony [info] {sfWebDebugLogger} Factories 88.27 ms (1)
+May 07 15:25:56 symfony [info] {sfWebDebugLogger} Action "reporte/reporteEstado" 58.82 ms (1)
+May 07 15:25:56 symfony [info] {sfWebDebugLogger} Database (Doctrine) 2.68 ms (2)
+May 07 15:25:56 symfony [info] {sfWebDebugLogger} View "Success" for "reporte/reporteEstado" 110.38 ms (1)
+May 07 15:25:56 symfony [info] {sfWebResponse} Send content (40347 o)
+May 07 15:25:56 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /reporte/reporteEstado with parameters array (  'module' => 'reporte',  'action' => 'reporteEstado',)
+May 07 15:25:56 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+May 07 15:25:56 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+May 07 15:25:56 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+May 07 15:25:56 symfony [info] {reporteActions} Call "reporteActions->executeReporteEstado()"
+May 07 15:25:56 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+May 07 15:25:56 symfony [info] {Doctrine_Connection_Pgsql} query : SELECT *
+                FROM estado - ()
+May 07 15:25:56 symfony [info] {sfPHPView} Render "C:\wamp\www\ucs_control\apps\backend\modules/reporte/templates/reporteEstadoSuccess.php"
+May 07 15:25:56 symfony [info] {sfPHPView} Decorate content with "C:\wamp\www\ucs_control\apps\backend\templates/layout.php"
+May 07 15:25:56 symfony [info] {sfPHPView} Render "C:\wamp\www\ucs_control\apps\backend\templates/layout.php"
+May 07 15:25:56 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php on line 336 (Cannot modify header information - headers already sent by (output started at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php:409))
+May 07 15:25:56 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+May 07 15:25:56 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php:409))
+May 07 15:25:56 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+May 07 15:25:56 symfony [info] {sfWebDebugLogger} Configuration 31.73 ms (9)
+May 07 15:25:56 symfony [info] {sfWebDebugLogger} Factories 83.89 ms (1)
+May 07 15:25:56 symfony [info] {sfWebDebugLogger} Action "reporte/reporteEstado" 55.50 ms (1)
+May 07 15:25:56 symfony [info] {sfWebDebugLogger} Database (Doctrine) 2.57 ms (2)
+May 07 15:25:56 symfony [info] {sfWebDebugLogger} View "Success" for "reporte/reporteEstado" 115.74 ms (1)
+May 07 15:25:56 symfony [info] {sfWebResponse} Send content (40347 o)
+May 07 15:33:41 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /reporte/reporteEstado with parameters array (  'module' => 'reporte',  'action' => 'reporteEstado',)
+May 07 15:33:41 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+May 07 15:33:41 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+May 07 15:33:41 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+May 07 15:33:41 symfony [info] {reporteActions} Call "reporteActions->executeReporteEstado()"
+May 07 15:33:41 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+May 07 15:33:41 symfony [info] {Doctrine_Connection_Pgsql} query : SELECT *
+                FROM estado - ()
+May 07 15:44:23 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /reporte/reporteEstado with parameters array (  'module' => 'reporte',  'action' => 'reporteEstado',)
+May 07 15:44:23 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+May 07 15:44:23 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+May 07 15:44:23 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+May 07 15:44:23 symfony [info] {reporteActions} Call "reporteActions->executeReporteEstado()"
+May 07 15:44:24 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+May 07 15:44:24 symfony [info] {Doctrine_Connection_Pgsql} query : SELECT *
+                FROM estado - ()
+May 07 15:44:32 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /reporte/reporteEstado with parameters array (  'module' => 'reporte',  'action' => 'reporteEstado',)
+May 07 15:44:32 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+May 07 15:44:32 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+May 07 15:44:32 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+May 07 15:44:32 symfony [info] {reporteActions} Call "reporteActions->executeReporteEstado()"
+May 07 15:44:32 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+May 07 15:44:32 symfony [info] {Doctrine_Connection_Pgsql} query : SELECT *
+                FROM estado - ()
+May 07 15:45:59 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /reporte/reporteEstado with parameters array (  'module' => 'reporte',  'action' => 'reporteEstado',)
+May 07 15:45:59 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+May 07 15:45:59 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+May 07 15:45:59 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+May 07 15:45:59 symfony [info] {reporteActions} Call "reporteActions->executeReporteEstado()"
+May 07 15:45:59 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+May 07 15:45:59 symfony [info] {Doctrine_Connection_Pgsql} query : SELECT *
+                FROM estado - ()
+May 07 15:46:09 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /reporte/reporteEstado with parameters array (  'module' => 'reporte',  'action' => 'reporteEstado',)
+May 07 15:46:09 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+May 07 15:46:09 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+May 07 15:46:09 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+May 07 15:46:09 symfony [info] {reporteActions} Call "reporteActions->executeReporteEstado()"
+May 07 15:46:09 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+May 07 15:46:09 symfony [info] {Doctrine_Connection_Pgsql} query : SELECT *
+                FROM estado - ()
+May 07 15:46:09 symfony [info] {sfPHPView} Render "C:\wamp\www\ucs_control\apps\backend\modules/reporte/templates/reporteEstadoSuccess.php"
+May 07 15:46:09 symfony [notice] {sfWebDebugLogger}  Notice at C:\wamp\www\ucs_control\apps\backend\modules\reporte\templates\reporteEstadoSuccess.php on line 36 (Undefined variable: estado)
+May 07 15:46:09 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\ucs_control\apps\backend\modules\reporte\templates\reporteEstadoSuccess.php on line 36 (Invalid argument supplied for foreach())
+May 07 15:46:09 symfony [info] {sfPHPView} Decorate content with "C:\wamp\www\ucs_control\apps\backend\templates/layout.php"
+May 07 15:46:09 symfony [info] {sfPHPView} Render "C:\wamp\www\ucs_control\apps\backend\templates/layout.php"
+May 07 15:46:09 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php on line 336 (Cannot modify header information - headers already sent by (output started at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php:409))
+May 07 15:46:09 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+May 07 15:46:09 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php:409))
+May 07 15:46:09 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+May 07 15:46:09 symfony [info] {sfWebDebugLogger} Configuration 22.36 ms (9)
+May 07 15:46:09 symfony [info] {sfWebDebugLogger} Factories 91.90 ms (1)
+May 07 15:46:09 symfony [info] {sfWebDebugLogger} Action "reporte/reporteEstado" 63.22 ms (1)
+May 07 15:46:09 symfony [info] {sfWebDebugLogger} Database (Doctrine) 2.82 ms (2)
+May 07 15:46:09 symfony [info] {sfWebDebugLogger} View "Success" for "reporte/reporteEstado" 166.11 ms (1)
+May 07 15:46:09 symfony [info] {sfWebResponse} Send content (50100 o)
+May 07 15:46:09 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /reporte/reporteEstado with parameters array (  'module' => 'reporte',  'action' => 'reporteEstado',)
+May 07 15:46:09 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+May 07 15:46:09 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+May 07 15:46:09 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+May 07 15:46:09 symfony [info] {reporteActions} Call "reporteActions->executeReporteEstado()"
+May 07 15:46:09 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+May 07 15:46:09 symfony [info] {Doctrine_Connection_Pgsql} query : SELECT *
+                FROM estado - ()
+May 07 15:46:09 symfony [info] {sfPHPView} Render "C:\wamp\www\ucs_control\apps\backend\modules/reporte/templates/reporteEstadoSuccess.php"
+May 07 15:46:09 symfony [notice] {sfWebDebugLogger}  Notice at C:\wamp\www\ucs_control\apps\backend\modules\reporte\templates\reporteEstadoSuccess.php on line 36 (Undefined variable: estado)
+May 07 15:46:09 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\ucs_control\apps\backend\modules\reporte\templates\reporteEstadoSuccess.php on line 36 (Invalid argument supplied for foreach())
+May 07 15:46:10 symfony [info] {sfPHPView} Decorate content with "C:\wamp\www\ucs_control\apps\backend\templates/layout.php"
+May 07 15:46:10 symfony [info] {sfPHPView} Render "C:\wamp\www\ucs_control\apps\backend\templates/layout.php"
+May 07 15:46:10 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php on line 336 (Cannot modify header information - headers already sent by (output started at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php:409))
+May 07 15:46:10 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+May 07 15:46:10 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php:409))
+May 07 15:46:10 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+May 07 15:46:10 symfony [info] {sfWebDebugLogger} Configuration 33.17 ms (9)
+May 07 15:46:10 symfony [info] {sfWebDebugLogger} Factories 85.39 ms (1)
+May 07 15:46:10 symfony [info] {sfWebDebugLogger} Action "reporte/reporteEstado" 65.43 ms (1)
+May 07 15:46:10 symfony [info] {sfWebDebugLogger} Database (Doctrine) 3.40 ms (2)
+May 07 15:46:10 symfony [info] {sfWebDebugLogger} View "Success" for "reporte/reporteEstado" 152.11 ms (1)
+May 07 15:46:10 symfony [info] {sfWebResponse} Send content (50068 o)
+May 07 15:47:00 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /reporte/reporteEstado with parameters array (  'module' => 'reporte',  'action' => 'reporteEstado',)
+May 07 15:47:00 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+May 07 15:47:00 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+May 07 15:47:00 symfony [info] {sfBasicSecurityFilter} Action "reporte/reporteEstado" requires authentication, forwarding to "default/login"
+May 07 15:47:01 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+May 07 15:47:01 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+May 07 15:47:01 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+May 07 15:47:01 symfony [info] {defaultActions} Call "defaultActions->executeLogin()"
+May 07 15:47:01 symfony [info] {sfPHPView} Render "C:\wamp\www\ucs_control\apps\backend\modules/default/templates/loginSuccess.php"
+May 07 15:47:01 symfony [info] {sfPHPView} Decorate content with "C:\wamp\www\ucs_control\apps\backend\templates/layout.php"
+May 07 15:47:01 symfony [info] {sfPHPView} Render "C:\wamp\www\ucs_control\apps\backend\templates/layout.php"
+May 07 15:47:01 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php on line 336 (Cannot modify header information - headers already sent by (output started at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php:409))
+May 07 15:47:01 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+May 07 15:47:01 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php:409))
+May 07 15:47:01 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+May 07 15:47:01 symfony [info] {sfWebDebugLogger} Configuration 82.45 ms (12)
+May 07 15:47:01 symfony [info] {sfWebDebugLogger} Factories 194.24 ms (1)
+May 07 15:47:01 symfony [info] {sfWebDebugLogger} Action "default/login" 0.53 ms (1)
+May 07 15:47:01 symfony [info] {sfWebDebugLogger} View "Success" for "default/login" 377.18 ms (1)
+May 07 15:47:01 symfony [info] {sfWebResponse} Send content (34317 o)
+May 07 15:47:02 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /reporte/reporteEstado with parameters array (  'module' => 'reporte',  'action' => 'reporteEstado',)
+May 07 15:47:02 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+May 07 15:47:02 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+May 07 15:47:02 symfony [info] {sfBasicSecurityFilter} Action "reporte/reporteEstado" requires authentication, forwarding to "default/login"
+May 07 15:47:02 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+May 07 15:47:02 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+May 07 15:47:02 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+May 07 15:47:02 symfony [info] {defaultActions} Call "defaultActions->executeLogin()"
+May 07 15:47:02 symfony [info] {sfPHPView} Render "C:\wamp\www\ucs_control\apps\backend\modules/default/templates/loginSuccess.php"
+May 07 15:47:02 symfony [info] {sfPHPView} Decorate content with "C:\wamp\www\ucs_control\apps\backend\templates/layout.php"
+May 07 15:47:02 symfony [info] {sfPHPView} Render "C:\wamp\www\ucs_control\apps\backend\templates/layout.php"
+May 07 15:47:02 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php on line 336 (Cannot modify header information - headers already sent by (output started at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php:409))
+May 07 15:47:02 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+May 07 15:47:02 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php:409))
+May 07 15:47:02 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+May 07 15:47:02 symfony [info] {sfWebDebugLogger} Configuration 57.92 ms (12)
+May 07 15:47:02 symfony [info] {sfWebDebugLogger} Factories 98.18 ms (1)
+May 07 15:47:02 symfony [info] {sfWebDebugLogger} Action "default/login" 0.50 ms (1)
+May 07 15:47:02 symfony [info] {sfWebDebugLogger} View "Success" for "default/login" 161.17 ms (1)
+May 07 15:47:02 symfony [info] {sfWebResponse} Send content (34595 o)
