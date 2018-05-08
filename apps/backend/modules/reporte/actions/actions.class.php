@@ -95,7 +95,7 @@ Certificación que se expide al solicitante por parte de la Secretaría General 
 <p align="right"><i><strong>sin sello no tiene válidez</strong></i>
 </p></font>
 </td></tr>
-<tr><td align="center"><br/><br/><strong>Prof. Ana Y. Montenegro N.<br/>Secretaria General UCS</strong>
+<tr><td align="center"><strong>Prof. Ana Y. Montenegro N.<br/>Secretaria General UCS</strong>
 </td></tr>
 </table>
         </font>';
