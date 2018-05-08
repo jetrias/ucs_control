@@ -26,7 +26,7 @@
             <div id="sf_admin_content">
                 <script type="text/javascript" src="/control/sfDependentSelectPlugin/js/SelectDependiente.min.js"></script>
                 <div class="sf_admin_form">
-                    <form method="get" action="/control/backend.php/reporte/MostrarReporteEstado" enctype="multipart/form-data"><input type="hidden" name="sf_method" value="put" />
+                    <form target="_blank" method="get" action="/control/backend.php/reporte/MostrarReporteEstado" enctype="multipart/form-data"><input type="hidden" name="sf_method" value="put" />
                         <div class="ui-helper-clearfix"></div>
                         <div id="sf_admin_form_tab_menu">
                             <br><br><br>
