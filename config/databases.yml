@@ -5,6 +5,6 @@ all:
   doctrine:
     class: sfDoctrineDatabase
     param:
-      dsn:      pgsql:host=localhost;dbname=sige
+      dsn:      pgsql:host=10.70.219.98;dbname=sige
       username: postgres
       password: post321gres
