@@ -27,7 +27,6 @@ class reporteActions extends sfActions
   }
   public function executeMostrarReporteEstado(sfWebRequest $request){
       ini_set('max_execution_time', 300);
-      //ini_set('memory_limit', '16M');
         $this->estado = $this->getRequestParameter('estado');
         $this->estudiantes = EstudianteTable::obtener_estudiante_estado($this->estado);
         $config = sfTCPDFPluginConfigHandler::loadConfig();
@@ -45,7 +44,7 @@ class reporteActions extends sfActions
         $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
         $pdf->setFontSubsetting(true);
         $pdf->SetFont('dejavusans', '', 8, '', true);
-        $pdf->AddPage();
+        $pdf->AddPage('P', 'Legal');
         $style = array(
             'border' => 2,
             'vpadding' => 'auto',
@@ -89,7 +88,6 @@ class reporteActions extends sfActions
 <table><tr><td>
 <p align="justify">
 La escala de calificaciones es del 1 al 20, siendo la mínima aprobatoria de 12 puntos.
-
 Certificación que se expide al solicitante por parte de la Secretaría General de la Universidad de la Ciencias de la Salud “Hugo Chávez Frías”, a los Ocho (8) días del mes de mayo del año Dos Mil Dieciocho (2018).
 </p>
 </td></tr></table><br/>
@@ -102,13 +100,10 @@ Certificación que se expide al solicitante por parte de la Secretaría General 
 </table>
         </font>';
         $pdf->writeHTML($html2, true, 0, true, true);
-        $pdf->AddPage();
+        $pdf->AddPage('P', 'Legal');
     endforeach;
         //$pdf->writeHTML($html2, true, 0, true, true);
         $pdf->Output('notas.pdf', 'I');
         throw new sfStopException();
-     // echo $this->estado;
-     // print_r($this->estudiantes);
-      exit();
   }
 }
