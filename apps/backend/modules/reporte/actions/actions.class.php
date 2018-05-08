@@ -44,7 +44,7 @@ class reporteActions extends sfActions
         $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
         $pdf->setFontSubsetting(true);
         $pdf->SetFont('dejavusans', '', 8, '', true);
-        $pdf->AddPage('P', 'Legal');
+        $pdf->AddPage('P', 'A4');
         $style = array(
             'border' => 2,
             'vpadding' => 'auto',
@@ -100,7 +100,7 @@ Certificación que se expide al solicitante por parte de la Secretaría General 
 </table>
         </font>';
         $pdf->writeHTML($html2, true, 0, true, true);
-        $pdf->AddPage('P', 'Legal');
+        $pdf->AddPage('P', 'A4');
     endforeach;
         //$pdf->writeHTML($html2, true, 0, true, true);
         $pdf->Output('notas.pdf', 'I');
