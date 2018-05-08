@@ -26,6 +26,7 @@ class reporteActions extends sfActions
       
   }
   public function executeMostrarReporteEstado(sfWebRequest $request){
+      ini_set('max_execution_time', 300);
         $this->estado = $this->getRequestParameter('estado');
         $this->estudiantes = EstudianteTable::obtener_estudiante_estado($this->estado);
         $config = sfTCPDFPluginConfigHandler::loadConfig();
