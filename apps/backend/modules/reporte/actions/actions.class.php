@@ -88,7 +88,7 @@ class reporteActions extends sfActions
 <p align="justify">
 La escala de calificaciones es del 1 al 20, siendo la mínima aprobatoria de 12 puntos.
 
-Certificación que se expide al solicitante por parte de la Secretaría General de la Universidad de la Ciencias de la Salud “Hugo Chávez Frías”, a los Veintiún (21) días del mes de abril del año Dos Mil Diecisiete (2017).
+Certificación que se expide al solicitante por parte de la Secretaría General de la Universidad de la Ciencias de la Salud “Hugo Chávez Frías”, a los Ocho (8) días del mes de mayo del año Dos Mil Dieciocho (2018).
 </p>
 </td></tr></table><br/>
 <table><tr><td><font size="8"><i>IM/AM</i>
