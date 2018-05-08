@@ -71,7 +71,7 @@ class reporteActions extends sfActions
             </table></font><br>
             <font size="8">
             <table border="1">
-            <tr><td width="3%" align="center">N</td><td width="15%" align="center">CÓDIGO</td><td width="61%" align="center">UNIDAD CURRÍCULAR</td><td width="15%" align="center">PERÍODO<br>LECTIVO</td><td width="6%" align="center">NOTA</td></tr>';
+            <tr><td width="3%" align="center">N</td><td width="15%" align="center">CÓDIGO</td><td width="66%" align="center">UNIDAD CURRÍCULAR</td><td width="10%" align="center">PERÍODO<br>LECTIVO</td><td width="6%" align="center">NOTA</td></tr>';
         $notas = NotasTable::getNotasGrado2($data['id']);
         $nro = 0;
         foreach ($notas as $data):
