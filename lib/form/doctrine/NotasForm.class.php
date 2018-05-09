@@ -15,7 +15,7 @@ class NotasForm extends BaseNotasForm
       unset($this['estudiante_id']);
        $this->widgetSchema['unidad_curricular_id'] = new sfWidgetFormDoctrineChoice(array(
                  'model'     => 'UnidadCurricular',
-                 'table_method'=>'getUi',
+                 //'table_method'=>'getUi',
                  'add_empty' => false,
 ));
        $this->widgetSchema['periodo'] = new sfWidgetFormInput();
