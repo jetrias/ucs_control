@@ -57,7 +57,7 @@ class reporteActions extends sfActions
         foreach($this->estudiantes as $data):
          $html2 = '<br><br><font size="8"><table>
             <tr><td align="left"><img src="images/logo_ucs.jpg" width="300" /></td><td align="right" ><font size="8">República Bolivariana de Venezuela<br> 
-            Universidad de las Ciencias de la Salud <br><b>"HUGO CHÁVEZ FRÍAS"</b><br> SECRETARÍA GENERAL <br> CONTROL DE ESTUDIOS</font></td></tr>
+            Universidad de las Ciencias de la Salud <br><b>"HUGO CHÁVEZ FRÍAS"</b><br> SECRETARÍA GENERAL <br> Dirección General de Control de Estudios</font></td></tr>
             <tr><td colspan="2" align="center"><b>CERTIFICACIÓN DE CALIFICACIONES</b></td></tr>
             <tr><td colspan="2"><p style="text-align: justify"><br>
        Quien suscribe, la Secretaría General de la Universidad de las Ciencias de la Salud “Hugo Chávez Frías”,
@@ -77,7 +77,7 @@ class reporteActions extends sfActions
             $nro++;
             $html2.='<tr><td align="center">' . $nro . '</td>
             <td align="center">' . $data['cod_ubv'] . '</td>
-            <td align="center">' . $data['descripcion'] . '</td>
+            <td>' . ucwords(strtolower($data['descripcion'])) . '</td>
             <td align="center">' . $data['periodo'] . '</td>
             <td align="center">' . $data['nota'] . '</td>
             </tr>';
@@ -91,8 +91,8 @@ La escala de calificaciones es del 1 al 20, siendo la mínima aprobatoria de 12 
 Certificación que se expide al solicitante por parte de la Secretaría General de la Universidad de la Ciencias de la Salud “Hugo Chávez Frías”, a los Ocho (8) días del mes de mayo del año Dos Mil Dieciocho (2018).
 </p>
 </td></tr></table><br/>
-<table><tr><td><font size="8"><i>IM/AM</i>
-<p align="right"><i><strong>sin sello no tiene válidez</strong></i>
+<table><tr><td><font size="8"><i>AM/IM</i>
+<p align="right"><i><strong>Sin sello no tiene válidez</strong></i>
 </p></font>
 </td></tr>
 <tr><td align="center"><strong>Prof. Ana Y. Montenegro N.<br/>Secretaria General UCS</strong>
