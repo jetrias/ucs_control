@@ -77,7 +77,7 @@ class reporteActions extends sfActions
             $nro++;
             $html2.='<tr><td align="center">' . $nro . '</td>
             <td align="center">' . $data['cod_ubv'] . '</td>
-            <td>' . ucwords(strtolower($data['descripcion'])) . '</td>
+            <td>' . mb_convert_case($data['descripcion'], MB_CASE_TITLE, "utf8") . '</td>
             <td align="center">' . $data['periodo'] . '</td>
             <td align="center">' . $data['nota'] . '</td>
             </tr>';
