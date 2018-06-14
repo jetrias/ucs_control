@@ -4243,3 +4243,319 @@ Mar 09 14:12:52 symfony [info] {Doctrine_Connection_Pgsql} query : select a.*,b.
                 left join parroquia h on a.parroquia_id=h.id
                 where a.id=34386 - ()
 Mar 09 14:12:52 symfony [notice] {sfWebDebugLogger}  Notice at C:\wamp\www\ucs_control\apps\estudiante\modules\reporte\actions\actions.class.php on line 897 (Undefined variable: persona)
+Jun 14 12:01:23 symfony [info] {sfPatternRouting} Match route "estudiante_edit" (/estudiante/:id/edit.:sf_format) for /estudiante/13914/edit with parameters array (  'module' => 'estudiante',  'action' => 'edit',  'sf_format' => 'html',  'id' => '13914',)
+Jun 14 12:01:23 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jun 14 12:01:23 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Jun 14 12:01:23 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 14 12:01:23 symfony [info] {estudianteActions} Call "estudianteActions->executeEdit()"
+Jun 14 12:01:24 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Jun 14 12:01:24 symfony [info] {Doctrine_Connection_Statement} execute : SELECT e.id AS e__id, e.tipo_identificacion AS e__tipo_identificacion, e.identificacion AS e__identificacion, e.primer_nombre AS e__primer_nombre, e.segundo_nombre AS e__segundo_nombre, e.primer_apellido AS e__primer_apellido, e.segundo_apellido AS e__segundo_apellido, e.sexo_id AS e__sexo_id, e.fecha_nacimiento AS e__fecha_nacimiento, e.pais_origen_id AS e__pais_origen_id, e.estado_id AS e__estado_id, e.municipio_id AS e__municipio_id, e.parroquia_id AS e__parroquia_id, e.direccion AS e__direccion, e.punto_referencia AS e__punto_referencia, e.asic_estado_id AS e__asic_estado_id, e.asic_municipio_id AS e__asic_municipio_id, e.asic_id AS e__asic_id, e.telefono AS e__telefono, e.telefono_casa AS e__telefono_casa, e.correo_electronico AS e__correo_electronico, e.persona_contacto AS e__persona_contacto, e.estado_civil_id AS e__estado_civil_id, e.n_hijos AS e__n_hijos, e.ano_curso AS e__ano_curso, e.cohorte AS e__cohorte, e.etnia_indigena_id AS e__etnia_indigena_id, e.elam AS e__elam, e.idmatricula AS e__idmatricula, e.trabaja AS e__trabaja, e.lugar AS e__lugar, e.horario AS e__horario, e.ingresos AS e__ingresos, e.telefono_trabajo AS e__telefono_trabajo, e.centro_poblado_id AS e__centro_poblado_id, e.foto AS e__foto, e.tipo_empresa AS e__tipo_empresa, e.estatus AS e__estatus, e.banco AS e__banco, e.tipo_cuenta AS e__tipo_cuenta, e.cuenta AS e__cuenta, e.cta_social AS e__cta_social, e.cta_personal AS e__cta_personal, e.no_cta AS e__no_cta, e.n_ingreso AS e__n_ingreso, e.opsu AS e__opsu, e.postulado AS e__postulado, e.registro AS e__registro, e.verificado AS e__verificado, e.fecha_verificacion AS e__fecha_verificacion, e.notas AS e__notas, e.pnf AS e__pnf, e.codigo_tlf_id AS e__codigo_tlf_id, e.codigo_tlf_casa_id AS e__codigo_tlf_casa_id, e.parentesco AS e__parentesco, e.codigo_tlf_contacto AS e__codigo_tlf_contacto, e.telefono_contacto AS e__telefono_contacto, e.situacion_academica AS e__situacion_academica, e.carnet_patria AS e__carnet_patria, e.serial_carnet_patria AS e__serial_carnet_patria FROM estudiante e WHERE (e.id = ?) - (13914)
+Jun 14 12:01:24 symfony [info] {sfPHPView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/editSuccess.php"
+Jun 14 12:01:24 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\apps\estudiante\modules/estudiante/templates/_assets.php"
+Jun 14 12:01:24 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_flashes.php"
+Jun 14 12:01:24 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_header.php"
+Jun 14 12:01:24 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form.php"
+Jun 14 12:01:24 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_actions.php"
+Jun 14 12:01:24 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\apps\estudiante\modules/estudiante/templates/_form_fieldset.php"
+Jun 14 12:01:24 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:24 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:24 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:24 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:24 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:24 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:24 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:24 symfony [info] {Doctrine_Connection_Pgsql} query : SELECT s.id AS s__id, s.descripcion AS s__descripcion FROM sexo s - ()
+Jun 14 12:01:24 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:24 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:24 symfony [notice] {sfWebDebugLogger}  Notice at C:\wamp\www\symfony-1.4.20\lib\plugins\sfDoctrinePlugin\lib\widget\sfWidgetFormDoctrineChoice.class.php on line 84 (Uninitialized string offset: 1)
+Jun 14 12:01:24 symfony [info] {Doctrine_Connection_Pgsql} query : SELECT p.id AS p__id, p.descripcion AS p__descripcion, p.iso AS p__iso FROM pais_origen p ORDER BY 2  - ()
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\apps\estudiante\modules/estudiante/templates/_form_fieldset.php"
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:25 symfony [info] {Doctrine_Connection_Pgsql} query : SELECT e.id AS e__id, e.descripcion AS e__descripcion FROM estado e - ()
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:25 symfony [info] {Doctrine_Connection_Statement} execute : SELECT m.id AS m__id, m.descripcion AS m__descripcion, m.estado_id AS m__estado_id, m.municipio_codigo AS m__municipio_codigo FROM municipio m WHERE (m.id = ?) LIMIT 1 - (101)
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:25 symfony [info] {Doctrine_Connection_Statement} execute : SELECT p.id AS p__id, p.descripcion AS p__descripcion, p.municipio_id AS p__municipio_id, p.estado_codigo AS p__estado_codigo, p.municipio_codigo AS p__municipio_codigo, p.parroquia_codigo AS p__parroquia_codigo FROM parroquia p WHERE (p.id = ?) LIMIT 1 - (10117)
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:25 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.descripcion AS c__descripcion, c.estado_codigo AS c__estado_codigo, c.municipio_codigo AS c__municipio_codigo, c.parroquia_codigo AS c__parroquia_codigo, c.parroquia_id AS c__parroquia_id, c.id AS c__id, c.centro_codigo AS c__centro_codigo FROM centro_poblado c WHERE (c.id = ?) LIMIT 1 - (1011700001)
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\apps\estudiante\modules/estudiante/templates/_form_fieldset.php"
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:25 symfony [info] {Doctrine_Connection_Pgsql} query : SELECT c.id AS c__id, c.codigo AS c__codigo, c.tipo AS c__tipo FROM codigo_tlf c - ()
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:25 symfony [info] {Doctrine_Connection_Pgsql} query : SELECT c.id AS c__id, c.codigo AS c__codigo, c.tipo AS c__tipo FROM codigo_tlf c - ()
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:25 symfony [info] {Doctrine_Connection_Pgsql} query : SELECT c.id AS c__id, c.codigo AS c__codigo, c.tipo AS c__tipo FROM codigo_tlf c - ()
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\apps\estudiante\modules/estudiante/templates/_form_fieldset.php"
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:25 symfony [info] {Doctrine_Connection_Pgsql} query : SELECT e.id AS e__id, e.descripcion AS e__descripcion FROM estado_civil e - ()
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:25 symfony [info] {Doctrine_Connection_Pgsql} query : SELECT e.id AS e__id, e.descripcion AS e__descripcion FROM etnia_indigena e - ()
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\apps\estudiante\modules/estudiante/templates/_form_fieldset.php"
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\apps\estudiante\modules/estudiante/templates/_form_fieldset.php"
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\apps\estudiante\modules/estudiante/templates/_form_fieldset.php"
+Jun 14 12:01:25 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:25 symfony [info] {Doctrine_Connection_Pgsql} query : SELECT a.id AS a__id, a.descripcion AS a__descripcion, a.municipio_id AS a__municipio_id, a.estado_id AS a__estado_id, a.parroquia_id AS a__parroquia_id FROM asic a - ()
+Jun 14 12:01:26 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:01:26 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\symfony-1.4.20\lib\exception\sfException.class.php on line 107 (Cannot modify header information - headers already sent by (output started at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php:409))
+Jun 14 12:01:26 symfony [err] {InvalidArgumentException} Widget "pnf_id" does not exist.
+Jun 14 12:01:26 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\symfony-1.4.20\lib\exception\sfException.class.php on line 161 (Cannot modify header information - headers already sent by (output started at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php:409))
+Jun 14 12:01:27 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php on line 336 (Cannot modify header information - headers already sent by (output started at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php:409))
+Jun 14 12:01:27 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Jun 14 12:01:27 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php:409))
+Jun 14 12:01:27 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jun 14 12:01:27 symfony [info] {sfWebDebugLogger} Configuration 2321.87 ms (11)
+Jun 14 12:01:27 symfony [info] {sfWebDebugLogger} Factories 423.54 ms (1)
+Jun 14 12:01:27 symfony [info] {sfWebDebugLogger} Action "estudiante/edit" 195.34 ms (1)
+Jun 14 12:01:27 symfony [info] {sfWebDebugLogger} Database (Doctrine) 34.80 ms (14)
+Jun 14 12:01:27 symfony [info] {sfWebDebugLogger} View "Success" for "estudiante/edit" 2974.60 ms (1)
+Jun 14 12:01:27 symfony [info] {sfWebDebugLogger} Partial "estudiante/_assets" 6.64 ms (1)
+Jun 14 12:01:27 symfony [info] {sfWebDebugLogger} Partial "estudiante/_flashes" 1.33 ms (1)
+Jun 14 12:01:27 symfony [info] {sfWebDebugLogger} Partial "estudiante/_form_header" 1.58 ms (1)
+Jun 14 12:01:27 symfony [info] {sfWebDebugLogger} Partial "estudiante/_form" 2843.92 ms (1)
+Jun 14 12:01:27 symfony [info] {sfWebDebugLogger} Partial "estudiante/_form_actions" 41.53 ms (1)
+Jun 14 12:01:27 symfony [info] {sfWebDebugLogger} Partial "estudiante/_form_fieldset" 1039.31 ms (6)
+Jun 14 12:01:27 symfony [info] {sfWebDebugLogger} Partial "estudiante/_form_field" 2581.84 ms (39)
+Jun 14 12:02:01 symfony [info] {sfPatternRouting} Match route "estudiante_edit" (/estudiante/:id/edit.:sf_format) for /estudiante/13914/edit with parameters array (  'module' => 'estudiante',  'action' => 'edit',  'sf_format' => 'html',  'id' => '13914',)
+Jun 14 12:02:02 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jun 14 12:02:02 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Jun 14 12:02:02 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 14 12:02:02 symfony [info] {estudianteActions} Call "estudianteActions->executeEdit()"
+Jun 14 12:02:02 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Jun 14 12:02:02 symfony [info] {Doctrine_Connection_Statement} execute : SELECT e.id AS e__id, e.tipo_identificacion AS e__tipo_identificacion, e.identificacion AS e__identificacion, e.primer_nombre AS e__primer_nombre, e.segundo_nombre AS e__segundo_nombre, e.primer_apellido AS e__primer_apellido, e.segundo_apellido AS e__segundo_apellido, e.sexo_id AS e__sexo_id, e.fecha_nacimiento AS e__fecha_nacimiento, e.pais_origen_id AS e__pais_origen_id, e.estado_id AS e__estado_id, e.municipio_id AS e__municipio_id, e.parroquia_id AS e__parroquia_id, e.direccion AS e__direccion, e.punto_referencia AS e__punto_referencia, e.asic_estado_id AS e__asic_estado_id, e.asic_municipio_id AS e__asic_municipio_id, e.asic_id AS e__asic_id, e.telefono AS e__telefono, e.telefono_casa AS e__telefono_casa, e.correo_electronico AS e__correo_electronico, e.persona_contacto AS e__persona_contacto, e.estado_civil_id AS e__estado_civil_id, e.n_hijos AS e__n_hijos, e.ano_curso AS e__ano_curso, e.cohorte AS e__cohorte, e.etnia_indigena_id AS e__etnia_indigena_id, e.elam AS e__elam, e.idmatricula AS e__idmatricula, e.trabaja AS e__trabaja, e.lugar AS e__lugar, e.horario AS e__horario, e.ingresos AS e__ingresos, e.telefono_trabajo AS e__telefono_trabajo, e.centro_poblado_id AS e__centro_poblado_id, e.foto AS e__foto, e.tipo_empresa AS e__tipo_empresa, e.estatus AS e__estatus, e.banco AS e__banco, e.tipo_cuenta AS e__tipo_cuenta, e.cuenta AS e__cuenta, e.cta_social AS e__cta_social, e.cta_personal AS e__cta_personal, e.no_cta AS e__no_cta, e.n_ingreso AS e__n_ingreso, e.opsu AS e__opsu, e.postulado AS e__postulado, e.registro AS e__registro, e.verificado AS e__verificado, e.fecha_verificacion AS e__fecha_verificacion, e.notas AS e__notas, e.pnf AS e__pnf, e.codigo_tlf_id AS e__codigo_tlf_id, e.codigo_tlf_casa_id AS e__codigo_tlf_casa_id, e.parentesco AS e__parentesco, e.codigo_tlf_contacto AS e__codigo_tlf_contacto, e.telefono_contacto AS e__telefono_contacto, e.situacion_academica AS e__situacion_academica, e.carnet_patria AS e__carnet_patria, e.serial_carnet_patria AS e__serial_carnet_patria FROM estudiante e WHERE (e.id = ?) - (13914)
+Jun 14 12:02:02 symfony [info] {sfPHPView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/editSuccess.php"
+Jun 14 12:02:02 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\apps\estudiante\modules/estudiante/templates/_assets.php"
+Jun 14 12:02:02 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_flashes.php"
+Jun 14 12:02:02 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_header.php"
+Jun 14 12:02:02 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form.php"
+Jun 14 12:02:02 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_actions.php"
+Jun 14 12:02:02 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\apps\estudiante\modules/estudiante/templates/_form_fieldset.php"
+Jun 14 12:02:02 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:02 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:02 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:02 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:02 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:02 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:02 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:02 symfony [info] {Doctrine_Connection_Pgsql} query : SELECT s.id AS s__id, s.descripcion AS s__descripcion FROM sexo s - ()
+Jun 14 12:02:02 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:02 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:02 symfony [notice] {sfWebDebugLogger}  Notice at C:\wamp\www\symfony-1.4.20\lib\plugins\sfDoctrinePlugin\lib\widget\sfWidgetFormDoctrineChoice.class.php on line 84 (Uninitialized string offset: 1)
+Jun 14 12:02:02 symfony [info] {Doctrine_Connection_Pgsql} query : SELECT p.id AS p__id, p.descripcion AS p__descripcion, p.iso AS p__iso FROM pais_origen p ORDER BY 2  - ()
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\apps\estudiante\modules/estudiante/templates/_form_fieldset.php"
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:03 symfony [info] {Doctrine_Connection_Pgsql} query : SELECT e.id AS e__id, e.descripcion AS e__descripcion FROM estado e - ()
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:03 symfony [info] {Doctrine_Connection_Statement} execute : SELECT m.id AS m__id, m.descripcion AS m__descripcion, m.estado_id AS m__estado_id, m.municipio_codigo AS m__municipio_codigo FROM municipio m WHERE (m.id = ?) LIMIT 1 - (101)
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:03 symfony [info] {Doctrine_Connection_Statement} execute : SELECT p.id AS p__id, p.descripcion AS p__descripcion, p.municipio_id AS p__municipio_id, p.estado_codigo AS p__estado_codigo, p.municipio_codigo AS p__municipio_codigo, p.parroquia_codigo AS p__parroquia_codigo FROM parroquia p WHERE (p.id = ?) LIMIT 1 - (10117)
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:03 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.descripcion AS c__descripcion, c.estado_codigo AS c__estado_codigo, c.municipio_codigo AS c__municipio_codigo, c.parroquia_codigo AS c__parroquia_codigo, c.parroquia_id AS c__parroquia_id, c.id AS c__id, c.centro_codigo AS c__centro_codigo FROM centro_poblado c WHERE (c.id = ?) LIMIT 1 - (1011700001)
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\apps\estudiante\modules/estudiante/templates/_form_fieldset.php"
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:03 symfony [info] {Doctrine_Connection_Pgsql} query : SELECT c.id AS c__id, c.codigo AS c__codigo, c.tipo AS c__tipo FROM codigo_tlf c - ()
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:03 symfony [info] {Doctrine_Connection_Pgsql} query : SELECT c.id AS c__id, c.codigo AS c__codigo, c.tipo AS c__tipo FROM codigo_tlf c - ()
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:03 symfony [info] {Doctrine_Connection_Pgsql} query : SELECT c.id AS c__id, c.codigo AS c__codigo, c.tipo AS c__tipo FROM codigo_tlf c - ()
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\apps\estudiante\modules/estudiante/templates/_form_fieldset.php"
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:03 symfony [info] {Doctrine_Connection_Pgsql} query : SELECT e.id AS e__id, e.descripcion AS e__descripcion FROM estado_civil e - ()
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:03 symfony [info] {Doctrine_Connection_Pgsql} query : SELECT e.id AS e__id, e.descripcion AS e__descripcion FROM etnia_indigena e - ()
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\apps\estudiante\modules/estudiante/templates/_form_fieldset.php"
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\apps\estudiante\modules/estudiante/templates/_form_fieldset.php"
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\apps\estudiante\modules/estudiante/templates/_form_fieldset.php"
+Jun 14 12:02:03 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_field.php"
+Jun 14 12:02:03 symfony [info] {Doctrine_Connection_Pgsql} query : SELECT a.id AS a__id, a.descripcion AS a__descripcion, a.municipio_id AS a__municipio_id, a.estado_id AS a__estado_id, a.parroquia_id AS a__parroquia_id FROM asic a - ()
+Jun 14 12:02:05 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_actions.php"
+Jun 14 12:02:05 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_form_footer.php"
+Jun 14 12:02:05 symfony [info] {sfPartialView} Render "C:\wamp\www\ucs_control\cache\estudiante\dev\modules/autoEstudiante/templates/_themeswitcher.php"
+Jun 14 12:02:05 symfony [info] {sfPHPView} Decorate content with "C:\wamp\www\ucs_control\apps\estudiante\templates/layout.php"
+Jun 14 12:02:05 symfony [info] {sfPHPView} Render "C:\wamp\www\ucs_control\apps\estudiante\templates/layout.php"
+Jun 14 12:02:05 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php on line 336 (Cannot modify header information - headers already sent by (output started at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php:409))
+Jun 14 12:02:05 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Jun 14 12:02:05 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php:409))
+Jun 14 12:02:05 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jun 14 12:02:05 symfony [info] {sfWebDebugLogger} Configuration 744.12 ms (12)
+Jun 14 12:02:05 symfony [info] {sfWebDebugLogger} Factories 71.85 ms (1)
+Jun 14 12:02:05 symfony [info] {sfWebDebugLogger} Action "estudiante/edit" 140.66 ms (1)
+Jun 14 12:02:05 symfony [info] {sfWebDebugLogger} Database (Doctrine) 34.05 ms (14)
+Jun 14 12:02:05 symfony [info] {sfWebDebugLogger} View "Success" for "estudiante/edit" 2739.21 ms (1)
+Jun 14 12:02:05 symfony [info] {sfWebDebugLogger} Partial "estudiante/_assets" 2.34 ms (1)
+Jun 14 12:02:05 symfony [info] {sfWebDebugLogger} Partial "estudiante/_flashes" 1.52 ms (1)
+Jun 14 12:02:05 symfony [info] {sfWebDebugLogger} Partial "estudiante/_form_header" 1.72 ms (1)
+Jun 14 12:02:05 symfony [info] {sfWebDebugLogger} Partial "estudiante/_form" 2583.24 ms (1)
+Jun 14 12:02:05 symfony [info] {sfWebDebugLogger} Partial "estudiante/_form_actions" 6.97 ms (2)
+Jun 14 12:02:05 symfony [info] {sfWebDebugLogger} Partial "estudiante/_form_fieldset" 2553.36 ms (7)
+Jun 14 12:02:05 symfony [info] {sfWebDebugLogger} Partial "estudiante/_form_field" 2519.01 ms (39)
+Jun 14 12:02:05 symfony [info] {sfWebDebugLogger} Partial "estudiante/_form_footer" 1.44 ms (1)
+Jun 14 12:02:05 symfony [info] {sfWebDebugLogger} Partial "estudiante/_themeswitcher" 1.23 ms (1)
+Jun 14 12:02:05 symfony [info] {sfWebResponse} Send content (736191 o)
+Jun 14 12:02:07 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /sfDependentSelectAuto/_ajax with parameters array (  'module' => 'sfDependentSelectAuto',  'action' => '_ajax',)
+Jun 14 12:02:07 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jun 14 12:02:07 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Jun 14 12:02:07 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 14 12:02:07 symfony [info] {sfDependentSelectAutoActions} Call "sfDependentSelectAutoActions->execute_ajax()"
+Jun 14 12:02:07 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Jun 14 12:02:07 symfony [info] {Doctrine_Connection_Statement} execute : SELECT m.id AS m__id, m.descripcion AS m__descripcion, m.estado_id AS m__estado_id, m.municipio_codigo AS m__municipio_codigo FROM municipio m WHERE (m.estado_id = ?) - (1)
+Jun 14 12:02:07 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Jun 14 12:02:07 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php:409))
+Jun 14 12:02:07 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jun 14 12:02:07 symfony [info] {sfWebDebugLogger} Configuration 70.97 ms (9)
+Jun 14 12:02:07 symfony [info] {sfWebDebugLogger} Factories 62.31 ms (1)
+Jun 14 12:02:07 symfony [info] {sfWebDebugLogger} Action "sfDependentSelectAuto/_ajax" 92.84 ms (1)
+Jun 14 12:02:07 symfony [info] {sfWebDebugLogger} Database (Doctrine) 2.19 ms (2)
+Jun 14 12:02:07 symfony [info] {sfWebDebugLogger} View "None" for "sfDependentSelectAuto/_ajax" 0.01 ms (1)
+Jun 14 12:02:07 symfony [info] {sfWebResponse} Send content (20 o)
+Jun 14 12:02:07 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /sfDependentSelectAuto/_ajax with parameters array (  'module' => 'sfDependentSelectAuto',  'action' => '_ajax',)
+Jun 14 12:02:07 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jun 14 12:02:07 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Jun 14 12:02:07 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 14 12:02:07 symfony [info] {sfDependentSelectAutoActions} Call "sfDependentSelectAutoActions->execute_ajax()"
+Jun 14 12:02:07 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Jun 14 12:02:07 symfony [info] {Doctrine_Connection_Statement} execute : SELECT p.id AS p__id, p.descripcion AS p__descripcion, p.municipio_id AS p__municipio_id, p.estado_codigo AS p__estado_codigo, p.municipio_codigo AS p__municipio_codigo, p.parroquia_codigo AS p__parroquia_codigo FROM parroquia p WHERE (p.municipio_id = ?) - (101)
+Jun 14 12:02:07 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Jun 14 12:02:07 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php:409))
+Jun 14 12:02:07 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jun 14 12:02:07 symfony [info] {sfWebDebugLogger} Configuration 18.30 ms (8)
+Jun 14 12:02:07 symfony [info] {sfWebDebugLogger} Factories 52.42 ms (1)
+Jun 14 12:02:07 symfony [info] {sfWebDebugLogger} Action "sfDependentSelectAuto/_ajax" 121.78 ms (1)
+Jun 14 12:02:07 symfony [info] {sfWebDebugLogger} Database (Doctrine) 5.51 ms (2)
+Jun 14 12:02:07 symfony [info] {sfWebDebugLogger} View "None" for "sfDependentSelectAuto/_ajax" 0.01 ms (1)
+Jun 14 12:02:07 symfony [info] {sfWebResponse} Send content (445 o)
+Jun 14 12:02:08 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /sfDependentSelectAuto/_ajax with parameters array (  'module' => 'sfDependentSelectAuto',  'action' => '_ajax',)
+Jun 14 12:02:08 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jun 14 12:02:08 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Jun 14 12:02:08 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 14 12:02:08 symfony [info] {sfDependentSelectAutoActions} Call "sfDependentSelectAutoActions->execute_ajax()"
+Jun 14 12:02:08 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Jun 14 12:02:08 symfony [info] {Doctrine_Connection_Statement} execute : SELECT m.id AS m__id, m.descripcion AS m__descripcion, m.estado_id AS m__estado_id, m.municipio_codigo AS m__municipio_codigo FROM municipio m WHERE (m.id = ?) LIMIT 1 - (101)
+Jun 14 12:02:08 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Jun 14 12:02:08 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php:409))
+Jun 14 12:02:08 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jun 14 12:02:08 symfony [info] {sfWebDebugLogger} Configuration 17.98 ms (8)
+Jun 14 12:02:08 symfony [info] {sfWebDebugLogger} Factories 53.95 ms (1)
+Jun 14 12:02:08 symfony [info] {sfWebDebugLogger} Action "sfDependentSelectAuto/_ajax" 81.86 ms (1)
+Jun 14 12:02:08 symfony [info] {sfWebDebugLogger} Database (Doctrine) 2.41 ms (2)
+Jun 14 12:02:08 symfony [info] {sfWebDebugLogger} View "None" for "sfDependentSelectAuto/_ajax" 0.02 ms (1)
+Jun 14 12:02:08 symfony [info] {sfWebResponse} Send content (1 o)
+Jun 14 12:02:08 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /sfDependentSelectAuto/_ajax with parameters array (  'module' => 'sfDependentSelectAuto',  'action' => '_ajax',)
+Jun 14 12:02:08 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jun 14 12:02:08 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Jun 14 12:02:08 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 14 12:02:08 symfony [info] {sfDependentSelectAutoActions} Call "sfDependentSelectAutoActions->execute_ajax()"
+Jun 14 12:02:08 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Jun 14 12:02:08 symfony [info] {Doctrine_Connection_Statement} execute : SELECT m.id AS m__id, m.descripcion AS m__descripcion, m.estado_id AS m__estado_id, m.municipio_codigo AS m__municipio_codigo FROM municipio m WHERE (m.estado_id = ?) - (1)
+Jun 14 12:02:08 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Jun 14 12:02:08 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php:409))
+Jun 14 12:02:08 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jun 14 12:02:08 symfony [info] {sfWebDebugLogger} Configuration 19.63 ms (8)
+Jun 14 12:02:08 symfony [info] {sfWebDebugLogger} Factories 55.22 ms (1)
+Jun 14 12:02:08 symfony [info] {sfWebDebugLogger} Action "sfDependentSelectAuto/_ajax" 87.78 ms (1)
+Jun 14 12:02:08 symfony [info] {sfWebDebugLogger} Database (Doctrine) 2.24 ms (2)
+Jun 14 12:02:08 symfony [info] {sfWebDebugLogger} View "None" for "sfDependentSelectAuto/_ajax" 0.01 ms (1)
+Jun 14 12:02:08 symfony [info] {sfWebResponse} Send content (20 o)
+Jun 14 12:02:08 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /sfDependentSelectAuto/_ajax with parameters array (  'module' => 'sfDependentSelectAuto',  'action' => '_ajax',)
+Jun 14 12:02:08 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jun 14 12:02:08 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Jun 14 12:02:08 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 14 12:02:08 symfony [info] {sfDependentSelectAutoActions} Call "sfDependentSelectAutoActions->execute_ajax()"
+Jun 14 12:02:08 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Jun 14 12:02:08 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.descripcion AS c__descripcion, c.estado_codigo AS c__estado_codigo, c.municipio_codigo AS c__municipio_codigo, c.parroquia_codigo AS c__parroquia_codigo, c.parroquia_id AS c__parroquia_id, c.id AS c__id, c.centro_codigo AS c__centro_codigo FROM centro_poblado c WHERE (c.parroquia_id = ?) - (10117)
+Jun 14 12:02:08 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Jun 14 12:02:08 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php:409))
+Jun 14 12:02:08 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jun 14 12:02:08 symfony [info] {sfWebDebugLogger} Configuration 18.09 ms (8)
+Jun 14 12:02:08 symfony [info] {sfWebDebugLogger} Factories 51.29 ms (1)
+Jun 14 12:02:08 symfony [info] {sfWebDebugLogger} Action "sfDependentSelectAuto/_ajax" 85.61 ms (1)
+Jun 14 12:02:08 symfony [info] {sfWebDebugLogger} Database (Doctrine) 5.83 ms (2)
+Jun 14 12:02:08 symfony [info] {sfWebDebugLogger} View "None" for "sfDependentSelectAuto/_ajax" 0.01 ms (1)
+Jun 14 12:02:08 symfony [info] {sfWebResponse} Send content (34 o)
+Jun 14 12:02:09 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /sfDependentSelectAuto/_ajax with parameters array (  'module' => 'sfDependentSelectAuto',  'action' => '_ajax',)
+Jun 14 12:02:09 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jun 14 12:02:09 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Jun 14 12:02:09 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 14 12:02:09 symfony [info] {sfDependentSelectAutoActions} Call "sfDependentSelectAutoActions->execute_ajax()"
+Jun 14 12:02:09 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Jun 14 12:02:09 symfony [info] {Doctrine_Connection_Statement} execute : SELECT p.id AS p__id, p.descripcion AS p__descripcion, p.municipio_id AS p__municipio_id, p.estado_codigo AS p__estado_codigo, p.municipio_codigo AS p__municipio_codigo, p.parroquia_codigo AS p__parroquia_codigo FROM parroquia p WHERE (p.id = ?) LIMIT 1 - (10117)
+Jun 14 12:02:09 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Jun 14 12:02:09 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php:409))
+Jun 14 12:02:09 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jun 14 12:02:09 symfony [info] {sfWebDebugLogger} Configuration 18.11 ms (8)
+Jun 14 12:02:09 symfony [info] {sfWebDebugLogger} Factories 53.83 ms (1)
+Jun 14 12:02:09 symfony [info] {sfWebDebugLogger} Action "sfDependentSelectAuto/_ajax" 75.82 ms (1)
+Jun 14 12:02:09 symfony [info] {sfWebDebugLogger} Database (Doctrine) 2.44 ms (2)
+Jun 14 12:02:09 symfony [info] {sfWebDebugLogger} View "None" for "sfDependentSelectAuto/_ajax" 0.01 ms (1)
+Jun 14 12:02:09 symfony [info] {sfWebResponse} Send content (3 o)
+Jun 14 12:02:09 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /sfDependentSelectAuto/_ajax with parameters array (  'module' => 'sfDependentSelectAuto',  'action' => '_ajax',)
+Jun 14 12:02:09 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jun 14 12:02:09 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Jun 14 12:02:09 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 14 12:02:09 symfony [info] {sfDependentSelectAutoActions} Call "sfDependentSelectAutoActions->execute_ajax()"
+Jun 14 12:02:09 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Jun 14 12:02:09 symfony [info] {Doctrine_Connection_Statement} execute : SELECT m.id AS m__id, m.descripcion AS m__descripcion, m.estado_id AS m__estado_id, m.municipio_codigo AS m__municipio_codigo FROM municipio m WHERE (m.id = ?) LIMIT 1 - (101)
+Jun 14 12:02:09 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Jun 14 12:02:09 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php:409))
+Jun 14 12:02:09 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jun 14 12:02:09 symfony [info] {sfWebDebugLogger} Configuration 19.11 ms (8)
+Jun 14 12:02:09 symfony [info] {sfWebDebugLogger} Factories 52.11 ms (1)
+Jun 14 12:02:09 symfony [info] {sfWebDebugLogger} Action "sfDependentSelectAuto/_ajax" 74.10 ms (1)
+Jun 14 12:02:09 symfony [info] {sfWebDebugLogger} Database (Doctrine) 2.27 ms (2)
+Jun 14 12:02:09 symfony [info] {sfWebDebugLogger} View "None" for "sfDependentSelectAuto/_ajax" 0.02 ms (1)
+Jun 14 12:02:09 symfony [info] {sfWebResponse} Send content (1 o)
+Jun 14 12:02:09 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /sfDependentSelectAuto/_ajax with parameters array (  'module' => 'sfDependentSelectAuto',  'action' => '_ajax',)
+Jun 14 12:02:09 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jun 14 12:02:09 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Jun 14 12:02:09 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 14 12:02:09 symfony [info] {sfDependentSelectAutoActions} Call "sfDependentSelectAutoActions->execute_ajax()"
+Jun 14 12:02:09 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Jun 14 12:02:09 symfony [info] {Doctrine_Connection_Statement} execute : SELECT m.id AS m__id, m.descripcion AS m__descripcion, m.estado_id AS m__estado_id, m.municipio_codigo AS m__municipio_codigo FROM municipio m WHERE (m.estado_id = ?) - (1)
+Jun 14 12:02:09 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Jun 14 12:02:09 symfony [warning] {sfWebDebugLogger}  Warning at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at C:\wamp\www\symfony-1.4.20\lib\response\sfWebResponse.class.php:409))
+Jun 14 12:02:09 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jun 14 12:02:09 symfony [info] {sfWebDebugLogger} Configuration 18.80 ms (8)
+Jun 14 12:02:09 symfony [info] {sfWebDebugLogger} Factories 54.84 ms (1)
+Jun 14 12:02:09 symfony [info] {sfWebDebugLogger} Action "sfDependentSelectAuto/_ajax" 84.02 ms (1)
+Jun 14 12:02:09 symfony [info] {sfWebDebugLogger} Database (Doctrine) 2.43 ms (2)
+Jun 14 12:02:09 symfony [info] {sfWebDebugLogger} View "None" for "sfDependentSelectAuto/_ajax" 0.01 ms (1)
+Jun 14 12:02:09 symfony [info] {sfWebResponse} Send content (20 o)

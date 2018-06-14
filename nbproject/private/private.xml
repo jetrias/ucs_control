@@ -5,7 +5,9 @@
         <group>
             <file>file:/C:/wamp/www/ucs_control/lib/model/doctrine/NotasTable.class.php</file>
             <file>file:/C:/wamp/www/ucs_control/apps/backend/modules/reporte/actions/actions.class.php</file>
+            <file>file:/C:/wamp/www/ucs_control/lib/form/doctrine/EstudianteForm.class.php</file>
             <file>file:/C:/wamp/www/ucs_control/apps/backend/modules/reporte/templates/reporteEstadoSuccess.php</file>
+            <file>file:/C:/wamp/www/ucs_control/lib/form/doctrine/NotasForm.class.php</file>
         </group>
     </open-files>
 </project-private>

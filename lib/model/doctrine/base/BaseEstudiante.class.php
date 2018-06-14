@@ -59,6 +59,14 @@ Doctrine_Manager::getInstance()->bindComponent('Estudiante', 'doctrine');
  * @property date $fecha_verificacion
  * @property string $notas
  * @property string $pnf
+ * @property integer $codigo_tlf_id
+ * @property integer $codigo_tlf_casa_id
+ * @property string $parentesco
+ * @property integer $codigo_tlf_contacto
+ * @property decimal $telefono_contacto
+ * @property string $situacion_academica
+ * @property string $carnet_patria
+ * @property string $serial_carnet_patria
  * @property Estado $Estado
  * @property Asic $Asic
  * @property Municipio $Municipio
@@ -70,10 +78,13 @@ Doctrine_Manager::getInstance()->bindComponent('Estudiante', 'doctrine');
  * @property Parroquia $Parroquia
  * @property Sexo $Sexo
  * @property CentroPoblado $CentroPoblado
- * @property Doctrine_Collection $EstudioSocioeconomico
- * @property Doctrine_Collection $Notas
+ * @property CodigoTlf $CodigoTlf
+ * @property CodigoTlf $CodigoTlf_13
+ * @property CodigoTlf $CodigoTlf_14
  * @property Doctrine_Collection $OtraInformacion
  * @property Doctrine_Collection $Reclamo
+ * @property Doctrine_Collection $EstudioSocioeconomico
+ * @property Doctrine_Collection $Notas
  * 
  * @method integer             getId()                    Returns the current record's "id" value
  * @method string              getTipoIdentificacion()    Returns the current record's "tipo_identificacion" value
@@ -127,6 +138,14 @@ Doctrine_Manager::getInstance()->bindComponent('Estudiante', 'doctrine');
  * @method date                getFechaVerificacion()     Returns the current record's "fecha_verificacion" value
  * @method string              getNotas()                 Returns the current record's "notas" value
  * @method string              getPnf()                   Returns the current record's "pnf" value
+ * @method integer             getCodigoTlfId()           Returns the current record's "codigo_tlf_id" value
+ * @method integer             getCodigoTlfCasaId()       Returns the current record's "codigo_tlf_casa_id" value
+ * @method string              getParentesco()            Returns the current record's "parentesco" value
+ * @method integer             getCodigoTlfContacto()     Returns the current record's "codigo_tlf_contacto" value
+ * @method decimal             getTelefonoContacto()      Returns the current record's "telefono_contacto" value
+ * @method string              getSituacionAcademica()    Returns the current record's "situacion_academica" value
+ * @method string              getCarnetPatria()          Returns the current record's "carnet_patria" value
+ * @method string              getSerialCarnetPatria()    Returns the current record's "serial_carnet_patria" value
  * @method Estado              getEstado()                Returns the current record's "Estado" value
  * @method Asic                getAsic()                  Returns the current record's "Asic" value
  * @method Municipio           getMunicipio()             Returns the current record's "Municipio" value
@@ -138,10 +157,13 @@ Doctrine_Manager::getInstance()->bindComponent('Estudiante', 'doctrine');
  * @method Parroquia           getParroquia()             Returns the current record's "Parroquia" value
  * @method Sexo                getSexo()                  Returns the current record's "Sexo" value
  * @method CentroPoblado       getCentroPoblado()         Returns the current record's "CentroPoblado" value
- * @method Doctrine_Collection getEstudioSocioeconomico() Returns the current record's "EstudioSocioeconomico" collection
- * @method Doctrine_Collection getNotas()                 Returns the current record's "Notas" collection
+ * @method CodigoTlf           getCodigoTlf()             Returns the current record's "CodigoTlf" value
+ * @method CodigoTlf           getCodigoTlf13()           Returns the current record's "CodigoTlf_13" value
+ * @method CodigoTlf           getCodigoTlf14()           Returns the current record's "CodigoTlf_14" value
  * @method Doctrine_Collection getOtraInformacion()       Returns the current record's "OtraInformacion" collection
  * @method Doctrine_Collection getReclamo()               Returns the current record's "Reclamo" collection
+ * @method Doctrine_Collection getEstudioSocioeconomico() Returns the current record's "EstudioSocioeconomico" collection
+ * @method Doctrine_Collection getNotas()                 Returns the current record's "Notas" collection
  * @method Estudiante          setId()                    Sets the current record's "id" value
  * @method Estudiante          setTipoIdentificacion()    Sets the current record's "tipo_identificacion" value
  * @method Estudiante          setIdentificacion()        Sets the current record's "identificacion" value
@@ -194,6 +216,14 @@ Doctrine_Manager::getInstance()->bindComponent('Estudiante', 'doctrine');
  * @method Estudiante          setFechaVerificacion()     Sets the current record's "fecha_verificacion" value
  * @method Estudiante          setNotas()                 Sets the current record's "notas" value
  * @method Estudiante          setPnf()                   Sets the current record's "pnf" value
+ * @method Estudiante          setCodigoTlfId()           Sets the current record's "codigo_tlf_id" value
+ * @method Estudiante          setCodigoTlfCasaId()       Sets the current record's "codigo_tlf_casa_id" value
+ * @method Estudiante          setParentesco()            Sets the current record's "parentesco" value
+ * @method Estudiante          setCodigoTlfContacto()     Sets the current record's "codigo_tlf_contacto" value
+ * @method Estudiante          setTelefonoContacto()      Sets the current record's "telefono_contacto" value
+ * @method Estudiante          setSituacionAcademica()    Sets the current record's "situacion_academica" value
+ * @method Estudiante          setCarnetPatria()          Sets the current record's "carnet_patria" value
+ * @method Estudiante          setSerialCarnetPatria()    Sets the current record's "serial_carnet_patria" value
  * @method Estudiante          setEstado()                Sets the current record's "Estado" value
  * @method Estudiante          setAsic()                  Sets the current record's "Asic" value
  * @method Estudiante          setMunicipio()             Sets the current record's "Municipio" value
@@ -205,10 +235,13 @@ Doctrine_Manager::getInstance()->bindComponent('Estudiante', 'doctrine');
  * @method Estudiante          setParroquia()             Sets the current record's "Parroquia" value
  * @method Estudiante          setSexo()                  Sets the current record's "Sexo" value
  * @method Estudiante          setCentroPoblado()         Sets the current record's "CentroPoblado" value
- * @method Estudiante          setEstudioSocioeconomico() Sets the current record's "EstudioSocioeconomico" collection
- * @method Estudiante          setNotas()                 Sets the current record's "Notas" collection
+ * @method Estudiante          setCodigoTlf()             Sets the current record's "CodigoTlf" value
+ * @method Estudiante          setCodigoTlf13()           Sets the current record's "CodigoTlf_13" value
+ * @method Estudiante          setCodigoTlf14()           Sets the current record's "CodigoTlf_14" value
  * @method Estudiante          setOtraInformacion()       Sets the current record's "OtraInformacion" collection
  * @method Estudiante          setReclamo()               Sets the current record's "Reclamo" collection
+ * @method Estudiante          setEstudioSocioeconomico() Sets the current record's "EstudioSocioeconomico" collection
+ * @method Estudiante          setNotas()                 Sets the current record's "Notas" collection
  * 
  * @package    ucs_control
  * @subpackage model
@@ -636,6 +669,70 @@ abstract class BaseEstudiante extends sfDoctrineRecord
              'primary' => false,
              'length' => '',
              ));
+        $this->hasColumn('codigo_tlf_id', 'integer', 4, array(
+             'type' => 'integer',
+             'fixed' => 0,
+             'unsigned' => false,
+             'notnull' => false,
+             'primary' => false,
+             'length' => 4,
+             ));
+        $this->hasColumn('codigo_tlf_casa_id', 'integer', 4, array(
+             'type' => 'integer',
+             'fixed' => 0,
+             'unsigned' => false,
+             'notnull' => false,
+             'primary' => false,
+             'length' => 4,
+             ));
+        $this->hasColumn('parentesco', 'string', null, array(
+             'type' => 'string',
+             'fixed' => 0,
+             'unsigned' => false,
+             'notnull' => false,
+             'primary' => false,
+             'length' => '',
+             ));
+        $this->hasColumn('codigo_tlf_contacto', 'integer', 4, array(
+             'type' => 'integer',
+             'fixed' => 0,
+             'unsigned' => false,
+             'notnull' => false,
+             'primary' => false,
+             'length' => 4,
+             ));
+        $this->hasColumn('telefono_contacto', 'decimal', 18, array(
+             'type' => 'decimal',
+             'fixed' => 0,
+             'unsigned' => false,
+             'notnull' => false,
+             'primary' => false,
+             'length' => 18,
+             ));
+        $this->hasColumn('situacion_academica', 'string', null, array(
+             'type' => 'string',
+             'fixed' => 0,
+             'unsigned' => false,
+             'notnull' => false,
+             'primary' => false,
+             'length' => '',
+             ));
+        $this->hasColumn('carnet_patria', 'string', null, array(
+             'type' => 'string',
+             'fixed' => 0,
+             'unsigned' => false,
+             'notnull' => false,
+             'primary' => false,
+             'length' => '',
+             ));
+        $this->hasColumn('serial_carnet_patria', 'string', null, array(
+             'type' => 'string',
+             'fixed' => 0,
+             'unsigned' => false,
+             'notnull' => false,
+             'primary' => false,
+             'length' => '',
+             ));
     }
 
     public function setUp()
@@ -685,19 +782,31 @@ abstract class BaseEstudiante extends sfDoctrineRecord
              'local' => 'centro_poblado_id',
              'foreign' => 'id'));
 
-        $this->hasMany('EstudioSocioeconomico', array(
-             'local' => 'id',
-             'foreign' => 'estudiante_id'));
+        $this->hasOne('CodigoTlf', array(
+             'local' => 'codigo_tlf_id',
+             'foreign' => 'id'));
 
-        $this->hasMany('Notas', array(
-             'local' => 'id',
-             'foreign' => 'estudiante_id'));
+        $this->hasOne('CodigoTlf as CodigoTlf_13', array(
+             'local' => 'codigo_tlf_casa_id',
+             'foreign' => 'id'));
+
+        $this->hasOne('CodigoTlf as CodigoTlf_14', array(
+             'local' => 'codigo_tlf_contacto',
+             'foreign' => 'id'));
 
         $this->hasMany('OtraInformacion', array(
              'local' => 'id',
              'foreign' => 'estudiante_id'));
 
         $this->hasMany('Reclamo', array(
+             'local' => 'id',
+             'foreign' => 'estudiante_id'));
+
+        $this->hasMany('EstudioSocioeconomico', array(
+             'local' => 'id',
+             'foreign' => 'estudiante_id'));
+
+        $this->hasMany('Notas', array(
              'local' => 'id',
              'foreign' => 'estudiante_id'));
     }

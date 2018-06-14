@@ -13,7 +13,12 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
+      fields:  
+          identificacion: {label: Número de Identificación}
+          direccion: {label: Dirección Exacta}
+          telefono: {label: Teléfono Personal}
+          n_hijos: {label: Número de Hijos}
+          ano_curso: {label: Ratificación de Matrícula, help: Año que cursa}
       list:    
           table_method: obtenerEstudiante
           display: [tipo_identificacion,identificacion,primer_nombre,segundo_nombre]
@@ -25,11 +30,12 @@ generator:
           title: ESTUDIANTE
           display:
               DATOS PERSONALES: [tipo_identificacion, identificacion, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido,sexo_id,fecha_nacimiento,pais_origen_id,foto]
-              UBICACIÓN: [estado_id, municipio_id, parroquia_id,centro_poblado_id,direccion,punto_referencia]
-              CONTACTO: [telefono, telefono_casa, correo_electronico,persona_contacto]
-              DE INTERES: [estado_civil_id, n_hijos,ano_curso, etnia_indigena_id,elam]
+              UBICACIÓN DE HABITACIÓN: [estado_id, municipio_id, parroquia_id,centro_poblado_id,direccion,punto_referencia]
+              CONTACTO: [codigo_tlf_id,telefono, codigo_tlf_casa_id,telefono_casa, correo_electronico,persona_contacto,parentesco,codigo_tlf_contacto,telefono_contacto]
+              DE INTERÉS: [estado_civil_id, n_hijos,ano_curso, etnia_indigena_id]
               INFORMACIÓN LABORAL: [trabaja,horario,lugar,ingresos,telefono_trabajo,tipo_empresa]
-              INFORMACIÓN BANCARIA: [no_cta,cta_social,cta_personal,banco, tipo_cuenta,cuenta]
+              INFORMACIÓN BANCARIA: [cta_social,cta_personal,banco, tipo_cuenta,cuenta]
+              DATOS DOCENTES: [asic_estado_id,asic_municipio_id,asic_id,ano_curso,pnf,estatus,elam]
           actions:
                _save:
       new:     ~
