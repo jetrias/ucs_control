@@ -233,6 +233,17 @@ class EstudianteForm extends BaseEstudianteForm {
        
 
 
+            /*             * ********         VALIDO CAMPOS          ********* */
+        $this->validatorSchema['cuenta'] = new sfValidatorAnd(array(
+                new sfValidatorString(
+                        array('min_length' => 0, 'max_length' => 20), array('min_length' => 'Debe ser mayor a 4 caracteres.', 'max_length' => 'Debe ser menor a 13 caracteres.')
+                ),
+                new sfValidatorRegex(
+                        array('pattern' => '/^[0-9]+$/'), array('invalid' => 'Solo debe colocar Letras y Numeros')
+                ),
+                    ), array());
+            /*             * ********         FIN VALIDO CAMPOS          ********* */
+        
 
 //
 //$this->widgetSchema['nombre']->setAttribute('readonly', 'readonly');
