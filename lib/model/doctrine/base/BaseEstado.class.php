@@ -11,15 +11,18 @@ Doctrine_Manager::getInstance()->bindComponent('Estado', 'doctrine');
  * @property string $descripcion
  * @property Doctrine_Collection $Estudiante
  * @property Doctrine_Collection $Estudiante_5
+ * @property Doctrine_Collection $Preinscripcion
  * 
- * @method integer             getId()           Returns the current record's "id" value
- * @method string              getDescripcion()  Returns the current record's "descripcion" value
- * @method Doctrine_Collection getEstudiante()   Returns the current record's "Estudiante" collection
- * @method Doctrine_Collection getEstudiante5()  Returns the current record's "Estudiante_5" collection
- * @method Estado              setId()           Sets the current record's "id" value
- * @method Estado              setDescripcion()  Sets the current record's "descripcion" value
- * @method Estado              setEstudiante()   Sets the current record's "Estudiante" collection
- * @method Estado              setEstudiante5()  Sets the current record's "Estudiante_5" collection
+ * @method integer             getId()             Returns the current record's "id" value
+ * @method string              getDescripcion()    Returns the current record's "descripcion" value
+ * @method Doctrine_Collection getEstudiante()     Returns the current record's "Estudiante" collection
+ * @method Doctrine_Collection getEstudiante5()    Returns the current record's "Estudiante_5" collection
+ * @method Doctrine_Collection getPreinscripcion() Returns the current record's "Preinscripcion" collection
+ * @method Estado              setId()             Sets the current record's "id" value
+ * @method Estado              setDescripcion()    Sets the current record's "descripcion" value
+ * @method Estado              setEstudiante()     Sets the current record's "Estudiante" collection
+ * @method Estado              setEstudiante5()    Sets the current record's "Estudiante_5" collection
+ * @method Estado              setPreinscripcion() Sets the current record's "Preinscripcion" collection
  * 
  * @package    ucs_control
  * @subpackage model
@@ -57,6 +60,10 @@ abstract class BaseEstado extends sfDoctrineRecord
              'foreign' => 'asic_estado_id'));
 
         $this->hasMany('Estudiante as Estudiante_5', array(
+             'local' => 'id',
+             'foreign' => 'estado_id'));
+
+        $this->hasMany('Preinscripcion', array(
              'local' => 'id',
              'foreign' => 'estado_id'));
     }

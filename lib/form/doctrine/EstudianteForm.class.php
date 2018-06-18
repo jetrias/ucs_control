@@ -76,6 +76,21 @@ class EstudianteForm extends BaseEstudianteForm {
         } else {
             $foto = $this->getObject()->getFoto();
         }
+        $this->widgetSchema['estatus'] = new sfWidgetFormChoice(array(
+                'choices' => array('' => 'Seleccione',
+                    "ACTIVO" => "ACTIVO", "PASIVO" => "PASIVO", "REGULAR" => "REGULAR",'CONTINUANTE CON ARRASTRE' => 'CONTINUANTE CON ARRASTRE', 'NUEVO INGRESO' => 'NUEVO INGRESO',  'REINGRESO' => 'REINGRESO', 'REPITENTE' => 'REPITENTE')));
+        $this->widgetSchema['ano_curso'] = new sfWidgetFormChoice(array(
+            'choices' => array('' => 'Seleccione',
+                "1" => "1", "2" => "2", "3" => "3",  "4" => "4", "5" => "5", "6" => "6")));
+                $this->widgetSchema['pnf'] = new sfWidgetFormChoice(array(
+            'choices' => array('' => 'Seleccione',
+                "MIC" => "MIC", 
+                "ODONTOLOGIA" => "ODONTOLOGIA", 
+                "FISIOTERAPIA" => "FISIOTERAPIA",  
+                "ENFERMERIA INTEGRAL COMUNITARIA" => "ENFERMERIA INTEGRAL COMUNITARIA", 
+                "TERAPIA OCUPACIONAL" => "TERAPIA OCUPACIONAL", 
+                "RADIOIMAGENOLOGÍA" => "RADIOIMAGENOLOGÍA",
+                "FONOAUDIOLOGÍA" => "FONOAUDIOLOGÍA")));
         $this->widgetSchema['foto'] = new sfWidgetFormInputFileEditable(array(
             'label' => 'Foto',
             'file_src' => '/control/uploads/fotos/original/s_' . $foto,
@@ -123,7 +138,7 @@ class EstudianteForm extends BaseEstudianteForm {
             'choices' => array('' => 'Seleccione',
                 "AHORROS" => "AHORROS", "CORRIENTE" => "CORRIENTE")));
         if (sfConfig::get("sf_app") == 'estudiante') {
-            unset($this['pnf'],$this['ano_curso'],$this['idmatricula'], $this['estatus'], $this['cta_social'], $this['cta_personal'], $this['n_ingreso'], $this['opsu'], $this['postulado'], $this['registro'], $this['verificado'], $this['fecha_verificacion'], $this['asic_estado_id'], $this['asic_municipio_id'], $this['asic_parroquia_id'],$this['notas']);
+            unset($this['idmatricula'],$this['cta_social'], $this['cta_personal'], $this['n_ingreso'], $this['opsu'], $this['postulado'], $this['registro'], $this['verificado'], $this['fecha_verificacion'],$this['notas']);
         /*  $this->validatorSchema['cuenta'] = new sfValidatorAnd(array(
         new sfValidatorInteger(
             array('min'=> 99999,                         'max' => 99999999999999999999),
@@ -155,6 +170,21 @@ class EstudianteForm extends BaseEstudianteForm {
                     ), array(), array('required' => 'Por favor coloque su 1er apellido.'));
             $this->validatorSchema['correo_electronico'] = new sfValidatorEmail(array(
                     ), array('required' => 'Por favor coloque su Correo Electronico.'));
+            $this->widgetSchema['asic_estado_id'] = new sfWidgetFormDoctrineChoice(array(
+                'model' => 'Estado',
+                'add_empty' => 'Seleccione estado'));
+            $this->widgetSchema['asic_municipio_id'] = new sfWidgetFormDoctrineDependentSelect(array(
+                'model' => 'Municipio',
+                'depends' => 'Estado',
+                'widget' => 'estudiante_asic_estado_id',
+                'add_empty' => 'Seleccione municipio',
+                'ajax' => true,));
+            $this->widgetSchema['asic_id'] = new sfWidgetFormDoctrineDependentSelect(array(
+                'model' => 'Asic',
+                'depends' => 'Municipio',
+                'widget' => 'estudiante_asic_municipio_id',
+                'add_empty' => 'Seleccione Asic',
+                'ajax' => true,));
         } else {
         $this->widgetSchema['ano_curso'] = new sfWidgetFormChoice(array(
             'choices' => array('' => 'Seleccione',
@@ -194,7 +224,7 @@ class EstudianteForm extends BaseEstudianteForm {
                 'date_widget' => new sfWidgetFormDate(array('format' => '%day% %month% %year%',))));
             $this->widgetSchema['estatus'] = new sfWidgetFormChoice(array(
                 'choices' => array('' => 'Seleccione',
-                    "ACTIVO" => "ACTIVO", "PASIVO" => "PASIVO", 'CONTINUANTE' => 'CONTINUANTE', 'CONTINUANTE CON ARRASTRE' => 'CONTINUANTE CON ARRASTRE', 'NUEVO INGRESO' => 'NUEVO INGRESO', 'PENDIENTE EVAF' => 'PENDIENTE EVAF', 'REINGRESO' => 'REINGRESO', 'REPITENTE' => 'REPITENTE')));
+                    "ACTIVO" => "ACTIVO", "PASIVO" => "PASIVO", "REGULAR" => "REGULAR",'CONTINUANTE CON ARRASTRE' => 'CONTINUANTE CON ARRASTRE', 'NUEVO INGRESO' => 'NUEVO INGRESO',  'REINGRESO' => 'REINGRESO', 'REPITENTE' => 'REPITENTE')));
         }
         if (sfConfig::get("sf_app") == 'frontend') {
             unset($this['idmatricula'], $this['estatus'], $this['cta_social'], $this['cta_personal'],$this['notas']);
@@ -203,6 +233,17 @@ class EstudianteForm extends BaseEstudianteForm {
        
 
 
+            /*             * ********         VALIDO CAMPOS          ********* */
+        $this->validatorSchema['cuenta'] = new sfValidatorAnd(array(
+                new sfValidatorString(
+                        array('min_length' => 0, 'max_length' => 20), array('min_length' => 'Debe ser mayor a 4 caracteres.', 'max_length' => 'Debe ser menor a 13 caracteres.')
+                ),
+                new sfValidatorRegex(
+                        array('pattern' => '/^[0-9]+$/'), array('invalid' => 'Solo debe colocar Letras y Numeros')
+                ),
+                    ), array());
+            /*             * ********         FIN VALIDO CAMPOS          ********* */
+        
 
 //
 //$this->widgetSchema['nombre']->setAttribute('readonly', 'readonly');

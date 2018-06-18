@@ -13,6 +13,7 @@ Doctrine_Manager::getInstance()->bindComponent('Municipio', 'doctrine');
  * @property integer $municipio_codigo
  * @property Doctrine_Collection $Estudiante
  * @property Doctrine_Collection $Estudiante_7
+ * @property Doctrine_Collection $Preinscripcion
  * 
  * @method integer             getId()               Returns the current record's "id" value
  * @method string              getDescripcion()      Returns the current record's "descripcion" value
@@ -20,12 +21,14 @@ Doctrine_Manager::getInstance()->bindComponent('Municipio', 'doctrine');
  * @method integer             getMunicipioCodigo()  Returns the current record's "municipio_codigo" value
  * @method Doctrine_Collection getEstudiante()       Returns the current record's "Estudiante" collection
  * @method Doctrine_Collection getEstudiante7()      Returns the current record's "Estudiante_7" collection
+ * @method Doctrine_Collection getPreinscripcion()   Returns the current record's "Preinscripcion" collection
  * @method Municipio           setId()               Sets the current record's "id" value
  * @method Municipio           setDescripcion()      Sets the current record's "descripcion" value
  * @method Municipio           setEstadoId()         Sets the current record's "estado_id" value
  * @method Municipio           setMunicipioCodigo()  Sets the current record's "municipio_codigo" value
  * @method Municipio           setEstudiante()       Sets the current record's "Estudiante" collection
  * @method Municipio           setEstudiante7()      Sets the current record's "Estudiante_7" collection
+ * @method Municipio           setPreinscripcion()   Sets the current record's "Preinscripcion" collection
  * 
  * @package    ucs_control
  * @subpackage model
@@ -79,6 +82,10 @@ abstract class BaseMunicipio extends sfDoctrineRecord
              'foreign' => 'asic_municipio_id'));
 
         $this->hasMany('Estudiante as Estudiante_7', array(
+             'local' => 'id',
+             'foreign' => 'municipio_id'));
+
+        $this->hasMany('Preinscripcion', array(
              'local' => 'id',
              'foreign' => 'municipio_id'));
     }

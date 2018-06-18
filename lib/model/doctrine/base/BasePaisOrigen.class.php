@@ -11,15 +11,18 @@ Doctrine_Manager::getInstance()->bindComponent('PaisOrigen', 'doctrine');
  * @property string $descripcion
  * @property string $iso
  * @property Doctrine_Collection $Estudiante
+ * @property Doctrine_Collection $Preinscripcion
  * 
- * @method integer             getId()          Returns the current record's "id" value
- * @method string              getDescripcion() Returns the current record's "descripcion" value
- * @method string              getIso()         Returns the current record's "iso" value
- * @method Doctrine_Collection getEstudiante()  Returns the current record's "Estudiante" collection
- * @method PaisOrigen          setId()          Sets the current record's "id" value
- * @method PaisOrigen          setDescripcion() Sets the current record's "descripcion" value
- * @method PaisOrigen          setIso()         Sets the current record's "iso" value
- * @method PaisOrigen          setEstudiante()  Sets the current record's "Estudiante" collection
+ * @method integer             getId()             Returns the current record's "id" value
+ * @method string              getDescripcion()    Returns the current record's "descripcion" value
+ * @method string              getIso()            Returns the current record's "iso" value
+ * @method Doctrine_Collection getEstudiante()     Returns the current record's "Estudiante" collection
+ * @method Doctrine_Collection getPreinscripcion() Returns the current record's "Preinscripcion" collection
+ * @method PaisOrigen          setId()             Sets the current record's "id" value
+ * @method PaisOrigen          setDescripcion()    Sets the current record's "descripcion" value
+ * @method PaisOrigen          setIso()            Sets the current record's "iso" value
+ * @method PaisOrigen          setEstudiante()     Sets the current record's "Estudiante" collection
+ * @method PaisOrigen          setPreinscripcion() Sets the current record's "Preinscripcion" collection
  * 
  * @package    ucs_control
  * @subpackage model
@@ -61,6 +64,10 @@ abstract class BasePaisOrigen extends sfDoctrineRecord
     {
         parent::setUp();
         $this->hasMany('Estudiante', array(
+             'local' => 'id',
+             'foreign' => 'pais_origen_id'));
+
+        $this->hasMany('Preinscripcion', array(
              'local' => 'id',
              'foreign' => 'pais_origen_id'));
     }
