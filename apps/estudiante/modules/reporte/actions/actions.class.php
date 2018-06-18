@@ -903,7 +903,7 @@ NOTA: deben ser impresos dos (02) ejemplares de cada formato.</p></td></tr></tab
         imagettftext($base, 14, 0, $x_str_nombre-$largo_estado, $y_str_cedula, $black, $normal, $this->data[0]['estado']);
 ////foto
         $foto_path=$server.'control/uploads/fotos/original/';
-        $image_foto = imagecreatefromjpeg($foto_path.'s_4556471e33e53c90326d9dac1edc712cd8c1fdf2.jpg');
+        $image_foto = imagecreatefromjpeg($foto_path.'s_'.$this->data[0]['foto']);
         $x_foto = 465;
         $y_foto = 165;
         imagecopyresampled($base, $image_foto, $x_foto, $y_foto, 0, 0, 159, 172, imagesx($image_foto), imagesy($image_foto));
