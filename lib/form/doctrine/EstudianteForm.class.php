@@ -11,6 +11,11 @@
 class EstudianteForm extends BaseEstudianteForm {
 
     public function configure() {
+//        $this->widgetSchema['codigo_tlf_id'] = new sfWidgetFormDoctrineChoice(array(
+//                'model'     => 'codigoTlf',
+//                'add_empty' => false,
+//                'query'=>"tipo='C'"
+//        ));
          $this->widgetSchema['tipo_identificacion'] = new sfWidgetFormChoice(array(
             'choices' => array('' => 'Seleccione',
                 "V" => "V", "E" => "E", "P" => "P")));

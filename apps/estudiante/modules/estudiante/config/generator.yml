@@ -19,6 +19,12 @@ generator:
           telefono: {label: Teléfono Personal}
           n_hijos: {label: Número de Hijos}
           ano_curso: {label: Ratificación de Matrícula, help: Año que cursa}
+          codigo_tlf_id: {label: Código teléfono Personal}
+          codigo_tlf_casa_id: {label: Código Teléfono Casa}
+          codigo_tlf_contacto: {label: Código Teléfono Contacto}
+          telefono_casa: {label: Teléfono de Casa}
+          telefono_contacto: {label: Teléfono de Contacto}
+          correo_electronico: {label: Correo Electrónico}
       list:    
           table_method: obtenerEstudiante
           display: [tipo_identificacion,identificacion,primer_nombre,segundo_nombre]
