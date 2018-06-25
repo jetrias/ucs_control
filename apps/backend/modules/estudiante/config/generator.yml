@@ -57,7 +57,7 @@ generator:
               DATOS DOCENTES: [asic_estado_id,asic_municipio_id,asic_id,ano_curso,pnf,estatus,elam,cohorte,n_ingreso,opsu,postulado,registro,verificado,fecha_verificacion,notas]
           actions:
                _save:
-               _back_to_list:
+               _list:
       new:          
           title: ESTUDIANTE
           display:
@@ -70,4 +70,4 @@ generator:
               DATOS DOCENTES: [asic_estado_id,asic_municipio_id,asic_id,ano_curso,pnf,estatus,elam]
           actions:
                _save:
-               _back_to_list:
+               _list:
