@@ -11,6 +11,11 @@
 class EstudianteForm extends BaseEstudianteForm {
 
     public function configure() {
+//        $this->widgetSchema['codigo_tlf_id'] = new sfWidgetFormDoctrineChoice(array(
+//                'model'     => 'codigoTlf',
+//                'add_empty' => false,
+//                'query'=>"tipo='C'"
+//        ));
          $this->widgetSchema['tipo_identificacion'] = new sfWidgetFormChoice(array(
             'choices' => array('' => 'Seleccione',
                 "V" => "V", "E" => "E", "P" => "P")));
@@ -78,7 +83,7 @@ class EstudianteForm extends BaseEstudianteForm {
         }
         $this->widgetSchema['estatus'] = new sfWidgetFormChoice(array(
                 'choices' => array('' => 'Seleccione',
-                    "ACTIVO" => "ACTIVO", "PASIVO" => "PASIVO", "REGULAR" => "REGULAR",'CONTINUANTE CON ARRASTRE' => 'CONTINUANTE CON ARRASTRE', 'NUEVO INGRESO' => 'NUEVO INGRESO',  'REINGRESO' => 'REINGRESO', 'REPITENTE' => 'REPITENTE')));
+                    "ACTIVO" => "ACTIVO", "PASIVO" => "PASIVO", "REGULAR" => "REGULAR",'CONTINUANTE CON ARRASTRE' => 'CONTINUANTE CON ARRASTRE', 'NUEVO INGRESO' => 'NUEVO INGRESO',  'REINGRESO' => 'REINGRESO', 'REPITENTE' => 'REPITENTE', 'DESERTOR' => 'DESERTOR')));
         $this->widgetSchema['ano_curso'] = new sfWidgetFormChoice(array(
             'choices' => array('' => 'Seleccione',
                 "1" => "1", "2" => "2", "3" => "3",  "4" => "4", "5" => "5", "6" => "6")));
