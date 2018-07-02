@@ -287,8 +287,8 @@ DIRECCIÓN GENERAL DE ADMISIÓN, CONTROL DE ESTUDIOS Y REGISTROS ACADEMICOS<br>
             por medio de la presente hace constar que el(la) ciudadano(a) <b> ' . $data[0]['primer_nombre'] . ' ' . $data[0]['segundo_nombre'] . ' 
             ' . $data[0]['primer_apellido'] . ' ' . $data[0]['segundo_apellido'] . '</b>, titular del Documento de 
                 Identidad CI/PP N°<b>' . $data[0]['identificacion'] . '</b>, es estudiante activo (a)  del Programa Nacional de Formación en 
-                Medicina Integral Comunitaria (PNFMIC). Actualmente, cursa el Período Académico 2018-I, comprendido entre el 08-01-2018
-                al 30-03-2018, en el siguiente horario: lunes a sábado de 8:00 a.m. a 12:00 a.m., y de 1:00 p.m., a 5:00 p.m.,  en la Parroquia 
+                Medicina Integral Comunitaria (PNFMIC). Actualmente, cursa el Período Académico 2018-I, comprendido entre el 02-04-2018
+                al 31-07-2018, en el siguiente horario: lunes a sábado de 8:00 a.m. a 12:00 a.m., y de 1:00 p.m., a 5:00 p.m.,  en la Parroquia 
                 ' . $data[0]['parroquia'] . ', del Municipio ' . $data[0]['municipio'] . ' del  Estado ' . strtoupper($data[0]['estado']) . '. 
             Constancia que se emite  a los ' . $dia . ' días del mes de ' . $mes_letras . ' de ' . $year . '.
 <br>
