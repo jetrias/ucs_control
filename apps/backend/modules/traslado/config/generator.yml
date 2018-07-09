@@ -1,0 +1,33 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           traslado
+    theme:                 jroller
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          traslado
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:    
+          table_method: obtenerTraslado
+          display: [estado,municipio,asic,tipo_traslado,estatus_expediente,observacion]
+          
+      filter:  
+          class: false
+      form:    ~
+      edit:    
+          display: [estado_emisor_id ,municipio_emisor_id,asic_emisor_id,estado_receptor_id,municipio_receptor_id,asic_receptor_id,fecha_emision,fecha_recepcion,tipo_traslado,estatus_expediente,observacion]
+          actions:
+               _save:
+               _list:
+      new:   
+          display: [estado_emisor_id ,municipio_emisor_id,asic_emisor_id,estado_receptor_id,municipio_receptor_id,asic_receptor_id,fecha_emision,fecha_recepcion,tipo_traslado,estatus_expediente,observacion]
+          actions:
+               _save:
+               _list:

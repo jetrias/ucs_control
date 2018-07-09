@@ -18,7 +18,7 @@ generator:
           direccion: {label: Dirección Exacta}
           telefono: {label: Teléfono Personal}
           n_hijos: {label: Número de Hijos}
-          ano_curso: {label: Ratificación de Matrícula, help: Año que cursa}
+          ano_curso: {label: Año que cursa, help: Ratificación de Matrícula}
           codigo_tlf_id: {label: Código teléfono Personal}
           codigo_tlf_casa_id: {label: Código Teléfono Casa}
           codigo_tlf_contacto: {label: Código Teléfono Contacto}
@@ -27,6 +27,17 @@ generator:
           correo_electronico: {label: Correo Electrónico}
           carnet_patria: {label: Código del Carné de la Patria}
           serial_carnet_patria: {label: Serial del Carné de la Patria}
+          asic_estado_id: {label: Estado del ASIC}
+          asic_municipio_id: {label: Municipio del ASIC}
+          asic_parroquia_id: {label: Parroquia del ASIC}
+          elam: {label: ELAM}
+          pnf: {label: PNF que cursa}
+          lugar: {label: Organismo}
+          ingresos: {label: Ingresos Mensuales}
+          tipo_empresa: {label: Tipo Organismo}
+          asic: {label: ASIC}
+          lgbt: {label: LGBT, help: Indique si pertenece a la comunidad LGBT}
+          afrodescendiente: {label: AFRODESCENDIENTE, help: Indique si usted es Afrodescendiente}
       list:    
           table_method: obtenerEstudiante
           display: [tipo_identificacion,identificacion,primer_nombre,segundo_nombre]
@@ -38,12 +49,12 @@ generator:
           title: ESTUDIANTE
           display:
               DATOS PERSONALES: [tipo_identificacion, identificacion, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido,sexo_id,fecha_nacimiento,pais_origen_id,foto]
-              UBICACIÓN DE HABITACIÓN: [estado_id, municipio_id, parroquia_id,centro_poblado_id,direccion,punto_referencia]
-              CONTACTO: [codigo_tlf_id,telefono, codigo_tlf_casa_id,telefono_casa, correo_electronico,persona_contacto,parentesco,codigo_tlf_contacto,telefono_contacto]
-              DE INTERÉS: [estado_civil_id, n_hijos, etnia_indigena_id,carnet_patria,serial_carnet_patria]
-              INFORMACIÓN LABORAL: [trabaja,horario,lugar,ingresos,telefono_trabajo,tipo_empresa]
-              INFORMACIÓN BANCARIA: [cta_social,cta_personal,banco, tipo_cuenta,cuenta]
-              DATOS DOCENTES: [asic_estado_id,asic_municipio_id,asic_id,ano_curso,pnf,estatus,elam]
+              DATOS DE HABITACIÓN: [estado_id, municipio_id, parroquia_id,asic_hab_id,centro_poblado_id,direccion,punto_referencia]
+              DATOS DE CONTACTO: [codigo_tlf_id,telefono, codigo_tlf_casa_id,telefono_casa, correo_electronico,persona_contacto,parentesco,codigo_tlf_contacto,telefono_contacto]
+              DATOS DE INTERÉS: [estado_civil_id, n_hijos, etnia_indigena_id,carnet_patria,serial_carnet_patria,lgbt,afrodescendiente]
+              DATOS LABORALES: [trabaja,horario,lugar,ingresos,telefono_trabajo,tipo_empresa,dedicacion_laboral]
+              DATOS BANCARIOS: [banco, tipo_cuenta,cuenta]
+              DATOS ACADÉMICOS: [asic_estado_id,asic_municipio_id,asic_id,ano_curso,pnf,estatus,elam]
           actions:
                _save:
       new:     ~

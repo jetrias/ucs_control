@@ -35,6 +35,11 @@ class estudianteActions extends autoEstudianteActions
     // has filters? (usefull for activate reset button)
     $this->hasFilters = $this->getUser()->getAttribute('estudiante.filters', $this->configuration->getFilterDefaults(), 'admin_module');
   }
+    public function executeList_traslado(sfWebRequest $request){
+        $id=$request->getParameter('id');
+        $this->getUser()->setAttribute('estudiante_id',$id);
+        $this->redirect('/control/backend.php/traslado');
+    }
     public function executeList_notas(sfWebRequest $request){
         $id=$request->getParameter('id');
         $this->getUser()->setAttribute('estudiante_id',$id);

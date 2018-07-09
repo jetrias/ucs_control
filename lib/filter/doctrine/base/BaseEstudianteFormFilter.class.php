@@ -72,6 +72,12 @@ abstract class BaseEstudianteFormFilter extends BaseFormFilterDoctrine
       'situacion_academica'  => new sfWidgetFormFilterInput(),
       'carnet_patria'        => new sfWidgetFormFilterInput(),
       'serial_carnet_patria' => new sfWidgetFormFilterInput(),
+      'afrodescendiente'     => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
+      'lgbt'                 => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
+      'dedicacion_laboral'   => new sfWidgetFormFilterInput(),
+      'asic_parroquia_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Parroquia_15'), 'add_empty' => true)),
+      'asic_hab_id'          => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Asic_16'), 'add_empty' => true)),
+      'mod_ingreso_id'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('ModalidadIngreso'), 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
@@ -134,6 +140,12 @@ abstract class BaseEstudianteFormFilter extends BaseFormFilterDoctrine
       'situacion_academica'  => new sfValidatorPass(array('required' => false)),
       'carnet_patria'        => new sfValidatorPass(array('required' => false)),
       'serial_carnet_patria' => new sfValidatorPass(array('required' => false)),
+      'afrodescendiente'     => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
+      'lgbt'                 => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
+      'dedicacion_laboral'   => new sfValidatorPass(array('required' => false)),
+      'asic_parroquia_id'    => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Parroquia_15'), 'column' => 'id')),
+      'asic_hab_id'          => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Asic_16'), 'column' => 'id')),
+      'mod_ingreso_id'       => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('ModalidadIngreso'), 'column' => 'id')),
     ));
 
     $this->widgetSchema->setNameFormat('estudiante_filters[%s]');
@@ -213,6 +225,12 @@ abstract class BaseEstudianteFormFilter extends BaseFormFilterDoctrine
       'situacion_academica'  => 'Text',
       'carnet_patria'        => 'Text',
       'serial_carnet_patria' => 'Text',
+      'afrodescendiente'     => 'Boolean',
+      'lgbt'                 => 'Boolean',
+      'dedicacion_laboral'   => 'Text',
+      'asic_parroquia_id'    => 'ForeignKey',
+      'asic_hab_id'          => 'ForeignKey',
+      'mod_ingreso_id'       => 'ForeignKey',
     );
   }
 }

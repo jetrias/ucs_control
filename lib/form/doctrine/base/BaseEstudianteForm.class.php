@@ -75,6 +75,12 @@ abstract class BaseEstudianteForm extends BaseFormDoctrine
       'situacion_academica'  => new sfWidgetFormTextarea(),
       'carnet_patria'        => new sfWidgetFormTextarea(),
       'serial_carnet_patria' => new sfWidgetFormTextarea(),
+      'afrodescendiente'     => new sfWidgetFormInputCheckbox(),
+      'lgbt'                 => new sfWidgetFormInputCheckbox(),
+      'dedicacion_laboral'   => new sfWidgetFormTextarea(),
+      'asic_parroquia_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Parroquia_15'), 'add_empty' => true)),
+      'asic_hab_id'          => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Asic_16'), 'add_empty' => true)),
+      'mod_ingreso_id'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('ModalidadIngreso'), 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
@@ -138,6 +144,12 @@ abstract class BaseEstudianteForm extends BaseFormDoctrine
       'situacion_academica'  => new sfValidatorString(array('required' => false)),
       'carnet_patria'        => new sfValidatorString(array('required' => false)),
       'serial_carnet_patria' => new sfValidatorString(array('required' => false)),
+      'afrodescendiente'     => new sfValidatorBoolean(array('required' => false)),
+      'lgbt'                 => new sfValidatorBoolean(array('required' => false)),
+      'dedicacion_laboral'   => new sfValidatorString(array('required' => false)),
+      'asic_parroquia_id'    => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Parroquia_15'), 'required' => false)),
+      'asic_hab_id'          => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Asic_16'), 'required' => false)),
+      'mod_ingreso_id'       => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('ModalidadIngreso'), 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('estudiante[%s]');

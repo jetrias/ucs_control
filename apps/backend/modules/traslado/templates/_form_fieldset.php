@@ -1,0 +1,33 @@
+<div id="sf_fieldset_<?php echo preg_replace('/[^a-z0-9_]/', '_', strtolower($fieldset)) ?>" class="ui-corner-all">
+ <table>
+  <?php 
+  $count=0;
+  foreach ($fields as $name => $field): ?>
+    <?php if ((isset($form[$name]) && $form[$name]->isHidden()) || (!isset($form[$name]) && $field->isReal())) continue ?>
+    <?php 
+     if ($count==0)
+            {
+            echo '<tr><td>';
+            $count=1;
+            }
+    include_partial('traslado/form_field', array(
+      'name'       => $name,
+      'attributes' => $field->getConfig('attributes', array()),
+      'label'      => $field->getConfig('label'),
+      'help'       => $field->getConfig('help'),
+      'form'       => $form,
+      'field'      => $field,
+      'class'      => 'sf_admin_form_row sf_admin_'.strtolower($field->getType()).' sf_admin_form_field_'.$name,
+    ));
+        if($count/3===1){
+                        echo '</td></tr><tr><td>';
+                        $count=0;
+                    }else{
+                        echo '</td><td>';
+                    }
+                    $count++;
+                    ?>
+  <?php endforeach; ?>
+      </td></tr>
+      </table>
+</div>

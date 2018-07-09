@@ -37,6 +37,20 @@ Asic:
       local: id
       foreign: asic_id
       type: many
+    Estudiante_16:
+      class: Estudiante
+      local: id
+      foreign: asic_hab_id
+      type: many
+    Traslado:
+      local: id
+      foreign: asic_emisor_id
+      type: many
+    Traslado_7:
+      class: Traslado
+      local: id
+      foreign: asic_receptor_id
+      type: many
 CentroPoblado:
   connection: doctrine
   tableName: centro_poblado
@@ -174,6 +188,15 @@ Estado:
     Preinscripcion:
       local: id
       foreign: estado_id
+      type: many
+    Traslado:
+      local: id
+      foreign: estado_emisor_id
+      type: many
+    Traslado_3:
+      class: Traslado
+      local: id
+      foreign: estado_receptor_id
       type: many
 EstadoCivil:
   connection: doctrine
@@ -560,6 +583,42 @@ Estudiante:
       unsigned: false
       notnull: false
       primary: false
+    afrodescendiente:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    lgbt:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    dedicacion_laboral:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    asic_parroquia_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    asic_hab_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    mod_ingreso_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
   relations:
     Estado:
       local: asic_estado_id
@@ -621,11 +680,25 @@ Estudiante:
       local: codigo_tlf_contacto
       foreign: id
       type: one
-    OtraInformacion:
+    Parroquia_15:
+      class: Parroquia
+      local: asic_parroquia_id
+      foreign: id
+      type: one
+    Asic_16:
+      class: Asic
+      local: asic_hab_id
+      foreign: id
+      type: one
+    ModalidadIngreso:
+      local: mod_ingreso_id
+      foreign: id
+      type: one
+    Reclamo:
       local: id
       foreign: estudiante_id
       type: many
-    Reclamo:
+    Traslado:
       local: id
       foreign: estudiante_id
       type: many
@@ -634,6 +707,10 @@ Estudiante:
       foreign: estudiante_id
       type: many
     Notas:
+      local: id
+      foreign: estudiante_id
+      type: many
+    OtraInformacion:
       local: id
       foreign: estudiante_id
       type: many
@@ -1043,6 +1120,27 @@ MaterialTecho:
       local: id
       foreign: material_techo_id
       type: many
+ModalidadIngreso:
+  connection: doctrine
+  tableName: modalidad_ingreso
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: modalidad_ingreso_id
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    Estudiante:
+      local: id
+      foreign: mod_ingreso_id
+      type: many
 Municipio:
   connection: doctrine
   tableName: municipio
@@ -1084,6 +1182,15 @@ Municipio:
     Preinscripcion:
       local: id
       foreign: municipio_id
+      type: many
+    Traslado:
+      local: id
+      foreign: municipio_emisor_id
+      type: many
+    Traslado_5:
+      class: Traslado
+      local: id
+      foreign: municipio_receptor_id
       type: many
 Notas:
   connection: doctrine
@@ -1399,6 +1506,11 @@ Parroquia:
     Estudiante:
       local: id
       foreign: parroquia_id
+      type: many
+    Estudiante_15:
+      class: Estudiante
+      local: id
+      foreign: asic_parroquia_id
       type: many
     Preinscripcion:
       local: id
@@ -2019,6 +2131,120 @@ Titulo:
       local: id
       foreign: titulo_id
       type: many
+Traslado:
+  connection: doctrine
+  tableName: traslado
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: traslado_id
+    estudiante_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    estado_emisor_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    municipio_emisor_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    asic_emisor_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    estado_receptor_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    municipio_receptor_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    asic_receptor_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    fecha_emision:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    fecha_recepcion:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    tipo_traslado:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    estatus_expediente:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    observacion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    Estado:
+      local: estado_emisor_id
+      foreign: id
+      type: one
+    Estudiante:
+      local: estudiante_id
+      foreign: id
+      type: one
+    Estado_3:
+      class: Estado
+      local: estado_receptor_id
+      foreign: id
+      type: one
+    Municipio:
+      local: municipio_emisor_id
+      foreign: id
+      type: one
+    Municipio_5:
+      class: Municipio
+      local: municipio_receptor_id
+      foreign: id
+      type: one
+    Asic:
+      local: asic_emisor_id
+      foreign: id
+      type: one
+    Asic_7:
+      class: Asic
+      local: asic_receptor_id
+      foreign: id
+      type: one
 UnidadCurricular:
   connection: doctrine
   tableName: unidad_curricular

@@ -14,12 +14,11 @@ generator:
     config:
       actions: [_notas,_activo,_licencia,_baja,_usuario]
       fields:  
-          fields:  
           identificacion: {label: Número de Identificación}
           direccion: {label: Dirección Exacta}
           telefono: {label: Teléfono Personal}
           n_hijos: {label: Número de Hijos}
-          ano_curso: {label: Ratificación de Matrícula, help: Año que cursa}
+          ano_curso: {label: Año que cursa, help: Ratificación de Matrícula}
           codigo_tlf_id: {label: Código teléfono Personal}
           codigo_tlf_casa_id: {label: Código Teléfono Casa}
           codigo_tlf_contacto: {label: Código Teléfono Contacto}
@@ -30,7 +29,18 @@ generator:
           serial_carnet_patria: {label: Serial del Carné de la Patria}
           asic_estado_id: {label: Estado del ASIC}
           asic_municipio_id: {label: Municipio del ASIC}
+          asic_parroquia_id: {label: Parroquia del ASIC}
           n_ingreso: {label: Nuevo Ingreso}
+          elam: {label: ELAM}
+          pnf: {label: PNF que cursa}
+          lugar: {label: Organismo}
+          ingresos: {label: Ingresos Mensuales}
+          tipo_empresa: {label: Tipo Organismo}
+          asic: {label: ASIC}
+          lgbt: {label: LGBT, help: Indique si pertenece a la comunidad LGBT}
+          afrodescendiente: {label: AFRODESCENDIENTE, help: Indique si usted es Afrodescendiente}
+          asic_hab_id: {label: ASIC h.}
+          mod_ingreso_id: {label: Modalidad de Ingreso}
                     
       list:    
           object_actions: 
@@ -40,21 +50,22 @@ generator:
             _activo:
             _licencia:
             _baja:
+            _traslado:
             _usuario:   
           display: [tipo_identificacion,identificacion,primer_nombre,primer_apellido,estatus,verificado]
       filter:  
           display: [tipo_identificacion,identificacion,primer_nombre,primer_apellido,estado_id,municipio_id,pais_origen_id]
       form:    ~
       edit:       
-          title: ESTUDIANTE
+          title: ESTUDIANTE %%primer_nombre%% %%primer_apellido%%
           display:
               DATOS PERSONALES: [tipo_identificacion, identificacion, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido,sexo_id,fecha_nacimiento,pais_origen_id,foto]
-              UBICACIÓN DE HABITACIÓN: [estado_id, municipio_id, parroquia_id,centro_poblado_id,direccion,punto_referencia]
-              CONTACTO: [codigo_tlf_id,telefono, codigo_tlf_casa_id,telefono_casa, correo_electronico,persona_contacto,parentesco,codigo_tlf_contacto,telefono_contacto]
-              DE INTERÉS: [estado_civil_id, n_hijos, etnia_indigena_id,carnet_patria,serial_carnet_patria]
-              INFORMACIÓN LABORAL: [trabaja,horario,lugar,ingresos,telefono_trabajo,tipo_empresa]
-              INFORMACIÓN BANCARIA: [cta_social,cta_personal,banco, tipo_cuenta,cuenta]
-              DATOS DOCENTES: [asic_estado_id,asic_municipio_id,asic_id,ano_curso,pnf,estatus,elam,cohorte,n_ingreso,opsu,postulado,registro,verificado,fecha_verificacion,notas]
+              DATOS DE HABITACIÓN: [estado_id, municipio_id, parroquia_id,asic_hab_id,centro_poblado_id,direccion,punto_referencia]
+              DATOS DE CONTACTO: [codigo_tlf_id,telefono, codigo_tlf_casa_id,telefono_casa, correo_electronico,persona_contacto,parentesco,codigo_tlf_contacto,telefono_contacto]
+              DATOS DE INTERÉS: [estado_civil_id, n_hijos, etnia_indigena_id,carnet_patria,serial_carnet_patria,lgbt,afrodescendiente]
+              DATOS LABORALES: [trabaja,horario,lugar,ingresos,telefono_trabajo,tipo_empresa,dedicacion_laboral]
+              DATOS BANCARIOS: [banco, tipo_cuenta,cuenta]
+              DATOS ACADÉMICOS: [asic_estado_id,asic_municipio_id,asic_parroquia_id,asic_id,ano_curso,pnf,estatus,elam,cohorte,n_ingreso,opsu,postulado,registro,verificado,fecha_verificacion,notas,mod_ingreso_id]
           actions:
                _save:
                _list:
@@ -62,12 +73,12 @@ generator:
           title: ESTUDIANTE
           display:
               DATOS PERSONALES: [tipo_identificacion, identificacion, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido,sexo_id,fecha_nacimiento,pais_origen_id,foto]
-              UBICACIÓN DE HABITACIÓN: [estado_id, municipio_id, parroquia_id,centro_poblado_id,direccion,punto_referencia]
-              CONTACTO: [codigo_tlf_id,telefono, codigo_tlf_casa_id,telefono_casa, correo_electronico,persona_contacto,parentesco,codigo_tlf_contacto,telefono_contacto]
-              DE INTERÉS: [estado_civil_id, n_hijos, etnia_indigena_id,carnet_patria,serial_carnet_patria]
-              INFORMACIÓN LABORAL: [trabaja,horario,lugar,ingresos,telefono_trabajo,tipo_empresa]
-              INFORMACIÓN BANCARIA: [cta_social,cta_personal,banco, tipo_cuenta,cuenta]
-              DATOS DOCENTES: [asic_estado_id,asic_municipio_id,asic_id,ano_curso,pnf,estatus,elam]
+              DATOS DE HABITACIÓN: [estado_id, municipio_id, parroquia_id,asic_hab_id,centro_poblado_id,direccion,punto_referencia]
+              DATOS DE CONTACTO: [codigo_tlf_id,telefono, codigo_tlf_casa_id,telefono_casa, correo_electronico,persona_contacto,parentesco,codigo_tlf_contacto,telefono_contacto]
+              DATOS DE INTERÉS: [estado_civil_id, n_hijos, etnia_indigena_id,carnet_patria,serial_carnet_patria,lgbt,afrodescendiente]
+              DATOS LABORALES: [trabaja,horario,lugar,ingresos,telefono_trabajo,tipo_empresa,dedicacion_laboral]
+              DATOS BANCARIOS: [banco, tipo_cuenta,cuenta]
+              DATOS ACADÉMICOS: [asic_estado_id,asic_municipio_id,asic_parroquia_id,asic_id,ano_curso,pnf,estatus,elam,cohorte,n_ingreso,opsu,postulado,registro,verificado,fecha_verificacion,notas,mod_ingreso_id]
           actions:
                _save:
                _list:

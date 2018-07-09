@@ -1,3 +1,12 @@
+traslado:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                traslado
+    module:               traslado
+    prefix_path:          /traslado
+    column:               id
+    with_wildcard_routes: true
+
 notas:
   class: sfDoctrineRouteCollection
   options:
