@@ -65,7 +65,7 @@ generator:
               DATOS DE INTERÉS: [estado_civil_id, n_hijos, etnia_indigena_id,carnet_patria,serial_carnet_patria,lgbt,afrodescendiente]
               DATOS LABORALES: [trabaja,horario,lugar,ingresos,telefono_trabajo,tipo_empresa,dedicacion_laboral]
               DATOS BANCARIOS: [banco, tipo_cuenta,cuenta]
-              DATOS ACADÉMICOS: [asic_estado_id,asic_municipio_id,asic_parroquia_id,asic_id,ano_curso,pnf,estatus,elam,cohorte,n_ingreso,opsu,postulado,registro,verificado,fecha_verificacion,notas,mod_ingreso_id]
+              DATOS ACADÉMICOS: [asic_estado_id,asic_municipio_id,asic_parroquia_id,asic_id,ano_curso,pnf,estatus,elam,cohorte,n_ingreso,convocatoria,opsu,postulado,verificado,notas]
           actions:
                _save:
                _list:
@@ -78,7 +78,7 @@ generator:
               DATOS DE INTERÉS: [estado_civil_id, n_hijos, etnia_indigena_id,carnet_patria,serial_carnet_patria,lgbt,afrodescendiente]
               DATOS LABORALES: [trabaja,horario,lugar,ingresos,telefono_trabajo,tipo_empresa,dedicacion_laboral]
               DATOS BANCARIOS: [banco, tipo_cuenta,cuenta]
-              DATOS ACADÉMICOS: [asic_estado_id,asic_municipio_id,asic_parroquia_id,asic_id,ano_curso,pnf,estatus,elam,cohorte,n_ingreso,opsu,postulado,registro,verificado,fecha_verificacion,notas,mod_ingreso_id]
+              DATOS ACADÉMICOS: [asic_estado_id,asic_municipio_id,asic_parroquia_id,asic_id,ano_curso,pnf,estatus,elam,cohorte,n_ingreso,convocatoria,opsu,postulado,verificado,notas]
           actions:
                _save:
                _list:

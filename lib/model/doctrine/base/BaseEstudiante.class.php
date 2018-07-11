@@ -73,6 +73,7 @@ Doctrine_Manager::getInstance()->bindComponent('Estudiante', 'doctrine');
  * @property integer $asic_parroquia_id
  * @property integer $asic_hab_id
  * @property integer $mod_ingreso_id
+ * @property boolean $convocatoria
  * @property Estado $Estado
  * @property Asic $Asic
  * @property Municipio $Municipio
@@ -162,6 +163,7 @@ Doctrine_Manager::getInstance()->bindComponent('Estudiante', 'doctrine');
  * @method integer             getAsicParroquiaId()       Returns the current record's "asic_parroquia_id" value
  * @method integer             getAsicHabId()             Returns the current record's "asic_hab_id" value
  * @method integer             getModIngresoId()          Returns the current record's "mod_ingreso_id" value
+ * @method boolean             getConvocatoria()          Returns the current record's "convocatoria" value
  * @method Estado              getEstado()                Returns the current record's "Estado" value
  * @method Asic                getAsic()                  Returns the current record's "Asic" value
  * @method Municipio           getMunicipio()             Returns the current record's "Municipio" value
@@ -250,6 +252,7 @@ Doctrine_Manager::getInstance()->bindComponent('Estudiante', 'doctrine');
  * @method Estudiante          setAsicParroquiaId()       Sets the current record's "asic_parroquia_id" value
  * @method Estudiante          setAsicHabId()             Sets the current record's "asic_hab_id" value
  * @method Estudiante          setModIngresoId()          Sets the current record's "mod_ingreso_id" value
+ * @method Estudiante          setConvocatoria()          Sets the current record's "convocatoria" value
  * @method Estudiante          setEstado()                Sets the current record's "Estado" value
  * @method Estudiante          setAsic()                  Sets the current record's "Asic" value
  * @method Estudiante          setMunicipio()             Sets the current record's "Municipio" value
@@ -810,6 +813,14 @@ abstract class BaseEstudiante extends sfDoctrineRecord
              'notnull' => false,
              'primary' => false,
              'length' => 4,
+             ));
+        $this->hasColumn('convocatoria', 'boolean', 1, array(
+             'type' => 'boolean',
+             'fixed' => 0,
+             'unsigned' => false,
+             'notnull' => false,
+             'primary' => false,
+             'length' => 1,
              ));
     }
 

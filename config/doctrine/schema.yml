@@ -619,6 +619,12 @@ Estudiante:
       unsigned: false
       notnull: false
       primary: false
+    convocatoria:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
   relations:
     Estado:
       local: asic_estado_id

@@ -161,6 +161,7 @@ class EstudianteForm extends BaseEstudianteForm {
         $this->widgetSchema['tipo_cuenta'] = new sfWidgetFormChoice(array(
             'choices' => array('' => 'Seleccione',
                 "AHORROS" => "AHORROS", "CORRIENTE" => "CORRIENTE")));
+        $this->widgetSchema->moveField('convocatoria', 'after', 'n_ingreso');
         if (sfConfig::get("sf_app") == 'estudiante') {
             unset($this['idmatricula'],$this['cta_social'], $this['cta_personal'], $this['n_ingreso'], $this['opsu'], $this['postulado'], $this['registro'], $this['verificado'], $this['fecha_verificacion'],$this['notas']);
             $this->widgetSchema['asic_estado_id']->setAttribute('readonly','readonly');
@@ -264,7 +265,7 @@ class EstudianteForm extends BaseEstudianteForm {
                 'date_widget' => new sfWidgetFormDate(array('format' => '%day% %month% %year%',))));
             $this->widgetSchema['estatus'] = new sfWidgetFormChoice(array(
                 'choices' => array('' => 'Seleccione',
-                    "ACTIVO" => "ACTIVO", "PASIVO" => "PASIVO", "REGULAR" => "REGULAR",'CONTINUANTE CON ARRASTRE' => 'CONTINUANTE CON ARRASTRE', 'NUEVO INGRESO' => 'NUEVO INGRESO',  'REINGRESO' => 'REINGRESO', 'REPITENTE' => 'REPITENTE')));
+                    "ACTIVO" => "ACTIVO", "PASIVO" => "PASIVO", "REGULAR" => "REGULAR",'CONTINUANTE CON ARRASTRE' => 'CONTINUANTE CON ARRASTRE', 'NUEVO INGRESO' => 'NUEVO INGRESO',  'REINGRESO' => 'REINGRESO', 'REPITENTE' => 'REPITENTE', 'DESERTOR' => 'DESERTOR', 'EGRESADO' => 'EGRESADO')));
         }
         if (sfConfig::get("sf_app") == 'frontend') {
             unset($this['idmatricula'], $this['estatus'], $this['cta_social'], $this['cta_personal'],$this['notas']);

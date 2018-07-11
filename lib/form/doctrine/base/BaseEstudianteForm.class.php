@@ -81,6 +81,7 @@ abstract class BaseEstudianteForm extends BaseFormDoctrine
       'asic_parroquia_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Parroquia_15'), 'add_empty' => true)),
       'asic_hab_id'          => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Asic_16'), 'add_empty' => true)),
       'mod_ingreso_id'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('ModalidadIngreso'), 'add_empty' => true)),
+      'convocatoria'         => new sfWidgetFormInputCheckbox(),
     ));
 
     $this->setValidators(array(
@@ -150,6 +151,7 @@ abstract class BaseEstudianteForm extends BaseFormDoctrine
       'asic_parroquia_id'    => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Parroquia_15'), 'required' => false)),
       'asic_hab_id'          => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Asic_16'), 'required' => false)),
       'mod_ingreso_id'       => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('ModalidadIngreso'), 'required' => false)),
+      'convocatoria'         => new sfValidatorBoolean(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('estudiante[%s]');

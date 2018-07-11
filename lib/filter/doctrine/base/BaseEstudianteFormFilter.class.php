@@ -78,6 +78,7 @@ abstract class BaseEstudianteFormFilter extends BaseFormFilterDoctrine
       'asic_parroquia_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Parroquia_15'), 'add_empty' => true)),
       'asic_hab_id'          => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Asic_16'), 'add_empty' => true)),
       'mod_ingreso_id'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('ModalidadIngreso'), 'add_empty' => true)),
+      'convocatoria'         => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
     ));
 
     $this->setValidators(array(
@@ -146,6 +147,7 @@ abstract class BaseEstudianteFormFilter extends BaseFormFilterDoctrine
       'asic_parroquia_id'    => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Parroquia_15'), 'column' => 'id')),
       'asic_hab_id'          => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Asic_16'), 'column' => 'id')),
       'mod_ingreso_id'       => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('ModalidadIngreso'), 'column' => 'id')),
+      'convocatoria'         => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
     ));
 
     $this->widgetSchema->setNameFormat('estudiante_filters[%s]');
@@ -231,6 +233,7 @@ abstract class BaseEstudianteFormFilter extends BaseFormFilterDoctrine
       'asic_parroquia_id'    => 'ForeignKey',
       'asic_hab_id'          => 'ForeignKey',
       'mod_ingreso_id'       => 'ForeignKey',
+      'convocatoria'         => 'Boolean',
     );
   }
 }
