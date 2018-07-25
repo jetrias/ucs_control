@@ -51,7 +51,7 @@ class estudianteActions extends autoEstudianteActions
         $this->getUser()->setFlash('notice', 'Se modificó el estatus del estudiante a ACTIVO y se marcó verificado!');
         $this->redirect('/control/backend.php/estudiante');
     }
-        public function executeList_baja(sfWebRequest $request){
+    public function executeList_baja(sfWebRequest $request){
         $id=$request->getParameter('id');
         EstudianteTable::bajaEstudiante($id);
         $this->getUser()->setFlash('notice', 'Se modificó el estatus del estudiante a LICENCIA y se marcó verificado!');

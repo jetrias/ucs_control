@@ -44,5 +44,78 @@ WHERE a.estudiante_id =$id order by b.id";
                 ->addWhere('estudiante_id=?', $id);
         return $q;
     }
-
+    public static function insertSCBVI($est_id,$nota){
+        $sql="insert into notas (seccion, nota,pnf_id,estudiante_id,unidad_curricular_id)"
+                . "values ('1','$nota',2,$est_id,204)";
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
+        return $q;
+    }
+public static function insertPFI($est_id,$nota){
+        $sql="insert into notas (seccion, nota,pnf_id,estudiante_id,unidad_curricular_id)"
+                . "values ('1','$nota',2,$est_id,205)";
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
+        return $q;
+    }
+    public static function insertIB($est_id,$nota){
+        $sql="insert into notas (seccion, nota,pnf_id,estudiante_id,unidad_curricular_id)"
+                . "values ('1','$nota',2,$est_id,206)";
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
+        return $q;
+    }
+      public static function insertSCBVII($est_id,$nota){
+        $sql="insert into notas (seccion, nota,pnf_id,estudiante_id,unidad_curricular_id)"
+                . "values ('1','$nota',2,$est_id,207)";
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
+        return $q;
+    }
+    public static function insertPFII($est_id,$nota){
+        $sql="insert into notas (seccion, nota,pnf_id,estudiante_id,unidad_curricular_id)"
+                . "values ('1','$nota',2,$est_id,208)";
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
+        return $q;
+    }
+        public static function insertPEI($est_id,$nota){
+        $sql="insert into notas (seccion, nota,pnf_id,estudiante_id,unidad_curricular_id)"
+                . "values ('1','$nota',2,$est_id,209)";
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
+        return $q;
+    }
+        public static function insertIBII($est_id,$nota){
+        $sql="insert into notas (seccion, nota,pnf_id,estudiante_id,unidad_curricular_id)"
+                . "values ('1','$nota',2,$est_id,210)";
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
+        return $q;
+    }
+    public static function insertSII($est_id,$nota){
+        $sql="insert into notas (seccion, nota,pnf_id,estudiante_id,unidad_curricular_id)"
+                . "values ('1','$nota',2,$est_id,211)";
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
+        return $q;
+    }
+     public static function insertPEII($est_id,$nota){
+        $sql="insert into notas (seccion, nota,pnf_id,estudiante_id,unidad_curricular_id)"
+                . "values ('1','$nota',2,$est_id,214)";
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
+        return $q;
+    }
+        public static function insertPFIII($est_id,$nota){
+        $sql="insert into notas (seccion, nota,pnf_id,estudiante_id,unidad_curricular_id)"
+                . "values ('1','$nota',2,$est_id,212)";
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
+        return $q;
+    }
+    public static function insertCA($est_id,$nota){
+        $sql="insert into notas (seccion, nota,pnf_id,estudiante_id,unidad_curricular_id)"
+                . "values ('1','$nota',2,$est_id,213)";
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
+        return $q;
+    }
+     public static function insertIBIII($est_id,$nota){
+        $sql="insert into notas (seccion, nota,pnf_id,estudiante_id,unidad_curricular_id)"
+                . "values ('1','$nota',2,$est_id,215)";
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
+        return $q;
+    }
+    
+    
 }

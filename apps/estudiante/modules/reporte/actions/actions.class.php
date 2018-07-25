@@ -914,5 +914,145 @@ NOTA: deben ser impresos dos (02) ejemplares de cada formato.</p></td></tr></tab
         imagepng($base);
         throw new sfStopException();
     }
+        public function executeMostrarSenamecf(sfWebRequest $request) {
+        $this->estudiante = $this->getUser()->getAttribute('estudiante_id');
+        $data = EstudianteTable::buscarEstudiante($this->estudiante);
+        $edad = $this->edad($data[0]['fecha_nacimiento']);
+        $fecha2 = date("d-m-Y", strtotime($data[0]['fecha_nacimiento']));
+        $encript = new crypt();
+        $encriptado = $encript->encriptar($data[0]['id'] . '-' . $data[0]['tipo_identificacion'] . '-' . $data[0]['identificacion']);
+        if ($data[0]['foto'] == '') {
+            $foto = 'persona.jpg';
+        } else {
+            $foto = $data[0]['foto'];
+        }
+        if ($data[0]['tipo_identificacion'] == 'V') {
+            $tipo_identificacion = 'CÉDULA';
+        }
+        if ($data[0]['tipo_identificacion'] == 'P') {
+            $tipo_identificacion = 'PASAPORTE';
+        }
+        $config = sfTCPDFPluginConfigHandler::loadConfig();
+        $pdf = new sfTCPDF();
+        $pdf->SetCreator(PDF_CREATOR);
+        $pdf->SetAuthor('SIGE');
+        $pdf->SetTitle('Documento de Verificación');
+        $pdf->SetSubject('SIGE - Verificación');
+        $pdf->SetKeywords('SIGE, PDF, verificación');
+        $pdf->setPrintHeader(false);
+        $pdf->setPrintFooter(false);
+        $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+        $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP - 20, PDF_MARGIN_RIGHT);
+        $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM - 20);
+        $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
+        $pdf->setFontSubsetting(true);
+        $pdf->SetFont('dejavusans', '', 8, '', true);
+        $pdf->AddPage();
+        $style = array(
+            'border' => 2,
+            'vpadding' => 'auto',
+            'hpadding' => 'auto',
+            'fgcolor' => array(0, 0, 0),
+            'bgcolor' => false, //array(255,255,255)
+            'module_width' => 1, // width of a single module in points
+            'module_height' => 1 // height of a single module in points
+        );
+        $dia = date('d');
+        $mes = date('m');
+        $year = date('Y');
+        $vence = '04-04-2017';
+        switch ($mes) {
+            case 1:
+                $mes_letras = 'enero';
+                break;
+            case 2:
+                $mes_letras = 'febrero';
+                break;
+            case 3:
+                $mes_letras = 'marzo';
+                break;
+            case 4:
+                $mes_letras = 'abril';
+                break;
+            case 5:
+                $mes_letras = 'mayo';
+                break;
+            case 6:
+                $mes_letras = 'junio';
+                break;
+            case 7:
+                $mes_letras = 'julio';
+                break;
+            case 8:
+                $mes_letras = 'agosto';
+                break;
+            case 9:
+                $mes_letras = 'septiembre';
+                break;
+            case 10:
+                $mes_letras = 'octubre';
+                break;
+            case 11:
+                $mes_letras = 'noviembre';
+                break;
+            case 12:
+                $mes_letras = 'diciembre';
+                break;
+        }
+//$params = $pdf->serializeTCPDFtagParameters(array($encriptado,'EAN13', '', '', '', 18, 0.4, array('position'=>'C', 'border'=>false, 'padding'=>4, 'fgcolor'=>array(0,0,0), 'bgcolor'=>array(255,255,255), 'text'=>true, 'font'=>'helvetica', 'fontsize'=>8, 'stretchtext'=>4), 'N'));
+//$pdf->write2DBarcode('www.tcpdf.org', 'QRCODE,L', 20, 30, 50, 50, $style, 'N');
+        $params2 = $pdf->serializeTCPDFtagParameters(array($encriptado, 'QRCODE,L', '', '', 20, 20, array('position' => 'C', 'border' => false, 'padding' => 4, 'fgcolor' => array(0, 0, 0), 'bgcolor' => array(255, 255, 255), 'text' => true, 'font' => 'helvetica', 'fontsize' => 8, 'stretchtext' => 4), 'N'));
+        $params = $pdf->serializeTCPDFtagParameters(array($encriptado, 'C128', '', '', 80, 20, 0.4, array('position' => 'C', 'border' => false, 'padding' => 4, 'fgcolor' => array(0, 0, 0), 'bgcolor' => array(255, 255, 255), 'text' => true, 'font' => 'helvetica', 'fontsize' => 8, 'stretchtext' => 4), 'N'));
+        $code = '<tcpdf method="write1DBarcode" params="' . $params . '" />';
+        $code2 = '<tcpdf method="write2DBarcode" params="' . $params2 . '" />';
+       
+        $pdf->SetFont('dejavusans', '', 9, '', true);
+       // $pdf->writeHTML($html, true, 0, true, true);
+        $pdf->SetMargins(PDF_MARGIN_LEFT - 10, PDF_MARGIN_TOP - 20, PDF_MARGIN_RIGHT - 10);
+        //$pdf->AddPage();
+
+        $html2 = '<br><br><font size="8"><table>
+            <tr><td align="left"><img src="images/logo_ucs.jpg" width="300" /></td><td align="right" ><font size="8">República Bolivariana de Venezuela<br> 
+            Universidad de las Ciencias de la Salud <br><b>"HUGO CHÁVEZ FRÍAS"</b><br> SECRETARÍA GENERAL <br> CONTROL DE ESTUDIOS</font></td></tr>
+            <tr><td colspan="2" align="center"><b>DOCUMENTO DE VERIFICACIÓN ACADÉMICA </b></td></tr>
+            <tr><td colspan="2"><p style="text-align: justify"><br>Hoy_______ de _________________________ de 20______, el (la) estudiante: '.$data[0]['primer_nombre'].' '.$data[0]['segundo_nombre'].' '.$data[0]['primer_apellido'].' '.$data[0]['segundo_nombre'].' , portador (a) del Documento de Identidad N.º '.$data[0]['identificacion'].', hace entrega del  Documento de Verificación Académica de la I Cohorte PNFA-PF, ante la Dirección de Acreditación y Certificacióndel SENAMECF,  para que el Comité de Verificación Académica procedan a la revisión de las calificaciones obtenidas en cada una de las Unidades Curriculares que contempla el Plan de Estudios del Programa Nacional de Formación Avanzada en Patología Forense.</p></td></tr>
+            </table></font><br>
+            <font size="8">
+            <table border="1">
+            <tr><td rowspan="2" width="3%" align="center">N</td><td rowspan="2" width="10%" align="center">CÓDIGO</td><td rowspan="2" width="45%" align="center">UNIDAD CURRÍCULAR</td><td rowspan="2" width="7%" align="center">PERÍODO<br>LECTIVO</td><td rowspan="2" width="6%" align="center">NOTA</td><td colspan="2" width="15%" align="center">Observación por parte del comité de verificación</td><td  rowspan="2" width="12%" align="center">
+           Calificación Definitiva según el Acta de Examen </td></tr>
+            <tr><td align="center">SI</td>
+            <td align="center">NO</td></tr>';
+        $this->identificacion = $this->getUser()->getAttribute('identificacion');
+        $this->id = $this->getUser()->getAttribute('estudiante_id');
+        $notas = NotasTable::getNotasGrado2($this->id);
+        $nro = 0;
+        foreach ($notas as $data):
+            $nro++;
+            $html2.='<tr><td align="center">' . $nro . '</td>
+            <td align="center">' . $data['unidad_curricular'] . '</td>
+            <td align="center">' . $data['descripcion'] . '</td>
+            <td align="center">' . $data['periodo'] . '</td>
+            <td align="center">' . $data['nota'] . '</td>
+             <td></td><td></td><td></td></tr>';
+        endforeach;
+        $html2.='</table><table>
+    <tr>
+    <td align="center"><br><br><br>_______________________<br>Directora de Acreditación, Certificación y Desarrollo <br>Avanzado Científico Forense<br>Firma y Nro. Doc. Identidad </td>
+    <td align="center"><br><br><br>_______________________<br>Coordinadora Formación y Desarrollo Avanzado <br> Científico Forense <br>Firma y Nro. Doc. Identidad</td>
+    <td colspan="2" align="center"><br><br><br>_______________________<br>Docente. Medico Patologo (a).<br>Firma y Nro. Doc. Identidad</td>
+    </tr>
+ <tr>
+    <td colspan="2" align="center"><br><br>_______________________<br>Vocero Estudiantil<br>Firma y Nro. Doc. Identidad</td>
+    <td colspan="2" align="center"><br><br>_______________________<br>Vocero Estudiantil<br>Firma y Nro. Doc. Identidad</td><td align="right" ><b>Formato 02-B</b></td></tr>
+    <tr><td colspan="4" align="center"><br><br><br><br>SELLO</td></tr>
+            </table>
+        </font>';
+        $pdf->writeHTML($html2, true, 0, true, true);
+        
+//        $pdf->writeHTML($html3, true, 0, true, true);
+        $pdf->Output('notas.pdf', 'I');
+        throw new sfStopException();
+    }
 
 }

@@ -22,6 +22,9 @@
                         if($sf_user->getAttribute('notas')=='SI-7'){
                              $notas='/control/estudiante.php/reporte/mostrarNotas2';
                         }
+                         if($sf_user->getAttribute('notas')=='SENAMECF'){
+                             $notas='/control/estudiante.php/reporte/mostrarSenamecf';
+                        }
                         ?>
                         <a href="<?php echo $notas;?>" target="_blank">
                             <div class="panel-footer">
