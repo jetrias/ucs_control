@@ -197,7 +197,7 @@ Certificación que se expide al solicitante por parte de la Secretaría General 
     </tr>
  <tr>
     <td colspan="2" align="center"><br><br>_______________________<br>Vocero Estudiantil<br>Firma y Nro. Doc. Identidad</td>
-    <td colspan="2" align="center"><br><br>_______________________<br>Vocero Estudiantil<br>Firma y Nro. Doc. Identidad</td><td align="right" ><b>Formato 02-B</b></td></tr>
+    <td colspan="2" align="center"><br><br>_______________________<br>Estudiante<br>Firma y Nro. Doc. Identidad</td><td align="right" ><b>Formato 02-B</b></td></tr>
     <tr><td colspan="4" align="center"><br><br><br><br>SELLO</td></tr>
             </table>
         </font>';
