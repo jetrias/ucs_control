@@ -168,11 +168,11 @@ Certificación que se expide al solicitante por parte de la Secretaría General 
          $html2 = '<br><br><font size="8"><table>
             <tr><td align="left"><img src="images/logo_ucs.jpg" width="300" /></td><td align="right" ><font size="8">República Bolivariana de Venezuela<br> 
             Universidad de las Ciencias de la Salud <br><b>"HUGO CHÁVEZ FRÍAS"</b><br> SECRETARÍA GENERAL <br> CONTROL DE ESTUDIOS</font></td></tr>
-            <tr><td colspan="2" align="center"><b>DOCUMENTO DE VERIFICACIÓN ACADÉMICA </b></td></tr>
+            <tr><td colspan="2" align="center"><b>CERTIFICACIÓN DE CALIFICACIONES </b></td></tr>
             <tr><td colspan="2"><p style="text-align: justify"><br>
 Quien suscribe, la Secretaría General de la Universidad de las Ciencias de la Salud 
 “Hugo Chávez Frías”, certifica que el(la) ciudadano(a): '.$data['primer_nombre'].' '.$data['segundo_nombre'].' '.$data['primer_apellido'].' '.$data['segundo_apellido'].', 
-    titular del Documento de Identidad N° '.$data['identificacion'].', quien cursó y aprobó las unidades curriculares del Plan de Estudios del Programa Nacional de Formación Avanzada en en Patología Forense, para optar al título de: ESPECIALISTA EN PATOLOGÍA FORENSE, obtuvo las siguientes calificaciones:            
+    titular del Documento de Identidad N° '.$data['identificacion'].', quien cursó y aprobó las unidades curriculares del Plan de Estudios del Programa Nacional de Formación Avanzada en Patología Forense, para optar al título de: ESPECIALISTA EN PATOLOGÍA FORENSE, obtuvo las siguientes calificaciones:            
  </p></td></tr>
             </table></font><br>
             <font size="8">
@@ -196,7 +196,7 @@ Quien suscribe, la Secretaría General de la Universidad de las Ciencias de la S
         $indice=$ia/$nro;
         $html2.='</table><br><br><br><table>
     <tr><td align="center" width="20%"></td><td align="center" width="60%">ÍNDICE ACADÉMICO: '.number_format($indice, 2, '.', '').'<br>
-EL TOTAL DE UNIDADES DE CRÉDITOS REQUERIDAS PARA EGRESAR ES DE: 49
+EL TOTAL DE UNIDADES DE CRÉDITOS REQUERIDAS PARA EGRESAR ES DE: '.$nro.'
 </td><td align="center" width="20%"></td></tr>
     <tr><td align="center" width="20%">im/AYMN</td><td align="center" width="60%"></td><td align="center" width="20%">sin sello no tiene válidez</td></tr>
     <tr><td align="center" width="20%"></td><td align="center" width="60%">ANA YADIRA MONTENEGRO NAVAS<br>
