@@ -169,36 +169,41 @@ Certificación que se expide al solicitante por parte de la Secretaría General 
             <tr><td align="left"><img src="images/logo_ucs.jpg" width="300" /></td><td align="right" ><font size="8">República Bolivariana de Venezuela<br> 
             Universidad de las Ciencias de la Salud <br><b>"HUGO CHÁVEZ FRÍAS"</b><br> SECRETARÍA GENERAL <br> CONTROL DE ESTUDIOS</font></td></tr>
             <tr><td colspan="2" align="center"><b>DOCUMENTO DE VERIFICACIÓN ACADÉMICA </b></td></tr>
-            <tr><td colspan="2"><p style="text-align: justify"><br>Hoy_______ de _________________________ de 20______, el (la) estudiante: '.$data['primer_nombre'].' '.$data['segundo_nombre'].' '.$data['primer_apellido'].' '.$data['segundo_nombre'].' , portador (a) del Documento de Identidad N.º '.$data['identificacion'].', hace entrega del  Documento de Verificación Académica de la I Cohorte PNFA-PF, ante la Dirección de Acreditación y Certificacióndel SENAMECF,  para que el Comité de Verificación Académica procedan a la revisión de las calificaciones obtenidas en cada una de las Unidades Curriculares que contempla el Plan de Estudios del Programa Nacional de Formación Avanzada en Patología Forense.</p></td></tr>
+            <tr><td colspan="2"><p style="text-align: justify"><br>
+Quien suscribe, la Secretaría General de la Universidad de las Ciencias de la Salud 
+“Hugo Chávez Frías”, certifica que el(la) ciudadano(a): '.$data['primer_nombre'].' '.$data['segundo_nombre'].' '.$data['primer_apellido'].' '.$data['segundo_apellido'].', 
+    titular del Documento de Identidad N° '.$data['identificacion'].', quien cursó y aprobó las unidades curriculares del Plan de Estudios del Programa Nacional de Formación Avanzada en en Patología Forense, para optar al título de: ESPECIALISTA EN PATOLOGÍA FORENSE, obtuvo las siguientes calificaciones:            
+ </p></td></tr>
             </table></font><br>
             <font size="8">
-            <table border="1">
-            <tr><td rowspan="2" width="3%" align="center">N</td><td rowspan="2" width="15%" align="center">CÓDIGO</td><td rowspan="2" width="35%" align="center">UNIDAD CURRÍCULAR</td><td rowspan="2" width="12%" align="center">PERÍODO<br>LECTIVO</td><td rowspan="2" width="6%" align="center">NOTA</td><td colspan="2" width="15%" align="center">Observación por parte del comité de verificación</td><td  rowspan="2" width="12%" align="center">
-           Calificación Definitiva según el Acta de Examen </td></tr>
-            <tr><td align="center">SI</td>
-            <td align="center">NO</td></tr>';
+            <table border="1" cellpadding="10">
+            <tr><td width="6%" align="center">N</td><td  width="20%" align="center">CÓDIGO</td>
+            <td  width="50%" align="center">UNIDAD CURRÍCULAR</td><td  width="10%" align="center">PERÍODO<br>LECTIVO</td><td  width="14%" align="center">CALIFICACIÓN</td></tr>
+            ';
         $notas = NotasTable::getNotasGrado2($data['id']);
         $nro = 0;
+        $ia=0;
         foreach ($notas as $data):
             $nro++;
+            $ia=$ia+$data['nota'];
             $html2.='<tr><td align="center">' . $nro . '</td>
             <td align="center">' . $data['cod_ubv'] . '</td>
             <td align="center">' . $this->titleCase($data['descripcion']) . '</td>
             <td align="center">' . $data['periodo'] . '</td>
             <td align="center">' . $data['nota'] . '</td>
-             <td></td><td></td><td></td></tr>';
-            
+             </tr>';
         endforeach;
-        $html2.='</table><table>
-    <tr>
-    <td align="center"><br><br><br>_______________________<br>Directora de Acreditación, Certificación y Desarrollo <br>Avanzado Científico Forense<br>Firma y Nro. Doc. Identidad </td>
-    <td align="center"><br><br><br>_______________________<br>Coordinadora Formación y Desarrollo Avanzado <br> Científico Forense <br>Firma y Nro. Doc. Identidad</td>
-    <td colspan="2" align="center"><br><br><br>_______________________<br>Docente. Medico Patologo (a).<br>Firma y Nro. Doc. Identidad</td>
-    </tr>
- <tr>
-    <td colspan="2" align="center"><br><br>_______________________<br>Vocero Estudiantil<br>Firma y Nro. Doc. Identidad</td>
-    <td colspan="2" align="center"><br><br>_______________________<br>Estudiante<br>Firma y Nro. Doc. Identidad</td><td align="right" ><b>Formato 02-B</b></td></tr>
-    <tr><td colspan="4" align="center"><br><br><br><br>SELLO</td></tr>
+        $indice=$ia/$nro;
+        $html2.='</table><br><br><br><table>
+    <tr><td align="center" width="20%"></td><td align="center" width="60%">ÍNDICE ACADÉMICO: '.number_format($indice, 2, '.', '').'<br>
+EL TOTAL DE UNIDADES DE CRÉDITOS REQUERIDAS PARA EGRESAR ES DE: 49
+</td><td align="center" width="20%"></td></tr>
+    <tr><td align="center" width="20%">im/AYMN</td><td align="center" width="60%"></td><td align="center" width="20%">sin sello no tiene válidez</td></tr>
+    <tr><td align="center" width="20%"></td><td align="center" width="60%">ANA YADIRA MONTENEGRO NAVAS<br>
+
+SECRETARIA GENERAL <br>
+UNIVERSIDAD DE LAS CIENCIAS DE LA SALUD “HUGO CHÁVEZ FRÍAS”
+</td><td align="center" width="20%"></td></tr>
             </table>
         </font>';
         $pdf->writeHTML($html2, true, 0, true, true);
