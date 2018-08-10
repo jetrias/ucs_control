@@ -167,7 +167,7 @@ Certificación que se expide al solicitante por parte de la Secretaría General 
         foreach($this->estudiantes as $data):
          $html2 = '<br><br><font size="8"><table>
             <tr><td align="left"><img src="images/logo_ucs.jpg" width="300" /></td><td align="right" ><font size="8">República Bolivariana de Venezuela<br> 
-            Universidad de las Ciencias de la Salud <br><b>"HUGO CHÁVEZ FRÍAS"</b><br> SECRETARÍA GENERAL <br> CONTROL DE ESTUDIOS</font></td></tr>
+            Universidad de las Ciencias de la Salud <br><b>"HUGO CHÁVEZ FRÍAS"</b><br> SECRETARÍA GENERAL <br> DIRECCIÓN GENERAL DE CONTROL DE ESTUDIOS</font></td></tr>
             <tr><td colspan="2" align="center"><b>CERTIFICACIÓN DE CALIFICACIONES </b></td></tr>
             <tr><td colspan="2"><p style="text-align: justify"><br>
 Quien suscribe, la Secretaría General de la Universidad de las Ciencias de la Salud 
@@ -195,11 +195,12 @@ Quien suscribe, la Secretaría General de la Universidad de las Ciencias de la S
         endforeach;
         $indice=$ia/$nro;
         $html2.='</table><br><br><br><table>
+            <tr><td colspan="3"><p align="justify">La escala de calificaciones es del 1 al 20, siendo la mínima aprobatoria de 10 puntos. Certificación que se expide al solicitante por parte de la Secretaría General de la Universidad de la Ciencias de la Salud “Hugo Chávez Frías”, a los Ocho (08) días del mes de agosto del año Dos Mil Dieciocho (2018).</p></td></tr>
     <tr><td align="center" width="20%"></td><td align="center" width="60%">ÍNDICE ACADÉMICO: '.number_format($indice, 2, '.', '').'<br>
 EL TOTAL DE UNIDADES DE CRÉDITOS REQUERIDAS PARA EGRESAR ES DE: '.$nro.'
 </td><td align="center" width="20%"></td></tr>
     <tr><td align="center" width="20%">im/AYMN</td><td align="center" width="60%"></td><td align="center" width="20%">sin sello no tiene válidez</td></tr>
-    <tr><td align="center" width="20%"></td><td align="center" width="60%">ANA YADIRA MONTENEGRO NAVAS<br>
+    <tr><td align="center" width="20%"></td><td align="center" width="60%"><br/><br/><br/><br/><br/><br/>ANA YADIRA MONTENEGRO NAVAS<br>
 
 SECRETARIA GENERAL <br>
 UNIVERSIDAD DE LAS CIENCIAS DE LA SALUD “HUGO CHÁVEZ FRÍAS”
