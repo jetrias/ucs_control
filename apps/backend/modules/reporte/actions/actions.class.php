@@ -196,7 +196,7 @@ Quien suscribe, la Secretaría General de la Universidad de las Ciencias de la S
         $indice=$ia/$nro;
         $html2.='</table><br><br><br><table>
             <tr><td colspan="3"><p align="justify">La escala de calificaciones es del 1 al 20, siendo la mínima aprobatoria de 10 puntos. Certificación que se expide al solicitante por parte de la Secretaría General de la Universidad de la Ciencias de la Salud “Hugo Chávez Frías”, a los Ocho (08) días del mes de agosto del año Dos Mil Dieciocho (2018).</p></td></tr>
-    <tr><td align="center" width="20%"></td><td align="center" width="60%">ÍNDICE ACADÉMICO: '.number_format($indice, 2, '.', '').'<br>
+    <tr><td align="center" width="20%"></td><td align="center" width="60%"><br/><br/><br/>ÍNDICE ACADÉMICO: '.number_format($indice, 2, '.', '').'<br>
 EL TOTAL DE UNIDADES DE CRÉDITOS REQUERIDAS PARA EGRESAR ES DE: '.$nro.'
 </td><td align="center" width="20%"></td></tr>
     <tr><td align="center" width="20%">im/AYMN</td><td align="center" width="60%"></td><td align="center" width="20%">sin sello no tiene válidez</td></tr>
