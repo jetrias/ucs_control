@@ -1181,8 +1181,8 @@ $html5='
 <table class="bordesExternos" cellspacing="5px" width="50%"><tr><td align="center">
         <b>'.$data[0]['primer_nombre'].' '.$data[0]['segundo_nombre'].' '.$data[0]['primer_apellido'].' '.$data[0]['segundo_apellido'].'</b><br>
             CI:  '.$data[0]['identificacion'].'</td></tr></table></center>';
-$pdf->writeHTML($html5, true, 0, true, true);
-$pdf->AddPage();
+//$pdf->writeHTML($html5, true, 0, true, true);
+//$pdf->AddPage();
 $html2 = '<div style="text-align:center"><img src="images/logo_ucs.jpg" width="300" /><br></div>
              <div style="text-align:center">REPÚBLICA  BOLIVARIANA  DE VENEZUELA <br>
 UNIVERSIDAD DE LAS CIENCIAS DE LA SALUD “HUGO CHÁVEZ FRÍAS”<br><br>
@@ -1212,7 +1212,7 @@ UNIVERSIDAD DE LAS CIENCIAS DE LA SALUD “HUGO CHÁVEZ FRÍAS”<br><br>
 Para más información, dirígete a los  Consultorios Populares, y Centros de Diagnóstico Integral (CDI) de Barrio Adentro ó Coordinaciones de los CABES.
 ';
 $pdf->writeHTML($html2, true, 0, true, true);
-$pdf->AddPage();
+//$pdf->AddPage();
 //$html3= '<div style="text-align:center"><img src="images/orden_documentos.jpg" width="1800"/><br></div>';
 //$pdf->writeHTML($html3, true, 0, true, true);
 
