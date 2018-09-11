@@ -41,9 +41,9 @@ class loginActions extends sfActions {
                                     $this->getUser()->setAttribute('estatus', $this->alumno[0]['estatus']);
                                     $this->getUser()->setAttribute('estudiante_id', $this->usuario[0]['persona_id']); 
                                     $this->getUser()->setAttribute('foto', $this->alumno[0]['foto']);
-                                    $n_ingreso=($this->usuario[0]['n_ingreso']==true) ? 'SI' : 'NO';
+                                    //$n_ingreso=($this->usuario[0]['n_ingreso']==true) ? 'SI' : 'NO';
                                     $this->getUser()->setAttribute('notas', $this->alumno[0]['notas']);
-                                    $this->getUser()->setAttribute('n_ingreso', $n_ingreso);
+                                    $this->getUser()->setAttribute('n_ingreso', $this->usuario[0]['n_ingreso']);
 // Estudiante
                                     if ($this->usuario[0]['usurdi_id'] == '1') {
                                         $this->redirect('/control/estudiante.php/inicio');
