@@ -97,8 +97,14 @@
                                     <div>MATRÍCULA</div>
                                 </div>
                             </div>
-                        </div>
-                        <a href="/control/estudiante.php/reporte/matricula" target='_blank'>
+                        </div><?php
+                        if($sf_user->getAttribute('n_ingreso')==true){
+                            $link_matricula='/control/index.php/reporte/CICS';
+                        }else{
+                            $link_matricula='/control/estudiante.php/reporte/matricula';
+                        }
+                        ?>
+                        <a href="<?php echo $link_matricula;?>" target='_blank'>
                             <div class="panel-footer">
                                 <span class="pull-left">Ver Detalle</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

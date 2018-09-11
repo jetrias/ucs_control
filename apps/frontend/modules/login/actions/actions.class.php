@@ -44,6 +44,7 @@ class loginActions extends sfActions {
 //                                    $notas=($this->usuario[0]['notas']==t) ? 'SI' : 'NO';
 //                                    echo $this->usuario[0]['notas'];exit();
                                     $this->getUser()->setAttribute('notas', $this->alumno[0]['notas']);
+                                    $this->getUser()->setAttribute('notas', $this->alumno[0]['n_ingreso']);
 // Estudiante
                                     if ($this->usuario[0]['usurdi_id'] == '1') {
                                         $this->redirect('/control/estudiante.php/inicio');
