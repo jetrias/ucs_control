@@ -1198,25 +1198,23 @@ UNIVERSIDAD DE LAS CIENCIAS DE LA SALUD “HUGO CHÁVEZ FRÍAS”<br><br>
 <b>RECAUDOS</b><br><br>
 </div>
 1. Una carpeta marrón tipo oficio con gancho. <br>
-2. 6  fundas plásticas protectoras de  documentos.<br>
-3. Dos separadores.<br>
-4. Una  (1) fotocopia de la cédula de identidad (ampliada 300 x 300).<br>
-5. Copia de la Partida de nacimiento con vista al original con sus timbres fiscales.<br>
-6. Una (1) fotocopia simple del título de bachiller con sus respectivos timbres fiscales. (con vista al original)<br>
-7. Autenticación del título de bachiller, por  el plantel donde cursó los estudios ó por la Zona Educativa del Estado donde los culminó, en los casos que lo ameriten. En los casos de los bachilleres 2017, se solicitará la  Constancia de Culminación de estudios emitida por el Liceo de procedencia. Al finalizar el curso deben presentar obligatoriamente sus documentos probatorios de bachillerato (título y notas)<br>
-8. Original y copia simple de notas de 1ero a 5to año, respectivamente certificadas por  el plantel donde cursó los estudios o por la Zona Educativa del Estado donde los culminó, en los casos que lo ameriten, con sus respectivos timbres fiscales.<br>
-9. Registro en el Sistema Nacional de Ingreso a la Educación Universitaria. <br>
-10. Dos (2) fotos recientes tipo carné en fondo blanco.<br>
-11. En el caso de aspirantes de otras nacionalidades: Presentar la cédula de identidad que los acredite como Residentes en Venezuela (original y fotocopia ampliada).<br>
-12. Los aspirantes nacionalizados deben presentar copia de la Gaceta Oficial con la Resolución de Nacionalización.<br>
-13. Los aspirantes, ciudadanos venezolanos o de otras nacionalidades, que hayan realizado estudios de bachillerato fuera del territorio venezolano, deberán realizar previamente la legalización de los mismos ante las autoridades correspondientes, de acuerdo a los tratados y convenios firmados por el Estado venezolano.<br>
+2. Dos separadores.<br>
+3. Una  (1) fotocopia de la cédula de identidad (ampliada 300 x 300).<br>
+4. Copia de la Partida de nacimiento con vista al original con sus timbres fiscales.<br>
+5. Una (1) fotocopia simple del título de bachiller con sus respectivos timbres fiscales. (con vista al original)<br>
+6. Una (1) Copia simple de notas de 1ero a 5to año, respectivamente certificadas por  el plantel donde cursó los estudios o por la Zona Educativa del Estado donde los culminó, en los casos que lo ameriten, con sus respectivos timbres fiscales. (con vista al original)<br>
+7. Registro en el Sistema Nacional de Ingreso a la Educación Universitaria. <br>
+8. Dos (2) fotos recientes tipo carné en fondo blanco.<br>
+9. En el caso de aspirantes de otras nacionalidades: Presentar la cédula de identidad que los acredite como Residentes en Venezuela (original y fotocopia ampliada).<br>
+10. Los aspirantes nacionalizados deben presentar copia de la Gaceta Oficial con la Resolución de Nacionalización.<br>
+11. Los aspirantes, ciudadanos venezolanos o de otras nacionalidades, que hayan realizado estudios de bachillerato fuera del territorio venezolano, deberán realizar previamente la legalización de los mismos ante las autoridades correspondientes, de acuerdo a los tratados y convenios firmados por el Estado venezolano.<br>
 
 Para más información, dirígete a los  Consultorios Populares, y Centros de Diagnóstico Integral (CDI) de Barrio Adentro ó Coordinaciones de los CABES.
 ';
 $pdf->writeHTML($html2, true, 0, true, true);
 $pdf->AddPage();
-$html3= '<div style="text-align:center"><img src="images/orden_documentos.jpg" width="1800"/><br></div>';
-$pdf->writeHTML($html3, true, 0, true, true);
+//$html3= '<div style="text-align:center"><img src="images/orden_documentos.jpg" width="1800"/><br></div>';
+//$pdf->writeHTML($html3, true, 0, true, true);
 
     // Close and output PDF document
     // This method has several options, check the source code documentation for more information.
