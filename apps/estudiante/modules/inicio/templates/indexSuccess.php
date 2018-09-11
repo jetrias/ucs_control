@@ -98,7 +98,7 @@
                                 </div>
                             </div>
                         </div><?php
-                        if($sf_user->getAttribute('n_ingreso')==true){
+                        if($sf_user->getAttribute('n_ingreso')=='SI'){
                             $link_matricula='/control/index.php/reporte/CICS';
                         }else{
                             $link_matricula='/control/estudiante.php/reporte/matricula';
