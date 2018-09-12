@@ -1116,21 +1116,16 @@ $html4='
 <tr bgcolor="#cccccc"><td>&#9634; Copia de la Partida de nacimiento con vista al original con sus timbres fiscales.</td></tr>
 <tr ><td>&#9634; Una (1) fotocopia simple del título de bachiller con sus respectivos timbres fiscales. (con vista al
 original)</td></tr>
-<tr bgcolor="#cccccc"><td>&#9634; Autenticación del título de bachiller, por el plantel donde cursó los estudios ó por la Zona
-Educativa del Estado donde los culminó, en los casos que lo ameriten. En los casos de los bachilleres
-'.$year.', se solicitará la Constancia de Culminación de estudios emitida por el Liceo de procedencia. Al
-finalizar el curso deben presentar obligatoriamente sus documentos probatorios de bachillerato
-(título y notas)</td></tr>
-<tr ><td>&#9634; Una (1) copia simple de notas de 1ero a 5to año, respectivamente certificadas por el plantel
+<tr bgcolor="#cccccc"><td>&#9634; Una (1) copia simple de notas de 1ero a 5to año, respectivamente certificadas por el plantel
 donde cursó los estudios o por la Zona Educativa del Estado donde los culminó, en los casos que lo
 ameriten, con sus respectivos timbres fiscales. (con vista al original)</td></tr>
-<tr bgcolor="#cccccc"><td>&#9634; Registro en el Sistema Nacional de Ingreso a la Educación Universitaria.</td></tr>
-<tr ><td>&#9634; Dos (2) fotos recientes tipo carné en fondo blanco.</td></tr>
-<tr bgcolor="#cccccc"><td>&#9634; En el caso de aspirantes de otras nacionalidades: Presentar la cédula de identidad que los
+<tr ><td>&#9634; Registro en el Sistema Nacional de Ingreso a la Educación Universitaria.</td></tr>
+<tr ><td bgcolor="#cccccc">&#9634; Dos (2) fotos recientes tipo carné en fondo blanco.</td></tr>
+<tr><td>&#9634; En el caso de aspirantes de otras nacionalidades: Presentar la cédula de identidad que los
 acredite como Residentes en Venezuela (original y fotocopia ampliada).</td></tr>
-<tr ><td>&#9634; Los aspirantes nacionalizados deben presentar copia de la Gaceta Oficial con la Resolución de
+<tr bgcolor="#cccccc"><td>&#9634; Los aspirantes nacionalizados deben presentar copia de la Gaceta Oficial con la Resolución de
 Nacionalización.</td></tr>
-<tr bgcolor="#cccccc"><td>&#9634; Los aspirantes, ciudadanos venezolanos o de otras nacionalidades, que hayan realizado estudios
+<tr ><td>&#9634; Los aspirantes, ciudadanos venezolanos o de otras nacionalidades, que hayan realizado estudios
 de bachillerato fuera del territorio venezolano, deberán realizar previamente la legalización de los
 mismos ante las autoridades correspondientes, de acuerdo a los tratados y convenios firmados por
 el Estado venezolano.
