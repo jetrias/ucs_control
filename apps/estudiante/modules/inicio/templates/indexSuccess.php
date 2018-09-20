@@ -48,7 +48,14 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="/control/estudiante.php/reporte/carnet" target="_blank"  download="carnet.png">
+                        <?php
+                         if($sf_user->getAttribute('n_ingreso')==TRUE){
+                             $link_carnet='#';
+                         }else{
+                             $link_carnet='/control/estudiante.php/reporte/carnet';
+                         }
+                        ?>
+                        <a href="<?php echo $link_carnet; ?>" target="_blank"  download="carnet.png">
                             <div class="panel-footer">
                                 <span class="pull-left">Ver Detalle</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -72,9 +79,12 @@
                         </div>
                         <?php
                         $link_constancia='#';
-                        if($sf_user->getAttribute('estatus')=='ACTIVO'){
+                         if($sf_user->getAttribute('n_ingreso')==TRUE){
+                             $link_constancia='#';
+                         }else{
                             $link_constancia='/control/estudiante.php/reporte/consEst';
-                        }
+                         }
+                       
                         ?>
                         <a href="<?php echo $link_constancia;?>" target='_blank'>
                             <div class="panel-footer">
