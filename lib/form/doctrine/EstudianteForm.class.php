@@ -212,7 +212,7 @@ class EstudianteForm extends BaseEstudianteForm {
         } else {
         $this->widgetSchema['ano_curso'] = new sfWidgetFormChoice(array(
             'choices' => array('' => 'Seleccione',
-                "1" => "1", "2" => "2", "3" => "3",  "4" => "4", "5" => "5", "6" => "6")));
+                "0" => "0","1" => "1", "2" => "2", "3" => "3",  "4" => "4", "5" => "5", "6" => "6")));
                 $this->widgetSchema['pnf'] = new sfWidgetFormChoice(array(
             'choices' => array('' => 'Seleccione',
                 "MIC" => "MIC", 
