@@ -410,7 +410,7 @@ Secretario (a) Docente del Programa Nacional de formación<br> en Medicina Integ
         $html = '<table>
             <tr><td align="left"><img src="images/logo_ucs.jpg" width="300" /></td><td align="right" ><font size="8">República Bolivariana de Venezuela<br> 
             Universidad de las Ciencias de la Salud <br><b>"HUGO CHÁVEZ FRÍAS"</b><br> SECRETARÍA GENERAL <br> CONTROL DE ESTUDIOS</font></td></tr>
-            <tr><td colspan="2" align="center"><b>ACTA DE VERIFICACIÓN ACADÉMICA <br><br>V COHORTE PNFMIC - ESTUDIANTES INTERNACIONALES</b></td></tr>
+            <tr><td colspan="2" align="center"><b>ACTA DE VERIFICACIÓN ACADÉMICA <br><br>VI COHORTE PNFMIC - ESTUDIANTES INTERNACIONALES</b></td></tr>
             <tr><td colspan="2"><p style="text-align: justify"><br><br>Hoy____de_______________de__________, en la ciudad de_________________ del estado__________________,
 reunidos: el (la) Coordinador (a) CABES-PNFMIC, ___________________________ Doc. Identidad N°_________________,
 el (la) Secretario (a) Docente del PNFMIC - Dirección de Control de Estudios _____________________________________
