@@ -452,7 +452,7 @@ estaba indicada en el acta de examen.</p></td></tr>
         $this->identificacion = $this->getUser()->getAttribute('identificacion');
         $notas = NotasTable::getNotasGrado($this->identificacion);
         foreach ($notas as $data):
-            $html2.='<tr><td align="center">' . $data['identificador'] . '</td><td align="center">' . $data['unidad_curricular'] . '</td><td align="center">' . $data['descripcion'] . '</td><td align="center">' . $data['periodo'] . '</td><td align="center">' . $data['nota'] . '</td>
+            $html2.='<tr><td align="center">' . $data['identificador'] . '</td><td align="center">' . $data['cod_unerg'] . '</td><td align="center">' . $data['descripcion'] . '</td><td align="center">' . $data['periodo'] . '</td><td align="center">' . $data['nota'] . '</td>
              <td></td><td></td><td></td></tr>';
         endforeach;
         $html2.='</table><table>
