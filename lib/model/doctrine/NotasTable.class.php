@@ -17,9 +17,13 @@ class NotasTable extends Doctrine_Table {
     }
 
     public static function getNotasGrado($id) {
-        $sql = "SELECT a.*,b.id as identificador, b.descripcion
+        /*$sql = "SELECT a.*,b.id as identificador, b.descripcion
 FROM notas a
 inner join unidad_curricular b on a.unidad_curricular=b.cod_unerg
+WHERE pasaporte ilike '%$id%' order by b.id";*/
+        $sql = "SELECT a.*,b.id as identificador, b.descripcion
+FROM notas a
+inner join unidad_curricular b on a.unidad_curricular_id=b.id
 WHERE pasaporte ilike '%$id%' order by b.id";
 //        echo $sql;exit();
         $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);

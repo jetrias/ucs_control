@@ -771,7 +771,7 @@ NOTA: deben ser impresos dos (02) ejemplares de cada formato.</p></td></tr></tab
         $html = '<table>
             <tr><td align="left"><img src="images/logo_ucs.jpg" width="300" /></td><td align="right" ><font size="8">República Bolivariana de Venezuela<br> 
             Universidad de las Ciencias de la Salud <br><b>"HUGO CHÁVEZ FRÍAS"</b><br> SECRETARÍA GENERAL <br> CONTROL DE ESTUDIOS</font></td></tr>
-            <tr><td colspan="2" align="center"><b>ACTA DE VERIFICACIÓN ACADÉMICA <br><br>VII COHORTE PNFMIC</b></td></tr>
+            <tr><td colspan="2" align="center"><b>ACTA DE VERIFICACIÓN ACADÉMICA <br><br>VIII COHORTE PNFMIC</b></td></tr>
             <tr><td colspan="2"><p style="text-align: justify"><br><br>Hoy____ de _________________________ de 20________, reunidos: el (la) 
             Secretario (a) Docente PNFMIC ____________________________ Doc. Ident. N° ____________, el (la) Director (a) de Secretaría UCS
              ___________________________________ Doc. Ident. N°_______________, del estado ___________________ , conjuntamente con los (las) 
