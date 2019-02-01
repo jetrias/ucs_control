@@ -39,8 +39,8 @@ class reporteActions extends sfActions
         $pdf->setPrintHeader(false);
         $pdf->setPrintFooter(false);
         $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-        $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP - 20, PDF_MARGIN_RIGHT);
-        $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM - 20);
+        $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP - 25, PDF_MARGIN_RIGHT);
+        $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM - 25);
         $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
         $pdf->setFontSubsetting(true);
         $pdf->SetFont('dejavusans', '', 8, '', true);
@@ -58,7 +58,7 @@ class reporteActions extends sfActions
          $html2 = '<br><br><font size="8"><table>
             <tr><td align="left"><img src="images/logo_ucs.jpg" width="300" /></td><td align="right" ><font size="8">República Bolivariana de Venezuela<br> 
             Universidad de las Ciencias de la Salud <br><b>"HUGO CHÁVEZ FRÍAS"</b><br> SECRETARÍA GENERAL <br> Dirección General de Control de Estudios</font></td></tr>
-            <tr><td colspan="2" align="center"><b>CERTIFICACIÓN DE CALIFICACIONES</b></td></tr>
+            <tr><td colspan="2" align="center"><b>NOTAS CERTIFICADAS</b></td></tr>
             <tr><td colspan="2"><p style="text-align: justify"><br>
        Quien suscribe, la Secretaría General de la Universidad de las Ciencias de la Salud “Hugo Chávez Frías”,
        certifica que el ciudadano:  <strong>'.$data['primer_nombre'].' '.$data['segundo_nombre'].' '.$data['primer_apellido'].' '.$data['segundo_apellido'].'</strong>, titular del Documento de Identidad 
@@ -73,6 +73,7 @@ class reporteActions extends sfActions
             <tr><td width="3%" align="center">N</td><td width="15%" align="center">CÓDIGO</td><td width="66%" align="center">UNIDAD CURRÍCULAR</td><td width="10%" align="center">PERÍODO<br>LECTIVO</td><td width="6%" align="center">NOTA</td></tr>';
         $notas = NotasTable::getNotasGrado2($data['id']);
         $nro = 0;
+        $detalle_notas=0;
         foreach ($notas as $data):
             $nro++;
             $html2.='<tr><td align="center">' . $nro . '</td>
@@ -81,7 +82,9 @@ class reporteActions extends sfActions
             <td align="center">' . $data['periodo'] . '</td>
             <td align="center">' . $data['nota'] . '</td>
             </tr>';
+            $detalle_notas+=$data['nota'];
         endforeach;
+        $promedio=$detalle_notas/$nro;
         $html2.='</table>
             </table>
 <br/><br/>
@@ -89,10 +92,14 @@ class reporteActions extends sfActions
 <p align="justify">
 La escala de calificaciones es del 1 al 20, siendo la mínima aprobatoria de 12 puntos.
 Certificación que se expide al solicitante por parte de la Secretaría General de la Universidad de la Ciencias de la Salud “Hugo Chávez Frías”, a los Ocho (8) días del mes de mayo del año Dos Mil Dieciocho (2018).
-</p>
+</p></br>
+<center>
+ÍNDICE ACADÉMICO: '.$promedio.' </br>
+EL TOTAL DE UNIDADES CURRICULARES REQUERIDAS PARA EGRESAR ES DE: 49
+</center>
 </td></tr></table><br/>
-<table><tr><td><font size="8"><i>AM/IM</i>
-<p align="right"><i><strong>Sin sello no tiene válidez</strong></i>
+<table><tr><td><font size="8"><i>mi/AM</i>
+<p align="right"><i><strong>Sin sello no tiene validez</strong></i>
 </p></font>
 </td></tr>
 <tr><td align="center"><strong>Prof. Ana Y. Montenegro N.<br/>Secretaria General UCS</strong>
