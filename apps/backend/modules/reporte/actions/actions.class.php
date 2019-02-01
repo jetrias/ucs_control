@@ -82,7 +82,7 @@ class reporteActions extends sfActions
             <td align="center">' . $data['periodo'] . '</td>
             <td align="center">' . $data['nota'] . '</td>
             </tr>';
-            $sum_notas.=$sum_notas+$data['nota'];
+            $sum_notas.=intval($sum_notas)+intval($data['nota']);
         endforeach;
         $promedio=$sum_notas/$nro;
         $html2.='</table>
