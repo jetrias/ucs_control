@@ -58,7 +58,7 @@ class reporteActions extends sfActions
          $html2 = '<br><br><font size="8"><table>
             <tr><td align="left"><img src="images/logo_ucs.jpg" width="300" /></td><td align="right" ><font size="8">República Bolivariana de Venezuela<br> 
             Universidad de las Ciencias de la Salud <br><b>"HUGO CHÁVEZ FRÍAS"</b><br> SECRETARÍA GENERAL <br> Dirección General de Control de Estudios</font></td></tr>
-            <tr><td colspan="2" align="center"><b>CERTIFICACIÓN DE CALIFICACIONES</b></td></tr>
+            <tr><td colspan="2" align="center"><b>NOTAS CERTIFICADAS</b></td></tr>
             <tr><td colspan="2"><p style="text-align: justify"><br>
        Quien suscribe, la Secretaría General de la Universidad de las Ciencias de la Salud “Hugo Chávez Frías”,
        certifica que el ciudadano:  <strong>'.$data['primer_nombre'].' '.$data['segundo_nombre'].' '.$data['primer_apellido'].' '.$data['segundo_apellido'].'</strong>, titular del Documento de Identidad 
@@ -82,20 +82,22 @@ class reporteActions extends sfActions
             <td align="center">' . $data['periodo'] . '</td>
             <td align="center">' . $data['nota'] . '</td>
             </tr>';
-            $sum_notas.=$sum_notas+$data['nota'];
+            $sum_notas=$sum_notas+$data['nota'];
         endforeach;
         $promedio=$sum_notas/$nro;
+        $promedio2=number_format((float)$promedio, 2, '.', '');
         $html2.='</table>
             </table>
 <br/><br/>
 <table><tr><td>
 <p align="justify">
 La escala de calificaciones es del 1 al 20, siendo la mínima aprobatoria de 12 puntos.
-Certificación que se expide al solicitante por parte de la Secretaría General de la Universidad de la Ciencias de la Salud “Hugo Chávez Frías”, a los Ocho (8) días del mes de mayo del año Dos Mil Dieciocho (2018).
-</p>'.$sum_notas.' '.$nro.' '.$promedio.'
+Certificación que se expide al solicitante por parte de la Secretaría General de la Universidad de la Ciencias de la Salud “Hugo Chávez Frías”, a los Ocho (8) días del mes de febrero del año Dos Mil Diecinueve (2019).
+</p>
+Indice Académico: <strong>'.$promedio2.'</strong>. El total de unidades curriculares requeridas para egresar es de 49.
 </td></tr></table><br/>
-<table><tr><td><font size="8"><i>im/AM</i>
-<p align="right"><i><strong>Sin sello no tiene válidez</strong></i>
+<table><tr><td><font size="8"><i>mi/MA</i>
+<p align="right"><i><strong>Sin sello no tiene validez</strong></i>
 </p></font>
 </td></tr>
 <tr><td align="center"><strong>Prof. Ana Y. Montenegro N.<br/>Secretaria General UCS</strong>
