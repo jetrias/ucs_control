@@ -39,8 +39,8 @@ class reporteActions extends sfActions
         $pdf->setPrintHeader(false);
         $pdf->setPrintFooter(false);
         $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-        $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP - 25, PDF_MARGIN_RIGHT);
-        $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM - 25);
+        $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP - 20, PDF_MARGIN_RIGHT);
+        $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM - 20);
         $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
         $pdf->setFontSubsetting(true);
         $pdf->SetFont('dejavusans', '', 8, '', true);
@@ -93,8 +93,7 @@ class reporteActions extends sfActions
 La escala de calificaciones es del 1 al 20, siendo la mínima aprobatoria de 12 puntos.
 Certificación que se expide al solicitante por parte de la Secretaría General de la Universidad de la Ciencias de la Salud “Hugo Chávez Frías”, a los Ocho (8) días del mes de mayo del año Dos Mil Dieciocho (2018).
 </p></br>
-
-ÍNDICE ACADÉMICO: '.$promedio.' </br>
+ÍNDICE ACADÉMICO: '.$promedio.' 
 EL TOTAL DE UNIDADES CURRICULARES REQUERIDAS PARA EGRESAR ES DE: 49
 </td></tr></table><br/>
 <table><tr><td><font size="8"><i>mi/AM</i>
