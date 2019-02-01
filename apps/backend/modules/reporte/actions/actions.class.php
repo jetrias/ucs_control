@@ -73,6 +73,7 @@ class reporteActions extends sfActions
             <tr><td width="3%" align="center">N</td><td width="15%" align="center">CÓDIGO</td><td width="66%" align="center">UNIDAD CURRÍCULAR</td><td width="10%" align="center">PERÍODO<br>LECTIVO</td><td width="6%" align="center">NOTA</td></tr>';
         $notas = NotasTable::getNotasGrado2($data['id']);
         $nro = 0;
+        $sum_notas=0;
         foreach ($notas as $data):
             $nro++;
             $html2.='<tr><td align="center">' . $nro . '</td>
@@ -81,7 +82,9 @@ class reporteActions extends sfActions
             <td align="center">' . $data['periodo'] . '</td>
             <td align="center">' . $data['nota'] . '</td>
             </tr>';
+            $sum_notas.=$sum_notas+$data['nota'];
         endforeach;
+        $promedio=$sum_notas/$nro;
         $html2.='</table>
             </table>
 <br/><br/>
@@ -89,9 +92,9 @@ class reporteActions extends sfActions
 <p align="justify">
 La escala de calificaciones es del 1 al 20, siendo la mínima aprobatoria de 12 puntos.
 Certificación que se expide al solicitante por parte de la Secretaría General de la Universidad de la Ciencias de la Salud “Hugo Chávez Frías”, a los Ocho (8) días del mes de mayo del año Dos Mil Dieciocho (2018).
-</p>
+</p>'.$promedio.'
 </td></tr></table><br/>
-<table><tr><td><font size="8"><i>AM/IM</i>
+<table><tr><td><font size="8"><i>im/AM</i>
 <p align="right"><i><strong>Sin sello no tiene válidez</strong></i>
 </p></font>
 </td></tr>
