@@ -61,7 +61,7 @@ class reporteActions extends sfActions
             <tr><td colspan="2" align="center"><b>NOTAS CERTIFICADAS</b></td></tr>
             <tr><td colspan="2"><p style="text-align: justify"><br>
        Quien suscribe, la Secretaría General de la Universidad de las Ciencias de la Salud “Hugo Chávez Frías”,
-       certifica que el ciudadano:  <strong>'.$data['primer_nombre'].' '.$data['segundo_nombre'].' '.$data['primer_apellido'].' '.$data['segundo_apellido'].'</strong>, titular del Documento de Identidad 
+       certifica que el ciudadano(a):  <strong>'.$data['primer_nombre'].' '.$data['segundo_nombre'].' '.$data['primer_apellido'].' '.$data['segundo_apellido'].'</strong>, titular del Documento de Identidad 
        N° <strong>'.$data['tipo_identificacion'].'-'.$data['identificacion'].'</strong>, quien cursó y aprobó las unidades curriculares del Plan de Estudio del  
        <strong>Programa Nacional de Formación en Medicina Integral Comunitaria</strong>, para optar al título de: 
        <strong>Médico (a) Integral Comunitario (a)</strong>, obtuvo las siguientes calificaciones: 
