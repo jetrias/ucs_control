@@ -113,12 +113,6 @@ Indice Académico: <strong>'.$promedio2.'</strong>. El total de unidades curricu
   }
   function titleCase($string, $delimiters = array(" ", "-", ".", "'", "O'", "Mc"), $exceptions = array("de", "da", "dos", "das", "do", "I", "II", "III", "IV", "V", "VI"))
     {
-        /*
-         * Exceptions in lower case are words you don't want converted
-         * Exceptions all in upper case are any words you don't want converted to title case
-         *   but should be converted to upper case, e.g.:
-         *   king henry viii or king henry Viii should be King Henry VIII
-         */
         $string = mb_convert_case($string, MB_CASE_TITLE, "UTF-8");
         foreach ($delimiters as $dlnr => $delimiter) {
             $words = explode($delimiter, $string);
