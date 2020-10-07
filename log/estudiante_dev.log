@@ -4815,3 +4815,54 @@ Jun 19 00:01:03 symfony [warning] {sfWebDebugLogger}  Warning at /var/www/symfon
 Jun 19 00:01:03 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
 Jun 19 00:01:03 symfony [info] {sfWebDebugLogger} Configuration 238.18 ms (10)
 Jun 19 00:01:03 symfony [info] {sfWebDebugLogger} Factories 41.85 ms (1)
+Jun 30 01:55:37 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /inicio with parameters array (  'module' => 'inicio',  'action' => 'index',)
+Jun 30 01:55:37 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jun 30 01:55:37 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Jun 30 01:55:37 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 30 01:55:37 symfony [info] {inicioActions} Call "inicioActions->executeIndex()"
+Jun 30 01:55:37 symfony [info] {sfPHPView} Render "/var/www/ucs_control/apps/estudiante/modules/inicio/templates/indexSuccess.php"
+Jun 30 01:55:37 symfony [info] {sfPHPView} Decorate content with "/var/www/ucs_control/apps/estudiante/templates/layout.php"
+Jun 30 01:55:37 symfony [info] {sfPHPView} Render "/var/www/ucs_control/apps/estudiante/templates/layout.php"
+Jun 30 01:55:37 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Jun 30 01:55:37 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jun 30 01:55:37 symfony [info] {sfWebDebugLogger} Configuration 1276.46 ms (9)
+Jun 30 01:55:37 symfony [info] {sfWebDebugLogger} Factories 64.66 ms (1)
+Jun 30 01:55:37 symfony [info] {sfWebDebugLogger} Action "inicio/index" 0.06 ms (1)
+Jun 30 01:55:37 symfony [info] {sfWebDebugLogger} View "Success" for "inicio/index" 6.23 ms (1)
+Jun 30 01:55:37 symfony [info] {sfWebResponse} Send content (56743 o)
+Jun 30 01:55:48 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /reporte/matricula with parameters array (  'module' => 'reporte',  'action' => 'matricula',)
+Jun 30 01:55:48 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jun 30 01:55:48 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Jun 30 01:55:48 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 30 01:55:48 symfony [info] {reporteActions} Call "reporteActions->executeMatricula()"
+Jun 30 01:55:48 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Jun 30 01:55:48 symfony [info] {Doctrine_Connection_Pgsql} query : select a.*,b.descripcion as pais,c.descripcion as sexo,d.descripcion as estado_asic,
+            e.descripcion as municipio_asic,f.descripcion as estado,g.descripcion as municipio,
+            h.descripcion as parroquia
+                from estudiante a 
+                left join pais_origen b on a.pais_origen_id=b.id 
+                left join sexo c on a.sexo_id=c.id
+                left join estado d on a.asic_estado_id=d.id
+                left join municipio e on a.asic_municipio_id=e.id
+                left join estado f on a.estado_id=f.id
+                left join municipio g on a.municipio_id=g.id
+                left join parroquia h on a.parroquia_id=h.id
+                where a.id=137465 - ()
+Jun 30 01:58:53 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /reporte/matricula with parameters array (  'module' => 'reporte',  'action' => 'matricula',)
+Jun 30 01:58:53 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jun 30 01:58:53 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Jun 30 01:58:53 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 30 01:58:53 symfony [info] {reporteActions} Call "reporteActions->executeMatricula()"
+Jun 30 01:58:53 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Jun 30 01:58:53 symfony [info] {Doctrine_Connection_Pgsql} query : select a.*,b.descripcion as pais,c.descripcion as sexo,d.descripcion as estado_asic,
+            e.descripcion as municipio_asic,f.descripcion as estado,g.descripcion as municipio,
+            h.descripcion as parroquia
+                from estudiante a 
+                left join pais_origen b on a.pais_origen_id=b.id 
+                left join sexo c on a.sexo_id=c.id
+                left join estado d on a.asic_estado_id=d.id
+                left join municipio e on a.asic_municipio_id=e.id
+                left join estado f on a.estado_id=f.id
+                left join municipio g on a.municipio_id=g.id
+                left join parroquia h on a.parroquia_id=h.id
+                where a.id=137465 - ()

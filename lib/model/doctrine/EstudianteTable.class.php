@@ -98,7 +98,7 @@ class EstudianteTable extends Doctrine_Table {
         return $q;
     }
     public static function obtener_estudiante_estado($id) {
-        $sql = "select * from estudiante where estado_id=$id and notas='SI-8'";
+        $sql = "select * from estudiante where estado_id=$id and notas='SI-9-2'";
         $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
         return $q;
     }

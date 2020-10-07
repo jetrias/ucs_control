@@ -12,7 +12,7 @@
         <div class="page-wrap">
         <center>
             <table width="100%">
-                <tr><td><center><img src="http://190.9.132.215/cintillo/cintillo.jpg" height="75px" width="1000px"/></center></td></tr>
+                <tr><td><center><img src="/control/images/Imagen1.jpg" height="75px" width="1000px"/></center></td></tr>
                 <tr><td>&nbsp;<br/></td></tr>
                 <tr><td><?php echo $sf_content ?></td></tr>
                 <tr><td>&nbsp;<br/></td></tr>

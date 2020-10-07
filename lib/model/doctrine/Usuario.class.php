@@ -17,13 +17,13 @@ class Usuario extends BaseUsuario {
         $opciones = ['cost' => 12,];
         $usuario_cla = password_hash($this->getUsuarioCla(), PASSWORD_BCRYPT, $opciones);
         $this->setUsuarioCla($usuario_cla);
-        if (sfConfig::get("sf_app") == 'frontend') {
+//        if (sfConfig::get("sf_app") == 'frontend') {
             $this->setUsutipId('1');
             $this->setUsuarioFre(date("Y/m/d"));
             $this->setUsusesId('2');
             $this->setUsuestId('1');
             $this->setUsurdiId('2');
-        }
+//        }
         $this->setPersonaId(sfContext::getInstance()->getUser()->getAttribute('estudiante_id'));
         return parent::save($conn);
     }

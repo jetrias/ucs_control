@@ -16087,3 +16087,84 @@ Mar 01 23:40:56 symfony [info] {sfWebDebugLogger} Factories 122.44 ms (1)
 Mar 01 23:40:56 symfony [info] {sfWebDebugLogger} Action "login/index" 630.18 ms (1)
 Mar 01 23:40:56 symfony [info] {sfWebDebugLogger} Database (Doctrine) 12.98 ms (2)
 Mar 01 23:40:56 symfony [info] {sfWebResponse} Send content (102 o)
+Sep 17 16:59:28 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Sep 17 16:59:28 symfony [err] {sfConfigurationException} The module "default" is not enabled.
+Sep 17 16:59:28 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Sep 17 16:59:28 symfony [warning] {sfWebDebugLogger}  Warning at /var/www/symfony-1.4.20/lib/response/sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at /var/www/symfony-1.4.20/lib/response/sfWebResponse.class.php:409))
+Sep 17 16:59:28 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Sep 17 16:59:28 symfony [info] {sfWebDebugLogger} Configuration 40.96 ms (6)
+Sep 17 16:59:28 symfony [info] {sfWebDebugLogger} Factories 73.80 ms (1)
+Sep 17 16:59:46 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /login with parameters array (  'module' => 'login',  'action' => 'index',)
+Sep 17 16:59:46 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Sep 17 16:59:46 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Sep 17 16:59:46 symfony [info] {loginActions} Call "loginActions->executeIndex()"
+Sep 17 16:59:46 symfony [notice] {sfWebDebugLogger}  Notice at /var/www/ucs_control/apps/frontend/modules/login/actions/actions.class.php on line 20 (A session had already been started - ignoring session_start())
+Sep 17 16:59:46 symfony [info] {sfPHPView} Render "/var/www/ucs_control/apps/frontend/modules/login/templates/indexSuccess.php"
+Sep 17 16:59:46 symfony [info] {sfPHPView} Decorate content with "/var/www/ucs_control/apps/frontend/templates/layout.php"
+Sep 17 16:59:46 symfony [info] {sfPHPView} Render "/var/www/ucs_control/apps/frontend/templates/layout.php"
+Sep 17 16:59:46 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Sep 17 16:59:46 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Sep 17 16:59:46 symfony [info] {sfWebDebugLogger} Configuration 6.67 ms (10)
+Sep 17 16:59:46 symfony [info] {sfWebDebugLogger} Factories 7.17 ms (1)
+Sep 17 16:59:46 symfony [info] {sfWebDebugLogger} Action "login/index" 0.26 ms (1)
+Sep 17 16:59:46 symfony [info] {sfWebDebugLogger} View "Success" for "login/index" 11.13 ms (1)
+Sep 17 16:59:46 symfony [info] {sfWebResponse} Send content (39763 o)
+Sep 17 16:59:46 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /s/login/lib/captcha/simple-php-captcha.php with parameters array (  'module' => 's',  'action' => 'login',  'lib' => 'captcha',  'simple-php-captcha.php' => true,)
+Sep 17 16:59:46 symfony [info] {sfFrontWebController} Action "s/login" does not exist
+Sep 17 16:59:46 symfony [err] {sfError404Exception} Action "s/login" does not exist.
+Sep 17 16:59:46 symfony [info] {sfWebResponse} Send status "HTTP/1.1 404 Not Found"
+Sep 17 16:59:46 symfony [warning] {sfWebDebugLogger}  Warning at /var/www/symfony-1.4.20/lib/response/sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at /var/www/symfony-1.4.20/lib/response/sfWebResponse.class.php:409))
+Sep 17 16:59:46 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Sep 17 16:59:46 symfony [info] {sfWebDebugLogger} Configuration 0.37 ms (5)
+Sep 17 16:59:46 symfony [info] {sfWebDebugLogger} Factories 7.05 ms (1)
+Sep 21 21:57:33 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /buscar/buscar with parameters array (  'module' => 'buscar',  'action' => 'buscar',)
+Sep 21 21:57:33 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Sep 21 21:57:33 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Sep 21 21:57:33 symfony [info] {buscarActions} Call "buscarActions->executeBuscar()"
+Sep 21 21:57:33 symfony [notice] {sfWebDebugLogger}  Notice at /var/www/ucs_control/apps/frontend/modules/buscar/actions/actions.class.php on line 25 (A session had already been started - ignoring session_start())
+Sep 21 21:57:33 symfony [info] {sfPHPView} Render "/var/www/ucs_control/apps/frontend/modules/buscar/templates/buscarSuccess.php"
+Sep 21 21:57:33 symfony [info] {sfPHPView} Decorate content with "/var/www/ucs_control/apps/frontend/templates/layout.php"
+Sep 21 21:57:33 symfony [info] {sfPHPView} Render "/var/www/ucs_control/apps/frontend/templates/layout.php"
+Sep 21 21:57:33 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Sep 21 21:57:33 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Sep 21 21:57:33 symfony [info] {sfWebDebugLogger} Configuration 26.42 ms (10)
+Sep 21 21:57:33 symfony [info] {sfWebDebugLogger} Factories 43.14 ms (1)
+Sep 21 21:57:33 symfony [info] {sfWebDebugLogger} Action "buscar/buscar" 0.32 ms (1)
+Sep 21 21:57:33 symfony [info] {sfWebDebugLogger} View "Success" for "buscar/buscar" 5.21 ms (1)
+Sep 21 21:57:33 symfony [info] {sfWebResponse} Send content (45587 o)
+Sep 21 21:57:34 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /buscar/modules/buscar/lib/captcha/simple-php-captcha.php with parameters array (  'module' => 'buscar',  'action' => 'modules',  'buscar' => 'lib',  'captcha' => 'simple-php-captcha.php',)
+Sep 21 21:57:34 symfony [notice] {sfWebDebugLogger}  Notice at /var/www/ucs_control/apps/frontend/modules/buscar/lib/captcha/simple-php-captcha.php on line 115 (A session had already been started - ignoring session_start())
+Sep 21 21:57:34 symfony [info] {sfFrontWebController} Action "buscar/modules" does not exist
+Sep 21 21:57:34 symfony [err] {sfError404Exception} Action "buscar/modules" does not exist.
+Sep 21 21:57:34 symfony [info] {sfWebResponse} Send status "HTTP/1.1 404 Not Found"
+Sep 21 21:57:34 symfony [warning] {sfWebDebugLogger}  Warning at /var/www/symfony-1.4.20/lib/response/sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at /var/www/symfony-1.4.20/lib/response/sfWebResponse.class.php:409))
+Sep 21 21:57:34 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Sep 21 21:57:34 symfony [info] {sfWebDebugLogger} Configuration 0.51 ms (5)
+Sep 21 21:57:34 symfony [info] {sfWebDebugLogger} Factories 5.56 ms (1)
+Sep 21 21:58:41 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /buscar/buscar with parameters array (  'module' => 'buscar',  'action' => 'buscar',)
+Sep 21 21:58:41 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Sep 21 21:58:41 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Sep 21 21:58:41 symfony [info] {buscarActions} Call "buscarActions->executeBuscar()"
+Sep 21 21:58:41 symfony [notice] {sfWebDebugLogger}  Notice at /var/www/ucs_control/apps/frontend/modules/buscar/actions/actions.class.php on line 25 (A session had already been started - ignoring session_start())
+Sep 21 21:58:41 symfony [info] {sfPHPView} Render "/var/www/ucs_control/apps/frontend/modules/buscar/templates/buscarSuccess.php"
+Sep 21 21:58:41 symfony [info] {sfPHPView} Decorate content with "/var/www/ucs_control/apps/frontend/templates/layout.php"
+Sep 21 21:58:41 symfony [info] {sfPHPView} Render "/var/www/ucs_control/apps/frontend/templates/layout.php"
+Sep 21 21:58:41 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Sep 21 21:58:41 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Sep 21 21:58:41 symfony [info] {sfWebDebugLogger} Configuration 0.66 ms (9)
+Sep 21 21:58:41 symfony [info] {sfWebDebugLogger} Factories 3.92 ms (1)
+Sep 21 21:58:41 symfony [info] {sfWebDebugLogger} Action "buscar/buscar" 0.23 ms (1)
+Sep 21 21:58:41 symfony [info] {sfWebDebugLogger} View "Success" for "buscar/buscar" 1.79 ms (1)
+Sep 21 21:58:41 symfony [info] {sfWebResponse} Send content (45582 o)
+Sep 21 21:58:42 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /buscar/modules/buscar/lib/captcha/simple-php-captcha.php with parameters array (  'module' => 'buscar',  'action' => 'modules',  'buscar' => 'lib',  'captcha' => 'simple-php-captcha.php',)
+Sep 21 21:58:42 symfony [notice] {sfWebDebugLogger}  Notice at /var/www/ucs_control/apps/frontend/modules/buscar/lib/captcha/simple-php-captcha.php on line 115 (A session had already been started - ignoring session_start())
+Sep 21 21:58:42 symfony [info] {sfFrontWebController} Action "buscar/modules" does not exist
+Sep 21 21:58:42 symfony [warning] {sfWebDebugLogger}  Warning at /var/www/symfony-1.4.20/lib/exception/sfException.class.php on line 107 (Cannot modify header information - headers already sent by (output started at /var/www/ucs_control/apps/frontend/modules/buscar/lib/captcha/simple-php-captcha.php:204))
+Sep 21 21:58:42 symfony [err] {sfError404Exception} Action "buscar/modules" does not exist.
+Sep 21 21:58:42 symfony [warning] {sfWebDebugLogger}  Warning at /var/www/symfony-1.4.20/lib/exception/sfException.class.php on line 161 (Cannot modify header information - headers already sent by (output started at /var/www/ucs_control/apps/frontend/modules/buscar/lib/captcha/simple-php-captcha.php:204))
+Sep 21 21:58:42 symfony [warning] {sfWebDebugLogger}  Warning at /var/www/symfony-1.4.20/lib/response/sfWebResponse.class.php on line 336 (Cannot modify header information - headers already sent by (output started at /var/www/ucs_control/apps/frontend/modules/buscar/lib/captcha/simple-php-captcha.php:204))
+Sep 21 21:58:42 symfony [info] {sfWebResponse} Send status "HTTP/1.1 404 Not Found"
+Sep 21 21:58:42 symfony [warning] {sfWebDebugLogger}  Warning at /var/www/symfony-1.4.20/lib/response/sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at /var/www/ucs_control/apps/frontend/modules/buscar/lib/captcha/simple-php-captcha.php:204))
+Sep 21 21:58:42 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Sep 21 21:58:42 symfony [info] {sfWebDebugLogger} Configuration 0.33 ms (5)
+Sep 21 21:58:42 symfony [info] {sfWebDebugLogger} Factories 3.32 ms (1)
