@@ -31,7 +31,7 @@ WHERE pasaporte ilike '%$id%' order by b.id";
     }
 
     public static function getNotasGrado2($id) {
-        $sql = "SELECT a.*,b.id as identificador, b.descripcion,b.cod_ubv
+        $sql = "SELECT a.*,b.id as identificador, b.descripcion,b.cod_ubv,b.ano_acad
 FROM notas a
 left join unidad_curricular b on a.unidad_curricular_id::int=b.id
 WHERE a.estudiante_id =$id order by b.id";

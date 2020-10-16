@@ -138,8 +138,7 @@ DIRECCIÓN GENERAL DE ADMISIÓN, CONTROL DE ESTUDIOS Y REGISTROS ACADEMICOS<br>
             por medio de la presente hace constar que el(la) ciudadano(a) ' . $data[0]['primer_nombre'] . ' ' . $data[0]['segundo_nombre'] . ' 
             ' . $data[0]['primer_apellido'] . ' ' . $data[0]['segundo_apellido'] . ', de Nacionalidad __________________ titular del Documento de 
                 Identidad CI/PP N° ' . $data[0]['identificacion'] . ', es estudiante activo (a)  del Programa Nacional de Formación en 
-                Medicina Integral Comunitaria (PNFMIC). Actualmente, cursa el Período Académico 2017-I, comprendido entre el 09-01-2017 
-                al 31-06-2017, en el siguiente horario: lunes a sábado de 8:00 a.m. a 12:00 a.m., y de 1:00 p.m., a 5:00 p.m., en el Área 
+                Medicina Integral Comunitaria (PNFMIC). Actualmente, cursa el Período Académico '.$year.', en el siguiente horario: lunes a sábado de 8:00 a.m. a 12:00 a.m., y de 1:00 p.m., a 5:00 p.m., en el Área 
                 de Salud Integral Comunitaria__________________, ubicada en la Parroquia ' . $data[0]['parroquia'] . ', Municipio ' . $data[0]['municipio'] . ' 
                     del  Estado ' . $data[0]['estado'] . '.  <br>
 
@@ -287,8 +286,7 @@ DIRECCIÓN GENERAL DE ADMISIÓN, CONTROL DE ESTUDIOS Y REGISTROS ACADEMICOS<br>
             por medio de la presente hace constar que el(la) ciudadano(a) <b> ' . $data[0]['primer_nombre'] . ' ' . $data[0]['segundo_nombre'] . ' 
             ' . $data[0]['primer_apellido'] . ' ' . $data[0]['segundo_apellido'] . '</b>, titular del Documento de 
                 Identidad CI/PP N°<b>' . $data[0]['identificacion'] . '</b>, es estudiante activo (a)  del Programa Nacional de Formación en 
-                Medicina Integral Comunitaria (PNFMIC). Actualmente, cursa el Período Académico 2018-I, comprendido entre el 17-9-2018
-                al 31-12-2018, en el siguiente horario: lunes a sábado de 8:00 a.m. a 12:00 a.m., y de 1:00 p.m., a 5:00 p.m.,  en la Parroquia 
+                Medicina Integral Comunitaria (PNFMIC). Actualmente, cursa el Período Académico '.$year.', en el siguiente horario: lunes a sábado de 8:00 a.m. a 12:00 a.m., y de 1:00 p.m., a 5:00 p.m.,  en la Parroquia 
                 ' . $data[0]['parroquia'] . ', del Municipio ' . $data[0]['municipio'] . ' del  Estado ' . strtoupper($data[0]['estado']) . '. 
             Constancia que se emite  a los ' . $dia . ' días del mes de ' . $mes_letras . ' de ' . $year . '.
 <br>

@@ -102,6 +102,13 @@ class EstudianteTable extends Doctrine_Table {
         $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
         return $q;
     }
+    public static function obtener_estudiante_estado_ri($id) {
+        $sql = "select * from estudiante where estado_id=$id and notas='SI-RI'";
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
+        return $q;
+    }
+
+
         public static function obtener_estudiante_senamecf() {
         $sql = "select * from estudiante where notas='SENAMECF'";
         $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);

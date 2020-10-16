@@ -44,7 +44,7 @@ class reporteActions extends sfActions
         $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
         $pdf->setFontSubsetting(true);
         $pdf->SetFont('dejavusans', '', 8, '', true);
-        $pdf->AddPage('P', 'A4');
+        $pdf->AddPage('P', 'F4');
         $style = array(
             'border' => 2,
             'vpadding' => 'auto',
@@ -92,7 +92,7 @@ class reporteActions extends sfActions
 <table><tr><td>
 <p align="justify">
 La escala de calificaciones es del 1 al 20, siendo la mínima aprobatoria de 12 puntos.
-Certificación que se expide al solicitante por parte de la Secretaría General de la Universidad de la Ciencias de la Salud “Hugo Chávez Frías”, a los Ocho (8) días del mes de febrero del año Dos Mil Diecinueve (2019).
+Certificación que se expide al solicitante por parte de la Secretaría General de la Universidad de la Ciencias de la Salud “Hugo Chávez Frías”, a los Ocho (8) días del mes de octubre del año Dos Mil Veinte (2020).
 </p>
 Indice Académico: <strong>'.$promedio2.'</strong>. El total de unidades curriculares requeridas para egresar es de 49.
 </td></tr></table><br/>
@@ -105,12 +105,106 @@ Indice Académico: <strong>'.$promedio2.'</strong>. El total de unidades curricu
 </table>
         </font>';
         $pdf->writeHTML($html2, true, 0, true, true);
-        $pdf->AddPage('P', 'A4');
+        $pdf->AddPage('P', 'F4');
     endforeach;
         //$pdf->writeHTML($html2, true, 0, true, true);
         $pdf->Output('notas.pdf', 'I');
         throw new sfStopException();
   }
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+public function executeMostrarReporteEstadoRi(sfWebRequest $request){
+      ini_set('max_execution_time', 300);
+        $this->estado = $this->getRequestParameter('estado');
+        $this->estudiantes = EstudianteTable::obtener_estudiante_estado_ri($this->estado);
+        $config = sfTCPDFPluginConfigHandler::loadConfig();
+        $pdf = new sfTCPDF();
+        $pdf->SetCreator(PDF_CREATOR);
+        $pdf->SetAuthor('SIGAE');
+        $pdf->SetTitle('Notas');
+        $pdf->SetSubject('SIGAE - Notas');
+        $pdf->SetKeywords('SIGAE, PDF, Notas');
+        $pdf->setPrintHeader(false);
+        $pdf->setPrintFooter(false);
+        $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+        $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP - 20, PDF_MARGIN_RIGHT);
+        $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM - 20);
+        $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
+        $pdf->setFontSubsetting(true);
+        $pdf->SetFont('dejavusans', '', 8, '', true);
+        //$pdf->AddPage('P', 'F4');
+        $style = array(
+            'border' => 2,
+            'vpadding' => 'auto',
+            'hpadding' => 'auto',
+            'fgcolor' => array(0, 0, 0),
+            'bgcolor' => false, //array(255,255,255)
+            'module_width' => 1, // width of a single module in points
+            'module_height' => 1 // height of a single module in points
+        );
+        foreach($this->estudiantes as $data):
+	$pdf->AddPage('P', 'F4');
+$html2 = '<br><br><font size="8"><table>
+            <tr><td align="left"><img src="images/logo_ucs.jpg" width="300" /></td><td align="right" ><font size="8">República Bolivariana de Venezuela<br> 
+            Universidad de las Ciencias de la Salud <br><b>"HUGO CHÁVEZ FRÍAS"</b><br> SECRETARÍA GENERAL <br> Dirección General de Control de Estudios</font></td></tr>
+            <tr><td colspan="2" align="center"><b>NOTAS CERTIFICADAS</b></td></tr>
+            <tr><td colspan="2"><p style="text-align: justify"><br>
+       Quien suscribe, la Secretaría General de la Universidad de las Ciencias de la Salud “Hugo Chávez Frías”,
+       certifica que el ciudadano(a):  <strong>'.$data['primer_nombre'].' '.$data['segundo_nombre'].' '.$data['primer_apellido'].' '.$data['segundo_apellido'].'</strong>, titular del Documento de Identidad 
+       N° <strong>'.$data['tipo_identificacion'].'-'.$data['identificacion'].'</strong>, quien cursó y aprobó las unidades curriculares del Plan de Estudio del  
+       <strong>Programa Nacional de Formación en Radioimagenologia</strong>, para optar al título de: 
+       <strong>Tecnico(a) Superior Universitario(a) en Radioimagenologia</strong>, obtuvo las siguientes calificaciones: 
+       
+</p></td></tr>
+            </table></font>';
+
+$html2.='<font size="8">
+            <table border="1">
+            <tr><td width="3%" align="center">N</td><td width="15%" align="center">CÓDIGO</td><td width="66%" align="center">UNIDAD CURRÍCULAR</td>
+            <td width="10%" align="center">TRAYECTO</td><td width="6%" align="center">NOTA</td></tr>';
+        $notas = NotasTable::getNotasGrado2($data['id']);
+
+        $nro = 0;
+        $sum_notas=0;
+        foreach ($notas as $data):
+            $nro++;
+            $html2.='<tr><td align="center">' . $nro . '</td>
+            <td align="center">' . $data['cod_ubv'] . '</td>
+            <td>' . $this->titleCase($data['descripcion']) . '</td>
+            <td align="center">' . $data['ano_acad'] . '</td>
+            <td align="center">' . $data['nota'] . '</td>
+            </tr>';
+            $sum_notas=$sum_notas+$data['nota'];
+        endforeach;
+        $promedio=$sum_notas/$nro;
+        $promedio2=number_format((float)$promedio, 2, '.', '');
+        $html2.='</table>
+            </table>';
+$html2.='<br/><br/>
+<table><tr><td>
+<p align="justify">
+La escala de calificaciones es del 1 al 20, siendo la mínima aprobatoria de 12 puntos.
+Certificación que se expide al solicitante por parte de la Secretaría General de la Universidad de la Ciencias de la Salud “Hugo Chávez Frías”, a los Ocho (8) días del mes de octubre del año Dos Mil Veinte (2020).
+</p>
+Indice Académico: <strong>'.$promedio2.'</strong>. El total de unidades curriculares requeridas para egresar es de 49.
+</td></tr></table><br/>
+<table><tr><td><font size="8"><i>mi/MA</i>
+<p align="right"><i><strong>Sin sello no tiene validez</strong></i>
+</p></font>
+</td></tr>
+<tr><td align="center"><strong>Prof. Ana Y. Montenegro N.<br/>Secretaria General UCS</strong>
+</td></tr>
+</table>
+        </font>';
+
+	
+	$pdf->writeHTML($html2, true, 0, true, true);
+	endforeach;
+	$pdf->Output('notas.pdf', 'I');
+        throw new sfStopException();
+
+           }
+
   function titleCase($string, $delimiters = array(" ", "-", ".", "'", "O'", "Mc"), $exceptions = array("de", "da", "dos", "das", "do", "I", "II", "III", "IV", "V", "VI"))
     {
         $string = mb_convert_case($string, MB_CASE_TITLE, "UTF-8");
