@@ -567,7 +567,7 @@ NOTA: deben ser impresos dos (02) ejemplares de cada formato.</p></td></tr></tab
     <tr><td colspan="7" align="center"><img src="images/cintillo.jpg"/></td></tr>
     <tr><td colspan="6" width="80%" align="center">REPÚBLICA BOLIVARIANA DE VENEZUELA<br> 
             UNIVERSIDAD DE LAS CIENCIAS DE LA SALUD "HUGO CHÁVEZ FRÍAS"<br>
-            <b>PLANILLA DE MATRÍCULA AÑO ACADÉMICO 2019</b>
+            <b>PLANILLA DE MATRÍCULA AÑO ACADÉMICO '.$year.'</b>
         </td><td width="20%"><img src="uploads/fotos/original/' . $foto . '" height="340" width="280" alt="foto"/></td></tr>
     <tr><td colspan="7" align="center"><b>DATOS PERSONALES</b></td></tr>
     <tr><td>PRIMER APELLIDO:<br>' . $data[0]['primer_apellido'] . '</td><td>SEGUNDO APELLIDO:<br>' . $data[0]['segundo_apellido'] . '</td><td>NOMBRES:<br>' . $data[0]['primer_nombre'] . ' ' . $data[0]['segundo_nombre'] . '</td><td>GÉNERO:</td>

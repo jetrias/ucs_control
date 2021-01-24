@@ -28,7 +28,8 @@ class reporteActions extends sfActions
   public function executeMostrarReporteEstado(sfWebRequest $request){
       ini_set('max_execution_time', 300);
         $this->estado = $this->getRequestParameter('estado');
-        $this->estudiantes = EstudianteTable::obtener_estudiante_estado($this->estado);
+	$this->periodo = $this->getRequestParameter('periodo');
+        $this->estudiantes = EstudianteTable::obtener_estudiante_estado_periodo($this->estado,$this->periodo);
         $config = sfTCPDFPluginConfigHandler::loadConfig();
         $pdf = new sfTCPDF();
         $pdf->SetCreator(PDF_CREATOR);
@@ -87,22 +88,11 @@ class reporteActions extends sfActions
         $promedio=$sum_notas/$nro;
         $promedio2=number_format((float)$promedio, 2, '.', '');
         $html2.='</table>
-            </table>
-<br/><br/>
-<table><tr><td>
-<p align="justify">
-La escala de calificaciones es del 1 al 20, siendo la mínima aprobatoria de 12 puntos.
-Certificación que se expide al solicitante por parte de la Secretaría General de la Universidad de la Ciencias de la Salud “Hugo Chávez Frías”, a los Ocho (8) días del mes de octubre del año Dos Mil Veinte (2020).
-</p>
-Indice Académico: <strong>'.$promedio2.'</strong>. El total de unidades curriculares requeridas para egresar es de 49.
-</td></tr></table><br/>
-<table><tr><td><font size="8"><i>mi/MA</i>
-<p align="right"><i><strong>Sin sello no tiene validez</strong></i>
-</p></font>
-</td></tr>
-<tr><td align="center"><strong>Prof. Ana Y. Montenegro N.<br/>Secretaria General UCS</strong>
-</td></tr>
-</table>
+            </table> <br/><br/> <table><tr><td> <p align="justify"> La escala de calificaciones es del 1 al 20, siendo la mínima aprobatoria de 12 puntos. 
+Certificación que se expide al solicitante por parte de la Secretaría General de la Universidad de la Ciencias de la Salud “Hugo Chávez Frías”, en fecha 
+'.date('d-m-Y').'. </p> Indice Académico: <strong>'.$promedio2.'</strong>. El total de unidades curriculares 
+requeridas para egresar es de 49. </td></tr></table><br/> <table><tr><td><font size="8"><i>MA/mi</i> <p align="right"><i><strong>Sin sello no tiene 
+validez</strong></i> </p></font> </td></tr> <tr><td align="center"><strong>Prof. Ana Y. Montenegro N.<br/>Secretaria General UCS</strong> </td></tr> </table>
         </font>';
         $pdf->writeHTML($html2, true, 0, true, true);
         $pdf->AddPage('P', 'F4');
@@ -152,8 +142,8 @@ $html2 = '<br><br><font size="8"><table>
        Quien suscribe, la Secretaría General de la Universidad de las Ciencias de la Salud “Hugo Chávez Frías”,
        certifica que el ciudadano(a):  <strong>'.$data['primer_nombre'].' '.$data['segundo_nombre'].' '.$data['primer_apellido'].' '.$data['segundo_apellido'].'</strong>, titular del Documento de Identidad 
        N° <strong>'.$data['tipo_identificacion'].'-'.$data['identificacion'].'</strong>, quien cursó y aprobó las unidades curriculares del Plan de Estudio del  
-       <strong>Programa Nacional de Formación en Radioimagenologia</strong>, para optar al título de: 
-       <strong>Tecnico(a) Superior Universitario(a) en Radioimagenologia</strong>, obtuvo las siguientes calificaciones: 
+       <strong>Programa Nacional de Formación en Radioimageneología</strong>, para optar al título de: 
+       <strong>Técnico(a) Superior Universitario(a) en Radioimageneología</strong>, obtuvo las siguientes calificaciones: 
        
 </p></td></tr>
             </table></font>';
@@ -161,7 +151,7 @@ $html2 = '<br><br><font size="8"><table>
 $html2.='<font size="8">
             <table border="1">
             <tr><td width="3%" align="center">N</td><td width="15%" align="center">CÓDIGO</td><td width="66%" align="center">UNIDAD CURRÍCULAR</td>
-            <td width="10%" align="center">TRAYECTO</td><td width="6%" align="center">NOTA</td></tr>';
+            <td width="10%" align="center">PERÍODO <br>LECTIVO</td><td width="6%" align="center">NOTA</td></tr>';
         $notas = NotasTable::getNotasGrado2($data['id']);
 
         $nro = 0;
@@ -170,8 +160,8 @@ $html2.='<font size="8">
             $nro++;
             $html2.='<tr><td align="center">' . $nro . '</td>
             <td align="center">' . $data['cod_ubv'] . '</td>
-            <td>' . $this->titleCase($data['descripcion']) . '</td>
-            <td align="center">' . $data['ano_acad'] . '</td>
+            <td>' . $data['descripcion'] . '</td>
+            <td align="center">' . $data['periodo'] . '</td>
             <td align="center">' . $data['nota'] . '</td>
             </tr>';
             $sum_notas=$sum_notas+$data['nota'];
@@ -186,7 +176,7 @@ $html2.='<br/><br/>
 La escala de calificaciones es del 1 al 20, siendo la mínima aprobatoria de 12 puntos.
 Certificación que se expide al solicitante por parte de la Secretaría General de la Universidad de la Ciencias de la Salud “Hugo Chávez Frías”, a los Ocho (8) días del mes de octubre del año Dos Mil Veinte (2020).
 </p>
-Indice Académico: <strong>'.$promedio2.'</strong>. El total de unidades curriculares requeridas para egresar es de 49.
+Indice Académico: <strong>'.$promedio2.'</strong>. El total de unidades curriculares requeridas para egresar como Técnico Superior Universitario en Radioimageneología es de 27.
 </td></tr></table><br/>
 <table><tr><td><font size="8"><i>mi/MA</i>
 <p align="right"><i><strong>Sin sello no tiene validez</strong></i>

@@ -97,8 +97,13 @@ class EstudianteTable extends Doctrine_Table {
         $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
         return $q;
     }
-    public static function obtener_estudiante_estado($id) {
+ public static function obtener_estudiante_estado($id) {
         $sql = "select * from estudiante where estado_id=$id and notas='SI-9-2'";
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
+        return $q;
+    }
+ public static function obtener_estudiante_estado_periodo($id,$periodo) {
+        $sql = "select * from estudiante where estado_id=$id and notas='$periodo'";
         $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
         return $q;
     }

@@ -16168,3 +16168,193 @@ Sep 21 21:58:42 symfony [warning] {sfWebDebugLogger}  Warning at /var/www/symfon
 Sep 21 21:58:42 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
 Sep 21 21:58:42 symfony [info] {sfWebDebugLogger} Configuration 0.33 ms (5)
 Sep 21 21:58:42 symfony [info] {sfWebDebugLogger} Factories 3.32 ms (1)
+Nov 26 19:19:17 symfony [info] {sfPatternRouting} Match route "otra_informacion_new" (/otra_informacion/new.:sf_format) for /otra_informacion/new with parameters array (  'module' => 'otra_informacion',  'action' => 'new',  'sf_format' => 'html',)
+Nov 26 19:19:17 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Nov 26 19:19:17 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Nov 26 19:19:17 symfony [info] {otra_informacionActions} Call "otra_informacionActions->executeNew()"
+Nov 26 19:19:17 symfony [info] {sfPHPView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/newSuccess.php"
+Nov 26 19:19:17 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_assets.php"
+Nov 26 19:19:17 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_flashes.php"
+Nov 26 19:19:17 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_header.php"
+Nov 26 19:19:17 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form.php"
+Nov 26 19:19:17 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_actions.php"
+Nov 26 19:19:17 symfony [info] {sfPartialView} Render "/var/www/ucs_control/apps/frontend/modules/otra_informacion/templates/_form_fieldset.php"
+Nov 26 19:19:17 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:19:17 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:19:17 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:19:17 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:19:17 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:19:17 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:19:17 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:19:17 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:19:17 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:19:17 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:19:17 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:19:17 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:19:17 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:19:17 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:19:17 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:19:17 symfony [info] {sfPartialView} Render "/var/www/ucs_control/apps/frontend/modules/otra_informacion/templates/_form_fieldset.php"
+Nov 26 19:19:17 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:19:17 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:19:17 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:19:17 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_actions.php"
+Nov 26 19:19:17 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_footer.php"
+Nov 26 19:19:17 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_themeswitcher.php"
+Nov 26 19:19:17 symfony [info] {sfPHPView} Decorate content with "/var/www/ucs_control/apps/frontend/templates/layout.php"
+Nov 26 19:19:17 symfony [info] {sfPHPView} Render "/var/www/ucs_control/apps/frontend/templates/layout.php"
+Nov 26 19:19:17 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Nov 26 19:19:17 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Nov 26 19:19:17 symfony [info] {sfWebDebugLogger} Configuration 207.89 ms (11)
+Nov 26 19:19:17 symfony [info] {sfWebDebugLogger} Factories 35.76 ms (1)
+Nov 26 19:19:17 symfony [info] {sfWebDebugLogger} Action "otra_informacion/new" 4.27 ms (1)
+Nov 26 19:19:17 symfony [info] {sfWebDebugLogger} View "Success" for "otra_informacion/new" 19.27 ms (1)
+Nov 26 19:19:17 symfony [info] {sfWebDebugLogger} Partial "otra_informacion/_assets" 0.23 ms (1)
+Nov 26 19:19:17 symfony [info] {sfWebDebugLogger} Partial "otra_informacion/_flashes" 0.19 ms (1)
+Nov 26 19:19:17 symfony [info] {sfWebDebugLogger} Partial "otra_informacion/_form_header" 0.19 ms (1)
+Nov 26 19:19:17 symfony [info] {sfWebDebugLogger} Partial "otra_informacion/_form" 12.65 ms (1)
+Nov 26 19:19:17 symfony [info] {sfWebDebugLogger} Partial "otra_informacion/_form_actions" 2.09 ms (2)
+Nov 26 19:19:17 symfony [info] {sfWebDebugLogger} Partial "otra_informacion/_form_fieldset" 8.83 ms (2)
+Nov 26 19:19:17 symfony [info] {sfWebDebugLogger} Partial "otra_informacion/_form_field" 7.09 ms (18)
+Nov 26 19:19:17 symfony [info] {sfWebDebugLogger} Partial "otra_informacion/_form_footer" 0.13 ms (1)
+Nov 26 19:19:17 symfony [info] {sfWebDebugLogger} Partial "otra_informacion/_themeswitcher" 0.13 ms (1)
+Nov 26 19:19:17 symfony [info] {sfWebResponse} Send content (194779 o)
+Nov 26 19:19:51 symfony [info] {sfPatternRouting} Match route "otra_informacion_create" (/otra_informacion.:sf_format) for /otra_informacion with parameters array (  'module' => 'otra_informacion',  'action' => 'create',  'sf_format' => 'html',)
+Nov 26 19:19:51 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Nov 26 19:19:51 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Nov 26 19:19:51 symfony [info] {otra_informacionActions} Call "otra_informacionActions->executeCreate()"
+Nov 26 19:19:51 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Nov 26 19:19:51 symfony [info] {Doctrine_Connection_Pgsql} query : SELECT NEXTVAL('otra_informacion_id_seq') - ()
+Nov 26 19:19:51 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO otra_informacion (base_mision, det_base_mision, org_dep, det_org_deportiva, org_cultural, det_org_cultural, org_ecologista, det_org_ecologista, org_productiva, det_org_productiva, mil_bolivariana, det_mil_bolivariana, org_politica_estudiantil, det_org_politica_estudiantil, iniciativa_productiva, facebook, twitter, instagram, estudiante_id, id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (NO, , NO, , NO, , NO, , NO, , NO, , NO, , NINGUNA, NINGUNA, NINGUNA, NINGUNA, 152290, 194124)
+Nov 26 19:19:51 symfony [warning] {sfWebDebugLogger}  Warning at /var/www/symfony-1.4.20/lib/exception/sfException.class.php on line 107 (Cannot modify header information - headers already sent by (output started at /var/www/symfony-1.4.20/lib/form/addon/sfFormObject.class.php:281))
+Nov 26 19:19:51 symfony [err] {Doctrine_Connection_Pgsql_Exception} SQLSTATE[22001]: String data, right truncated: 7 ERROR:  value too long for type character varying(2)
+Nov 26 19:19:51 symfony [warning] {sfWebDebugLogger}  Warning at /var/www/symfony-1.4.20/lib/exception/sfException.class.php on line 161 (Cannot modify header information - headers already sent by (output started at /var/www/symfony-1.4.20/lib/form/addon/sfFormObject.class.php:281))
+Nov 26 19:19:51 symfony [warning] {sfWebDebugLogger}  Warning at /var/www/symfony-1.4.20/lib/response/sfWebResponse.class.php on line 336 (Cannot modify header information - headers already sent by (output started at /var/www/symfony-1.4.20/lib/form/addon/sfFormObject.class.php:281))
+Nov 26 19:19:51 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Nov 26 19:19:51 symfony [warning] {sfWebDebugLogger}  Warning at /var/www/symfony-1.4.20/lib/response/sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at /var/www/symfony-1.4.20/lib/form/addon/sfFormObject.class.php:281))
+Nov 26 19:19:51 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Nov 26 19:19:51 symfony [info] {sfWebDebugLogger} Configuration 0.81 ms (10)
+Nov 26 19:19:51 symfony [info] {sfWebDebugLogger} Factories 6.08 ms (1)
+Nov 26 19:19:51 symfony [info] {sfWebDebugLogger} Action "otra_informacion/create" 63.72 ms (1)
+Nov 26 19:19:51 symfony [info] {sfWebDebugLogger} Database (Doctrine) 2.84 ms (2)
+Nov 26 19:20:12 symfony [info] {sfPatternRouting} Match route "otra_informacion_new" (/otra_informacion/new.:sf_format) for /otra_informacion/new with parameters array (  'module' => 'otra_informacion',  'action' => 'new',  'sf_format' => 'html',)
+Nov 26 19:20:12 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Nov 26 19:20:12 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Nov 26 19:20:12 symfony [info] {otra_informacionActions} Call "otra_informacionActions->executeNew()"
+Nov 26 19:20:12 symfony [info] {sfPHPView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/newSuccess.php"
+Nov 26 19:20:12 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_assets.php"
+Nov 26 19:20:12 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_flashes.php"
+Nov 26 19:20:12 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_header.php"
+Nov 26 19:20:12 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form.php"
+Nov 26 19:20:12 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_actions.php"
+Nov 26 19:20:12 symfony [info] {sfPartialView} Render "/var/www/ucs_control/apps/frontend/modules/otra_informacion/templates/_form_fieldset.php"
+Nov 26 19:20:12 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:20:12 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:20:12 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:20:12 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:20:12 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:20:12 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:20:12 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:20:12 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:20:12 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:20:12 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:20:12 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:20:12 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:20:12 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:20:12 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:20:12 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:20:12 symfony [info] {sfPartialView} Render "/var/www/ucs_control/apps/frontend/modules/otra_informacion/templates/_form_fieldset.php"
+Nov 26 19:20:12 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:20:12 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:20:12 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:20:12 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_actions.php"
+Nov 26 19:20:12 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_footer.php"
+Nov 26 19:20:12 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_themeswitcher.php"
+Nov 26 19:20:12 symfony [info] {sfPHPView} Decorate content with "/var/www/ucs_control/apps/frontend/templates/layout.php"
+Nov 26 19:20:12 symfony [info] {sfPHPView} Render "/var/www/ucs_control/apps/frontend/templates/layout.php"
+Nov 26 19:20:12 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Nov 26 19:20:12 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Nov 26 19:20:12 symfony [info] {sfWebDebugLogger} Configuration 1.24 ms (11)
+Nov 26 19:20:12 symfony [info] {sfWebDebugLogger} Factories 6.29 ms (1)
+Nov 26 19:20:12 symfony [info] {sfWebDebugLogger} Action "otra_informacion/new" 6.63 ms (1)
+Nov 26 19:20:12 symfony [info] {sfWebDebugLogger} View "Success" for "otra_informacion/new" 15.24 ms (1)
+Nov 26 19:20:12 symfony [info] {sfWebDebugLogger} Partial "otra_informacion/_assets" 0.42 ms (1)
+Nov 26 19:20:12 symfony [info] {sfWebDebugLogger} Partial "otra_informacion/_flashes" 0.36 ms (1)
+Nov 26 19:20:12 symfony [info] {sfWebDebugLogger} Partial "otra_informacion/_form_header" 0.19 ms (1)
+Nov 26 19:20:12 symfony [info] {sfWebDebugLogger} Partial "otra_informacion/_form" 9.69 ms (1)
+Nov 26 19:20:12 symfony [info] {sfWebDebugLogger} Partial "otra_informacion/_form_actions" 0.80 ms (2)
+Nov 26 19:20:12 symfony [info] {sfWebDebugLogger} Partial "otra_informacion/_form_fieldset" 7.00 ms (2)
+Nov 26 19:20:12 symfony [info] {sfWebDebugLogger} Partial "otra_informacion/_form_field" 5.36 ms (18)
+Nov 26 19:20:12 symfony [info] {sfWebDebugLogger} Partial "otra_informacion/_form_footer" 0.19 ms (1)
+Nov 26 19:20:12 symfony [info] {sfWebDebugLogger} Partial "otra_informacion/_themeswitcher" 0.17 ms (1)
+Nov 26 19:20:12 symfony [info] {sfWebResponse} Send content (194777 o)
+Nov 26 19:20:41 symfony [info] {sfPatternRouting} Match route "otra_informacion_create" (/otra_informacion.:sf_format) for /otra_informacion with parameters array (  'module' => 'otra_informacion',  'action' => 'create',  'sf_format' => 'html',)
+Nov 26 19:20:41 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Nov 26 19:20:41 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Nov 26 19:20:41 symfony [info] {otra_informacionActions} Call "otra_informacionActions->executeCreate()"
+Nov 26 19:20:41 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Nov 26 19:20:41 symfony [info] {Doctrine_Connection_Pgsql} query : SELECT NEXTVAL('otra_informacion_id_seq') - ()
+Nov 26 19:20:41 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO otra_informacion (base_mision, det_base_mision, org_dep, det_org_deportiva, org_cultural, det_org_cultural, org_ecologista, det_org_ecologista, org_productiva, det_org_productiva, mil_bolivariana, det_mil_bolivariana, org_politica_estudiantil, det_org_politica_estudiantil, iniciativa_productiva, facebook, twitter, instagram, estudiante_id, id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (NO, , NO, , NO, , NO, , NO, , NO, , NO, , NO, NO, NO, NO, 152290, 194125)
+Nov 26 19:20:41 symfony [info] {sfFrontWebController} Redirect to "/control/index.php/estudio_socioeconomico/buscarEse"
+Nov 26 19:20:41 symfony [warning] {sfWebDebugLogger}  Warning at /var/www/symfony-1.4.20/lib/response/sfWebResponse.class.php on line 336 (Cannot modify header information - headers already sent by (output started at /var/www/symfony-1.4.20/lib/form/addon/sfFormObject.class.php:281))
+Nov 26 19:20:41 symfony [info] {sfWebResponse} Send status "HTTP/1.1 302 Found"
+Nov 26 19:20:41 symfony [warning] {sfWebDebugLogger}  Warning at /var/www/symfony-1.4.20/lib/response/sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at /var/www/symfony-1.4.20/lib/form/addon/sfFormObject.class.php:281))
+Nov 26 19:20:41 symfony [info] {sfWebResponse} Send header "Location: /control/index.php/estudio_socioeconomico/buscarEse"
+Nov 26 19:20:41 symfony [warning] {sfWebDebugLogger}  Warning at /var/www/symfony-1.4.20/lib/response/sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at /var/www/symfony-1.4.20/lib/form/addon/sfFormObject.class.php:281))
+Nov 26 19:20:41 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Nov 26 19:20:41 symfony [info] {sfWebDebugLogger} Configuration 0.72 ms (10)
+Nov 26 19:20:41 symfony [info] {sfWebDebugLogger} Factories 5.72 ms (1)
+Nov 26 19:20:41 symfony [info] {sfWebDebugLogger} Action "otra_informacion/create" 58.42 ms (1)
+Nov 26 19:20:41 symfony [info] {sfWebDebugLogger} Database (Doctrine) 6.75 ms (3)
+Nov 26 19:20:41 symfony [info] {sfWebResponse} Send content (122 o)
+Nov 26 19:21:54 symfony [info] {sfPatternRouting} Match route "otra_informacion_new" (/otra_informacion/new.:sf_format) for /otra_informacion/new with parameters array (  'module' => 'otra_informacion',  'action' => 'new',  'sf_format' => 'html',)
+Nov 26 19:21:54 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Nov 26 19:21:54 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Nov 26 19:21:54 symfony [info] {otra_informacionActions} Call "otra_informacionActions->executeNew()"
+Nov 26 19:21:54 symfony [info] {sfPHPView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/newSuccess.php"
+Nov 26 19:21:54 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_assets.php"
+Nov 26 19:21:54 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_flashes.php"
+Nov 26 19:21:54 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_header.php"
+Nov 26 19:21:54 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form.php"
+Nov 26 19:21:54 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_actions.php"
+Nov 26 19:21:54 symfony [info] {sfPartialView} Render "/var/www/ucs_control/apps/frontend/modules/otra_informacion/templates/_form_fieldset.php"
+Nov 26 19:21:54 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:21:54 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:21:54 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:21:54 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:21:54 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:21:54 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:21:54 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:21:54 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:21:54 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:21:54 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:21:54 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:21:54 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:21:54 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:21:54 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:21:54 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:21:54 symfony [info] {sfPartialView} Render "/var/www/ucs_control/apps/frontend/modules/otra_informacion/templates/_form_fieldset.php"
+Nov 26 19:21:54 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:21:54 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:21:54 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_field.php"
+Nov 26 19:21:54 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_actions.php"
+Nov 26 19:21:54 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_form_footer.php"
+Nov 26 19:21:54 symfony [info] {sfPartialView} Render "/var/www/ucs_control/cache/frontend/dev/modules/autoOtra_informacion/templates/_themeswitcher.php"
+Nov 26 19:21:54 symfony [info] {sfPHPView} Decorate content with "/var/www/ucs_control/apps/frontend/templates/layout.php"
+Nov 26 19:21:54 symfony [info] {sfPHPView} Render "/var/www/ucs_control/apps/frontend/templates/layout.php"
+Nov 26 19:21:54 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Nov 26 19:21:54 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Nov 26 19:21:54 symfony [info] {sfWebDebugLogger} Configuration 1.28 ms (11)
+Nov 26 19:21:54 symfony [info] {sfWebDebugLogger} Factories 4.92 ms (1)
+Nov 26 19:21:54 symfony [info] {sfWebDebugLogger} Action "otra_informacion/new" 5.17 ms (1)
+Nov 26 19:21:54 symfony [info] {sfWebDebugLogger} View "Success" for "otra_informacion/new" 11.88 ms (1)
+Nov 26 19:21:54 symfony [info] {sfWebDebugLogger} Partial "otra_informacion/_assets" 0.18 ms (1)
+Nov 26 19:21:54 symfony [info] {sfWebDebugLogger} Partial "otra_informacion/_flashes" 0.13 ms (1)
+Nov 26 19:21:54 symfony [info] {sfWebDebugLogger} Partial "otra_informacion/_form_header" 0.12 ms (1)
+Nov 26 19:21:54 symfony [info] {sfWebDebugLogger} Partial "otra_informacion/_form" 8.70 ms (1)
+Nov 26 19:21:54 symfony [info] {sfWebDebugLogger} Partial "otra_informacion/_form_actions" 0.57 ms (2)
+Nov 26 19:21:54 symfony [info] {sfWebDebugLogger} Partial "otra_informacion/_form_fieldset" 6.58 ms (2)
+Nov 26 19:21:54 symfony [info] {sfWebDebugLogger} Partial "otra_informacion/_form_field" 5.08 ms (18)
+Nov 26 19:21:54 symfony [info] {sfWebDebugLogger} Partial "otra_informacion/_form_footer" 0.12 ms (1)
+Nov 26 19:21:54 symfony [info] {sfWebDebugLogger} Partial "otra_informacion/_themeswitcher" 0.11 ms (1)
+Nov 26 19:21:54 symfony [info] {sfWebResponse} Send content (193842 o)

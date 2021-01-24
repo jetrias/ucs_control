@@ -38,6 +38,17 @@
                                     endforeach;
                                     ?>
                                 </select>
+				<select name="periodo" id="periodo">
+					<option value="SI">SI</option>
+					<option value="SI-7">MIC-7</option>
+					<option value="SI-8">MIC-8</option>
+					<option value="SI-9">MIC-9</option>
+					<option value="SI-9-2">MIC-9-2</option>
+					<option value="SI-ELAM">ELAM</option>
+					<!--option value="SI-RI">RADIOIMAGENOLOGIA-I</option-->
+					<!--option value="SENAMECF">SENAMECF-I</option-->
+
+				</select>
                                 <input type="submit" value="Generar Reporte" id='enviar' name='enviar'>
                             </div>
                             <br><br><br><br><br><br><br><br><br><br><br><br>

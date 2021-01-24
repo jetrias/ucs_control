@@ -14591,3 +14591,19 @@ Oct 16 03:36:28 symfony [info] {sfWebDebugLogger} Factories 26.24 ms (1)
 Oct 16 03:36:28 symfony [info] {sfWebDebugLogger} Action "default/login" 0.07 ms (1)
 Oct 16 03:36:28 symfony [info] {sfWebDebugLogger} View "Success" for "default/login" 4.23 ms (1)
 Oct 16 03:36:28 symfony [info] {sfWebResponse} Send content (32720 o)
+Nov 26 19:15:43 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /otra_informacion with parameters array (  'module' => 'otra_informacion',  'action' => 'index',)
+Nov 26 19:15:43 symfony [info] {sfFrontWebController} Action "otra_informacion/index" does not exist
+Nov 26 19:15:43 symfony [err] {sfError404Exception} Action "otra_informacion/index" does not exist.
+Nov 26 19:15:43 symfony [info] {sfWebResponse} Send status "HTTP/1.1 404 Not Found"
+Nov 26 19:15:43 symfony [warning] {sfWebDebugLogger}  Warning at /var/www/symfony-1.4.20/lib/response/sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at /var/www/symfony-1.4.20/lib/response/sfWebResponse.class.php:409))
+Nov 26 19:15:43 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Nov 26 19:15:43 symfony [info] {sfWebDebugLogger} Configuration 0.66 ms (5)
+Nov 26 19:15:43 symfony [info] {sfWebDebugLogger} Factories 25.55 ms (1)
+Nov 26 19:16:06 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /otra_informacion/new with parameters array (  'module' => 'otra_informacion',  'action' => 'new',)
+Nov 26 19:16:06 symfony [info] {sfFrontWebController} Action "otra_informacion/new" does not exist
+Nov 26 19:16:06 symfony [err] {sfError404Exception} Action "otra_informacion/new" does not exist.
+Nov 26 19:16:06 symfony [info] {sfWebResponse} Send status "HTTP/1.1 404 Not Found"
+Nov 26 19:16:06 symfony [warning] {sfWebDebugLogger}  Warning at /var/www/symfony-1.4.20/lib/response/sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at /var/www/symfony-1.4.20/lib/response/sfWebResponse.class.php:409))
+Nov 26 19:16:06 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Nov 26 19:16:06 symfony [info] {sfWebDebugLogger} Configuration 0.43 ms (5)
+Nov 26 19:16:06 symfony [info] {sfWebDebugLogger} Factories 7.91 ms (1)
