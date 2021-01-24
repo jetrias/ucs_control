@@ -132,7 +132,7 @@ public function executeMostrarReporteEstadoV(sfWebRequest $request){
           'module_width' => 1, // width of a single module in points
           'module_height' => 1 // height of a single module in points
       );
-      $html2='<br><br><font size="8"><table>
+      $html='<br><br><font size="8"><table>
       <tr><td align="left"><img src="images/logo_ucs.jpg" width="300" /></td><td align="right" ><font size="8">República Bolivariana de Venezuela<br> 
       Universidad de las Ciencias de la Salud <br><b>"HUGO CHÁVEZ FRÍAS"</b><br> SECRETARÍA GENERAL <br> Dirección General de Control de Estudios</font></td></tr>
       <tr><td colspan="2" align="center"><b>ACTA DE VERIFICACIÓN ACADÉMICA DEL ESTUDIANTE <br>X COHORTE PNFMIC</b></td></tr>
@@ -152,10 +152,10 @@ public function executeMostrarReporteEstadoV(sfWebRequest $request){
        caso de que la nota reflejada en una o más unidades curriculares, no se  correspondiera con la nota reflejada en el acta de examen, y 
        en este sentido, el Comité de Verificación procedió a plasmar la nota que efectivamente estaba indicada en el acta de examen.    
       </p></td></tr></table>';
-      $pdf->writeHTML($html2, true, 0, true, true);
+      $pdf->writeHTML($html, true, 0, true, true);
       $pdf->AddPage('P', 'F4');
       foreach($this->estudiantes as $data):
-       $html2 .= '<br><br><font size="8"><table>
+       $html2 = '<br><br><font size="8"><table>
           <tr><td align="left"><img src="images/logo_ucs.jpg" width="300" /></td><td align="right" ><font size="8">República Bolivariana de Venezuela<br> 
           Universidad de las Ciencias de la Salud <br><b>"HUGO CHÁVEZ FRÍAS"</b><br> SECRETARÍA GENERAL <br> Dirección General de Control de Estudios</font></td></tr>
           <tr><td colspan="2" align="center"><b>DOCUMENTO DE VERIFICACIÓN ACADÉMICA DEL ESTUDIANTE </b></td></tr>
