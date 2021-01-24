@@ -134,7 +134,8 @@ public function executeMostrarReporteEstadoV(sfWebRequest $request){
       );
       $html='<br><br><font size="8"><table>
       <tr><td align="left"><img src="images/logo_ucs.jpg" width="300" /></td><td align="right" ><font size="8">República Bolivariana de Venezuela<br> 
-      Universidad de las Ciencias de la Salud <br><b>"HUGO CHÁVEZ FRÍAS"</b><br> SECRETARÍA GENERAL <br> Dirección General de Control de Estudios</font></td></tr>
+      Universidad de las Ciencias de la Salud <br><b>"HUGO CHÁVEZ FRÍAS"</b><br> SECRETARÍA GENERAL <br> Dirección General de Control de Estudios<br>
+      <strong>FORMATO O2-A</strong></font></td></tr>
       <tr><td colspan="2" align="center"><b>ACTA DE VERIFICACIÓN ACADÉMICA DEL ESTUDIANTE <br>X COHORTE PNFMIC</b></td></tr>
       <tr><td colspan="2"><p style="text-align: justify"><br>
       Hoy____ de _________________________ de 20________, reunidos: el (la) Secretario (a) Docente PNFMIC
@@ -166,7 +167,8 @@ public function executeMostrarReporteEstadoV(sfWebRequest $request){
       foreach($this->estudiantes as $data):
        $html2 = '<br><br><font size="8"><table>
           <tr><td align="left"><img src="images/logo_ucs.jpg" width="300" /></td><td align="right" ><font size="8">República Bolivariana de Venezuela<br> 
-          Universidad de las Ciencias de la Salud <br><b>"HUGO CHÁVEZ FRÍAS"</b><br> SECRETARÍA GENERAL <br> Dirección General de Control de Estudios</font></td></tr>
+          Universidad de las Ciencias de la Salud <br><b>"HUGO CHÁVEZ FRÍAS"</b><br> SECRETARÍA GENERAL <br> Dirección General de Control de Estudios<br>
+          <strong>FORMATO O2-B</strong></font></td></tr>
           <tr><td colspan="2" align="center"><b>DOCUMENTO DE VERIFICACIÓN ACADÉMICA DEL ESTUDIANTE </b></td></tr>
           <tr><td colspan="2"><p style="text-align: justify"><br>
           Hoy_____ de _________________________ de 20_____, el (la) estudiante: <strong>'.$data['primer_nombre'].' '.$data['segundo_nombre'].' '.$data['primer_apellido'].' '.$data['segundo_apellido'].'</strong> 
