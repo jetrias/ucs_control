@@ -132,17 +132,26 @@ public function executeMostrarReporteEstadoV(sfWebRequest $request){
           'module_width' => 1, // width of a single module in points
           'module_height' => 1 // height of a single module in points
       );
+      if($this->periodo=="ELAM-9"){
+          $cohorte='VIII cohorte ELAM';
+          $pnf='VIII COHORTE PNFMIC ELAM';
+          $comite='VIII Cohorte del  PNFMIC - ELAM';
+      }else{
+          $cohorte='X cohorte';
+          $pnf='X COHORTE PNFMIC';
+          $comite='X Cohorte del  PNFMIC';
+      }
       $html='<br><br><font size="8"><table>
       <tr><td align="left"><img src="images/logo_ucs.jpg" width="300" /></td><td align="right" ><font size="8">República Bolivariana de Venezuela<br> 
       Universidad de las Ciencias de la Salud <br><b>"HUGO CHÁVEZ FRÍAS"</b><br> SECRETARÍA GENERAL <br> Dirección General de Control de Estudios<br>
       <strong>FORMATO O2-A</strong></font></td></tr>
-      <tr><td colspan="2" align="center"><b>ACTA DE VERIFICACIÓN ACADÉMICA DEL ESTUDIANTE <br>X COHORTE PNFMIC</b></td></tr>
+      <tr><td colspan="2" align="center"><b>ACTA DE VERIFICACIÓN ACADÉMICA DEL ESTUDIANTE <br>'.$pnf.'</b></td></tr>
       <tr><td colspan="2"><p style="text-align: justify"><br>
       Hoy____ de _________________________ de 20________, reunidos: el (la) Secretario (a) Docente PNFMIC
        ____________________________ Doc. Ident. N° ____________, el (la) Director (a) de Secretaría UCS 
        ___________________________________ Doc. Ident. N°_______________, del estado ___________________, 
        conjuntamente con los (las) Profesores (as)____________________________ Doc. Ident. N°______________ y _______________________________ 
-       Doc. Ident. N°______________, respectivamente, designados como Comité de Verificación Académica de la X Cohorte del  PNFMIC, 
+       Doc. Ident. N°______________, respectivamente, designados como Comité de Verificación Académica de la '.$comite.', 
        y ______________________________ Doc. Identidad N°____________, en calidad de Testigo Estudiantil, con la finalidad de realizar una 
        revisión exhaustiva a las Actas de Exámenes de cada una de las unidades curriculares cursadas por: 
        ________________________________________________________Doc. Identidad N. º ___________________________, aspirante al 
@@ -173,7 +182,7 @@ public function executeMostrarReporteEstadoV(sfWebRequest $request){
           <tr><td colspan="2"><p style="text-align: justify"><br>
           Hoy_____ de _________________________ de 20_____, el (la) estudiante: <strong>'.$data['primer_nombre'].' '.$data['segundo_nombre'].' '.$data['primer_apellido'].' '.$data['segundo_apellido'].'</strong> 
           portador (a) del Documento de Identidad Nº <strong>'.$data['tipo_identificacion'].'-'.$data['identificacion'].'</strong>, hace entrega del  Documento de Verificación Académica ante la Secretaria Docente,  
-          para que el Comité de Verificación Académica de la X Cohorte, procedan a la revisión de las notas obtenidas en cada una de las unidades curriculares que contempla el Plan de Estudios del PNFMIC.
+          para que el Comité de Verificación Académica de la '.$cohorte.', procedan a la revisión de las notas obtenidas en cada una de las unidades curriculares que contempla el Plan de Estudios del PNFMIC.
      
 </p></td></tr>
           </table></font><br>
