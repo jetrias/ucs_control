@@ -152,7 +152,7 @@ public function executeMostrarReporteEstadoV(sfWebRequest $request){
        caso de que la nota reflejada en una o más unidades curriculares, no se  correspondiera con la nota reflejada en el acta de examen, y 
        en este sentido, el Comité de Verificación procedió a plasmar la nota que efectivamente estaba indicada en el acta de examen.    
       </p></td></tr></table>';
-      //$pdf->writeHTML($html2, true, 0, true, true);
+      $pdf->writeHTML($html2, true, 0, true, true);
       $pdf->AddPage('P', 'F4');
       foreach($this->estudiantes as $data):
        $html2 .= '<br><br><font size="8"><table>
