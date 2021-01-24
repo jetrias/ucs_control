@@ -168,7 +168,7 @@ public function executeMostrarReporteEstadoV(sfWebRequest $request){
           </table></font><br>
           <font size="8">
           <table border="1">
-          <tr><td width="3%" align="center" rowspan="2">N</td><td width="12%" align="center" rowspan="2">CÓDIGO</td><td width="40%" align="center" rowspan="2">UNIDAD CURRÍCULAR</td><td width="10%" align="center" rowspan="2">PERÍODO<br>LECTIVO</td><td width="6%" align="center" rowspan="2">NOTA</td><td width="10%" colspan="2">Observacion</td><td width="20%" colspan="2">Correccion</td></tr>
+          <tr><td width="3%" align="center" rowspan="2">N</td><td width="12%" align="center" rowspan="2">CÓDIGO</td><td width="40%" align="center" rowspan="2">UNIDAD CURRÍCULAR</td><td width="10%" align="center" rowspan="2">PERÍODO<br>LECTIVO</td><td width="6%" align="center" rowspan="2">NOTA</td><td width="10%" colspan="2">Observacion</td><td width="20%" rowspan="2">Correccion</td></tr>
           <tr><td width="5%">SI</td><td width="5%">No</td></tr>';
       $notas = NotasTable::getNotasGrado2($data['id']);
       $nro = 0;
@@ -188,13 +188,24 @@ public function executeMostrarReporteEstadoV(sfWebRequest $request){
       endforeach;
       $promedio=$sum_notas/$nro;
       $promedio2=number_format((float)$promedio, 2, '.', '');
-      $html2.='</table>
-          </table> <br/><br/> <table><tr><td> <p align="justify"> La escala de calificaciones es del 1 al 20, siendo la mínima aprobatoria de 12 puntos. 
-Certificación que se expide al solicitante por parte de la Secretaría General de la Universidad de la Ciencias de la Salud “Hugo Chávez Frías”, en fecha 
-'.date('d-m-Y').'. </p> Indice Académico: <strong>'.$promedio2.'</strong>. El total de unidades curriculares 
-requeridas para egresar es de 49. </td></tr></table><br/> <table><tr><td><font size="8"><i>MA/mi</i> <p align="right"><i><strong>Sin sello no tiene 
-validez</strong></i> </p></font> </td></tr> <tr><td align="center"><strong>Prof. Ana Y. Montenegro N.<br/>Secretaria General UCS</strong> </td></tr> </table>
-      </font>';
+      $html2.='
+      <tr><td align="center"></td><td align="center"></td> <td></td><td align="center"></td><td align="center"></td><td></td><td></td><td></td>
+          </tr>
+          <tr><td align="center"></td><td align="center"></td> <td></td><td align="center"></td><td align="center"></td><td></td><td></td><td></td>
+          </tr>
+          <tr><td align="center"></td><td align="center"></td> <td></td><td align="center"></td><td align="center"></td><td></td><td></td><td></td>
+          </tr>
+          <tr><td align="center"></td><td align="center"></td> <td></td><td align="center"></td><td align="center"></td><td></td><td></td><td></td>
+          </tr>
+      </table>
+          </table> <br/><br/> 
+        <table>
+        <tr><td>_____________________</td><td>_____________________</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>_____________________</td></tr>
+        <tr><td>Sec Docente MMC</td><td>Director de Secretaria UCS</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>Profesor(a)</td></tr>
+        <tr><td>_____________________</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>_____________________</td></tr>
+        <tr><td>Profesor(a)</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>Testigo Estudiantil</td></tr>
+        <tr><td colspan="4" align="center">SELLO <br> DIRECCION DE CONTROL DE ESTUDIOS</td></tr>
+        </table>';
       $pdf->writeHTML($html2, true, 0, true, true);
       $pdf->AddPage('P', 'F4');
   endforeach;
