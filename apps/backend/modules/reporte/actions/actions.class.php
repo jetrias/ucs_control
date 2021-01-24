@@ -168,7 +168,7 @@ public function executeMostrarReporteEstadoV(sfWebRequest $request){
           </table></font><br>
           <font size="8">
           <table border="1">
-          <tr><td width="3%" align="center">N</td><td width="15%" align="center">CÓDIGO</td><td width="40%" align="center">UNIDAD CURRÍCULAR</td><td width="10%" align="center">PERÍODO<br>LECTIVO</td><td width="6%" align="center">NOTA</td><td>SI</td><td>No</td><td>Correccion</td></tr>';
+          <tr><td width="3%" align="center">N</td><td width="12%" align="center">CÓDIGO</td><td width="40%" align="center">UNIDAD CURRÍCULAR</td><td width="10%" align="center">PERÍODO<br>LECTIVO</td><td width="6%" align="center">NOTA</td><td width="5%">SI</td><td width="5%">No</td><td width="20%">Correccion</td></tr>';
       $notas = NotasTable::getNotasGrado2($data['id']);
       $nro = 0;
       $sum_notas=0;
