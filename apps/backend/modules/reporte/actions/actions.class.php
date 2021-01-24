@@ -132,8 +132,30 @@ public function executeMostrarReporteEstadoV(sfWebRequest $request){
           'module_width' => 1, // width of a single module in points
           'module_height' => 1 // height of a single module in points
       );
+      $html2='<br><br><font size="8"><table>
+      <tr><td align="left"><img src="images/logo_ucs.jpg" width="300" /></td><td align="right" ><font size="8">República Bolivariana de Venezuela<br> 
+      Universidad de las Ciencias de la Salud <br><b>"HUGO CHÁVEZ FRÍAS"</b><br> SECRETARÍA GENERAL <br> Dirección General de Control de Estudios</font></td></tr>
+      <tr><td colspan="2" align="center"><b>ACTA DE VERIFICACIÓN ACADÉMICA DEL ESTUDIANTE <br>X COHORTE PNFMIC</b></td></tr>
+      <tr><td colspan="2"><p style="text-align: justify"><br>
+      Hoy____ de _________________________ de 20________, reunidos: el (la) Secretario (a) Docente PNFMIC
+       ____________________________ Doc. Ident. N° ____________, el (la) Director (a) de Secretaría UCS 
+       ___________________________________ Doc. Ident. N°_______________, del estado ___________________, 
+       conjuntamente con los (las) Profesores (as)____________________________ Doc. Ident. N°______________ y _______________________________ 
+       Doc. Ident. N°______________, respectivamente, designados como Comité de Verificación Académica de la X Cohorte del  PNFMIC, 
+       y ______________________________ Doc. Identidad N°____________, en calidad de Testigo Estudiantil, con la finalidad de realizar una 
+       revisión exhaustiva a las Actas de Exámenes de cada una de las unidades curriculares cursadas por: 
+       ________________________________________________________Doc. Identidad N. º ___________________________, aspirante al 
+       título de Médico (a) Integral Comunitario (a), CERTIFICAMOS: que las calificaciones obtenidas por este (a) último (a), se 
+       encuentran verificadas y marcadas como correctas, en el Formato 02-B que precede al presente documento. Específicamente, en la 
+       columna identificada como: SI  SE CORRESPONDE CON LA NOTA PLASMADA EN EL ACTA DE EXAMEN DE LA UNIDAD CURRICULAR, y también, en la 
+       columna identificada como: CORRECCIÓN CALIFICACIÓN DEFINITIVA QUE APARECE EN EL ACTA DE EXAMEN. La Corrección se realizó sólo en el 
+       caso de que la nota reflejada en una o más unidades curriculares, no se  correspondiera con la nota reflejada en el acta de examen, y 
+       en este sentido, el Comité de Verificación procedió a plasmar la nota que efectivamente estaba indicada en el acta de examen.    
+      </p>';
+      $pdf->writeHTML($html2, true, 0, true, true);
+      $pdf->AddPage('P', 'F4');
       foreach($this->estudiantes as $data):
-       $html2 = '<br><br><font size="8"><table>
+       $html2 .= '<br><br><font size="8"><table>
           <tr><td align="left"><img src="images/logo_ucs.jpg" width="300" /></td><td align="right" ><font size="8">República Bolivariana de Venezuela<br> 
           Universidad de las Ciencias de la Salud <br><b>"HUGO CHÁVEZ FRÍAS"</b><br> SECRETARÍA GENERAL <br> Dirección General de Control de Estudios</font></td></tr>
           <tr><td colspan="2" align="center"><b>DOCUMENTO DE VERIFICACIÓN ACADÉMICA DEL ESTUDIANTE </b></td></tr>
@@ -157,6 +179,9 @@ public function executeMostrarReporteEstadoV(sfWebRequest $request){
           <td>' . $this->titleCase($data['descripcion']) . '</td>
           <td align="center">' . $data['periodo'] . '</td>
           <td align="center">' . $data['nota'] . '</td>
+          <td></td>
+          <td></td>
+          <td></td>
           </tr>';
           $sum_notas=$sum_notas+$data['nota'];
       endforeach;
