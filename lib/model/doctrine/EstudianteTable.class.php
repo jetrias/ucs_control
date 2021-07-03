@@ -104,6 +104,7 @@ class EstudianteTable extends Doctrine_Table {
     }
  public static function obtener_estudiante_estado_periodo($id,$periodo) {
         $sql = "select * from estudiante where estado_id=$id and notas='$periodo'";
+        //echo $sql; 
         $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
         return $q;
     }

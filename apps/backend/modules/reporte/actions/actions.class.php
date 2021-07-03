@@ -29,7 +29,10 @@ class reporteActions extends sfActions
       ini_set('max_execution_time', 300);
         $this->estado = $this->getRequestParameter('estado');
 	$this->periodo = $this->getRequestParameter('periodo');
-        $this->estudiantes = EstudianteTable::obtener_estudiante_estado_periodo($this->estado,$this->periodo);
+        $this->estudiantes = EstudianteTable::obtener_estudiante_estado_periodo($this->estado,$this->periodo); 
+//echo $this->estado.' '.$this->periodo;
+//print_r($this->estudiantes);
+//exit();
         $config = sfTCPDFPluginConfigHandler::loadConfig();
         $pdf = new sfTCPDF();
         $pdf->SetCreator(PDF_CREATOR);
